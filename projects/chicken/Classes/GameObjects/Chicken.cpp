@@ -6,8 +6,13 @@
 /////////////////////////////////////////////////
 /* virtual */ bool Chicken::init()
 {
-	// Load Sprites
+	// super init
+	if (!CCNode::init())
+	{
+		return false;
+	}
 
+	// Load Sprites
 	spriteFront[slim] = CCSprite::create("normal_chicken_slim_f.png");
 	spriteFront[normal] = CCSprite::create("normal_chicken_normal_f.png");
 	spriteFront[fat] = CCSprite::create("normal_chicken_fat_f.png");

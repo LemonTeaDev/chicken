@@ -52,5 +52,5 @@ private:
 	std::array<CCLayer*, SLOT_COUNT> chickenSlots;
 	std::array<CCPoint, SLOT_COUNT> layerCenterPos;
 
-	std::mt19937 randomEngine;
+	mutable std::mt19937 randomEngine;
 };
