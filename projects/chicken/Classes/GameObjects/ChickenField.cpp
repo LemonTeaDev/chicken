@@ -14,13 +14,13 @@
 
 	InitializeLayerCenterPos();
 
-	// ´ß ½½·Ô ÇÒ´ç
-	int i = 0;
+	// Â¥ï¬?Î©Î©?‘â€?Â«?œÂ¥Ã?	int i = 0;
 	for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
 	{
 		auto slot = *slotItr;
 		slot = CCLayerColor::create(ccc4(255, rand()%255, rand()%255, 255));
 		slot->setContentSize(CCSizeMake(CHICKEN_SLOT_WIDTH, CHICKEN_SLOT_HEIGHT));
+        slot->setAnchorPoint(ccp(0.0f, 0.0f));
 		slot->setPosition(layerCenterPos[i]);
 		this->addChild(slot);
 		i++;
@@ -50,14 +50,15 @@ int ChickenField::GetRealIndex(int humanIndex) const
 void ChickenField::InitializeLayerCenterPos()
 {
 	int i = 0;
-	layerCenterPos[i++] = CCPointMake(218, 165);
-	layerCenterPos[i++] = CCPointMake(468, 165);
-	layerCenterPos[i++] = CCPointMake(700, 165);
-	layerCenterPos[i++] = CCPointMake(938, 165);
-	layerCenterPos[i++] = CCPointMake(218, 490);
-	layerCenterPos[i++] = CCPointMake(468, 490);
-	layerCenterPos[i++] = CCPointMake(700, 490);
-	layerCenterPos[i++] = CCPointMake(938, 490);
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+	layerCenterPos[i++] = CCPointMake(218-86, visibleSize.height-165-103);
+	layerCenterPos[i++] = CCPointMake(468-86, visibleSize.height-165-103);
+	layerCenterPos[i++] = CCPointMake(700-86, visibleSize.height-165-103);
+	layerCenterPos[i++] = CCPointMake(938-86, visibleSize.height-165-103);
+	layerCenterPos[i++] = CCPointMake(218-86, visibleSize.height-490-103);
+	layerCenterPos[i++] = CCPointMake(468-86, visibleSize.height-490-103);
+	layerCenterPos[i++] = CCPointMake(700-86, visibleSize.height-490-103);
+	layerCenterPos[i++] = CCPointMake(938-86, visibleSize.height-490-103);
 }
 
 void ChickenField::AddChicken(int index, Chicken* chicken)

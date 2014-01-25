@@ -31,23 +31,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 
-#ifndef _JY_TEST_
     CCScene *pGameScene = GameScene::scene();
-#else
-    CCScene *pScene = JYTestScene::scene();
-#endif
-	
-    CCScene *pScene = StartScene::scene();
 	//CCScene *pScene = GameOverScene::scene();
 	//CCScene *pGameScene = StartScene::scene();
 	//CCScene *pGameScene = GameOverScene::scene();
 
     // run
-#ifndef _JY_TEST_
-	pDirector->runWithScene(pGameScene);
-#else
-	pDirector->runWithScene(pScene);
-#endif
+    pDirector->runWithScene(pGameScene);
 
     return true;
 }

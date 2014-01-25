@@ -1,7 +1,7 @@
 #include "GameOverScene.h"
 #include "GameScene.h"
 #include "StartScene.h"
-#include "layers_scenes_transitions_nodes\CCTransitionPageTurn.h"
+//#include "layers_scenes_transitions_nodes\CCTransitionPageTurn.h"
 #include "CCDirector.h"
 
 USING_NS_CC;

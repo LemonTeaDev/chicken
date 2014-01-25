@@ -26,13 +26,15 @@ public:
     void beltSpeedUp(float degree);
     void beltSpeedDown(float degree);
 	void beltPause(float time);
-	void beltReverse();
+    void beltReverse();
 	bool isReverse() const { return isReverse; }
 
 	Food* findEatableFood(CCPoint chickenLocation);
 	void loadFood(Food* pFood);
 	void unloadFood(Food* pFood, bool cleanup = true);
-
+    
+	void drawGear();
+    
 private:
     CCSprite* beltSpr;
     int beltIdx;
@@ -41,5 +43,6 @@ private:
 
 	float beltSpeed;
 	bool isReverse;
+	CCSprite* gear[6];//3개의 다른 기어
 };
-#endif	
+#endif
