@@ -19,8 +19,16 @@ Localization* Localization::sharedLocalization(){
     if(onlyLocalization==NULL)
     {
         onlyLocalization = new Localization();
-        //DFLocalization::sharedLocalization()->mCurrentLanguage = kLanguageKorean;
     }
     
     return onlyLocalization;
+}
+
+const char* Localization::getAppName(){
+    if (mCurrentLanguage == kLanguageEnglish) {
+        return "chicken game";
+    }else if(mCurrentLanguage == kLanguageKorean){
+        return "치킨게임";
+    }
+    return "";
 }

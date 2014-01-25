@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "CocosHelper.h"
+
 USING_NS_CC;
 HelloWorld::HelloWorld(){
     CCTextureCache::sharedTextureCache()->addImage("Icon-114.png");

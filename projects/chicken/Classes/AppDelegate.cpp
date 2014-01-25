@@ -1,5 +1,8 @@
 #include "AppDelegate.h"
 #include "StartScene.h"
+#ifdef _JY_TEST_
+#include "JYTestScene.h"
+#endif
 
 USING_NS_CC;
 
@@ -25,8 +28,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
+#ifndef _JY_TEST_
     CCScene *pScene = StartScene::scene();
-
+#else
+    CCScene *pScene = JYTestScene::scene();
+#endif
     // run
     pDirector->runWithScene(pScene);
 

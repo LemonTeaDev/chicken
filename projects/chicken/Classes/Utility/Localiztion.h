@@ -10,7 +10,7 @@
 #define __chicken__Localiztion__
 
 #include <cocos2d.h>
-using namespace cocos2d;
+USING_NS_CC;
 
 
 class Localization
@@ -21,6 +21,7 @@ public:
     
     static Localization* sharedLocalization();
     CC_SYNTHESIZE_READONLY(ccLanguageType, mCurrentLanguage, CurrentLanguage);
+    const char* getAppName();
 };
 
 #endif /* defined(__chicken__Localiztion__) */
