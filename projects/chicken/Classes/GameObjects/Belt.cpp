@@ -40,7 +40,7 @@ bool Belt::init()
  
 void Belt::drawBackground(){
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    beltSpr = CocosHelper::addSprite(this, "belt-01.png", ccp(visibleSize.width/2, 220), 0, true, ccp(0.5f, 0.5f));
+    beltSpr = CocosHelper::addSprite(this, "../Resources/belt-01.png", ccp(visibleSize.width/2, 220), 0, true, ccp(0.5f, 0.5f));
     
     
     runBeltAnimation(0.5f,false);
@@ -50,11 +50,11 @@ void Belt::runBeltAnimation(float speed, bool isReverse)
 {
     CCAnimation* beltSprAnimation = CCAnimation::create();
     beltSprAnimation->setDelayPerUnit(speed);
-    beltSprAnimation->addSpriteFrameWithFileName("belt-02.png");
-    beltSprAnimation->addSpriteFrameWithFileName("belt-03.png");
-    beltSprAnimation->addSpriteFrameWithFileName("belt-04.png");
-    beltSprAnimation->addSpriteFrameWithFileName("belt-05.png");
-    beltSprAnimation->addSpriteFrameWithFileName("belt-06.png");
+    beltSprAnimation->addSpriteFrameWithFileName("../Resources/belt-02.png");
+    beltSprAnimation->addSpriteFrameWithFileName("../Resources/belt-03.png");
+    beltSprAnimation->addSpriteFrameWithFileName("../Resources/belt-04.png");
+    beltSprAnimation->addSpriteFrameWithFileName("../Resources/belt-05.png");
+    beltSprAnimation->addSpriteFrameWithFileName("../Resources/belt-06.png");
     
     CCAnimate *animate = CCAnimate::create(beltSprAnimation);
     CCRepeatForever *beltSprAnimate = CCRepeatForever::create(animate);
@@ -66,6 +66,30 @@ void Belt::runBeltAnimation(float speed, bool isReverse)
     }
 }
 
+void Belt::drawGear()
+{
+
+	//draw Gears
+	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+
+	gear[0] = CCSprite::create("../Resources/gear3.png");
+	gear[1] = CCSprite::create("../Resources/gear2.png");
+	gear[2] = CCSprite::create("../Resources/gear1.png");
+
+	gear[0]->setPosition(ccp(origin.x + (gear[0]->getContentSize().width) * 2, visibleSize.height / 2 - gear[0]->getContentSize().height + 2.0));
+	gear[1]->setPosition(ccp(origin.x + gear[1]->getContentSize().width / 2 + 2.0, visibleSize.height / 2 - gear[0]->getContentSize().height - 13.0));
+	gear[2]->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2 - gear[0]->getContentSize().height - gear[1]->getContentSize().height));
+
+	for (int i = 0; i < 3; i++){
+
+		this->addChild(gear[i], 2);
+		gear[i]->setAnchorPoint(CCPointMake(0.5f, 0.5f));
+		CCRotateBy* rotateAction = CCRotateBy::create(5.0f, 60.0f);
+		gear[i]->runAction(CCRepeatForever::create(rotateAction));
+	}
+
+}
 
 void Belt::beltSpeedUp(float degree){
     beltSpr->stopAllActions();

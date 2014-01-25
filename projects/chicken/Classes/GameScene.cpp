@@ -38,12 +38,13 @@ bool GameScene::init()
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
     CCLog("%f %f",visibleSize.width, visibleSize.height);
-    CocosHelper::addSprite(this, "back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
+    CocosHelper::addSprite(this, "../Resources/back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
     
-    // 컨베이어 벨트
+    // 컨베이어 벨트 + 기어즈
     Belt* belt = Belt::create();
     addChild(belt,GAME_SCENE_BELT,GAME_SCENE_BELT);
-    
+	belt->drawGear();
+
     // 불빛들
     Light* light = Light::create();
     light->setPosition(ccp(332, visibleSize.height-46));
@@ -70,11 +71,11 @@ bool GameScene::init()
     fogSpr->runAction(CCRepeatForever::create(sequence));
     */
     
-    CCMenuItem* pUp = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
+    CCMenuItem* pUp = CCMenuItemImage::create("../Resources/Icon-114.png", "../Resources/Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
 	pUp->setTag(1);
-    CCMenuItem* pDown = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
+    CCMenuItem* pDown = CCMenuItemImage::create("../Resources/Icon-114.png", "../Resources/Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
     pDown->setTag(2);
-    CCMenuItem* pReverse = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
+    CCMenuItem* pReverse = CCMenuItemImage::create("../Resources/Icon-114.png", "../Resources/Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
     pReverse->setTag(3);
     
 	pUp->setPosition(ccp(50, origin.y + visibleSize.height / 2));

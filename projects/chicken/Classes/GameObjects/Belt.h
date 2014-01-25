@@ -17,8 +17,11 @@ public:
     void beltSpeedUp(float degree);
     void beltSpeedDown(float degree);
     void beltReverse();
+
+	void drawGear();
     
 private:
     CCSprite* beltSpr;
+	CCSprite* gear[3];//3개의 다른 기어
 };
 #endif
