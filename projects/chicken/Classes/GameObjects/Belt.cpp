@@ -73,19 +73,32 @@ void Belt::drawGear()
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
+	//왼쪽 기어
 	gear[0] = CCSprite::create("../Resources/gear3.png");
 	gear[1] = CCSprite::create("../Resources/gear2.png");
 	gear[2] = CCSprite::create("../Resources/gear1.png");
 
-	gear[0]->setPosition(ccp(origin.x + (gear[0]->getContentSize().width) * 2, visibleSize.height / 2 - gear[0]->getContentSize().height + 2.0));
-	gear[1]->setPosition(ccp(origin.x + gear[1]->getContentSize().width / 2 + 2.0, visibleSize.height / 2 - gear[0]->getContentSize().height - 13.0));
-	gear[2]->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2 - gear[0]->getContentSize().height - gear[1]->getContentSize().height));
+	gear[0]->setPosition(ccp(origin.x + (gear[0]->getContentSize().width) * 2 + 4.0, 220 - 50.0));
+	gear[1]->setPosition(ccp(origin.x + gear[1]->getContentSize().width / 2 + 4.0, 220 - 60.0));
+	gear[2]->setPosition(ccp(origin.x + (gear[2]->getContentSize().width) * 3 - 4.5, 220 - 75.0));
 
-	for (int i = 0; i < 3; i++){
+	//오른쪽 기어
+	gear[3] = CCSprite::create("../Resources/gear3.png");
+	gear[4] = CCSprite::create("../Resources/gear2.png");
+	gear[5] = CCSprite::create("../Resources/gear1.png");
+
+	gear[3]->setPosition(ccp(visibleSize.width - (gear[0]->getContentSize().width) * 2 - 4.0, 220 - 50.0));
+	gear[4]->setPosition(ccp(visibleSize.width - gear[1]->getContentSize().width / 2 - 4.0, 220 - 60.0));
+	gear[5]->setPosition(ccp(visibleSize.width - (gear[2]->getContentSize().width) * 3 + 4.5, 220 - 75.0));
+
+
+
+
+	for (int i = 0; i < 6; i++){
 
 		this->addChild(gear[i], 2);
 		gear[i]->setAnchorPoint(CCPointMake(0.5f, 0.5f));
-		CCRotateBy* rotateAction = CCRotateBy::create(5.0f, 60.0f);
+		CCRotateBy* rotateAction = CCRotateBy::create(3.0f, 60.0f);
 		gear[i]->runAction(CCRepeatForever::create(rotateAction));
 	}
 

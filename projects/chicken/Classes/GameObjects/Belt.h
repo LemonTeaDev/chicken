@@ -22,6 +22,6 @@ public:
     
 private:
     CCSprite* beltSpr;
-	CCSprite* gear[3];//3개의 다른 기어
+	CCSprite* gear[6];//3개의 다른 기어
 };
 #endif
