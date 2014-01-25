@@ -60,7 +60,7 @@ bool Chicken::init()
     }
     
     
-    chickenSpr = CocosHelper::addSprite(this, "nomal_chicken_nomal_b_stand.png", CCPointMake(0,0), CHICKEN_SPR);
+    chickenSpr = CocosHelper::addSprite(this, "nomal_chicken_normal_b_stand.png", CCPointMake(0,0), CHICKEN_SPR);
     chickenSpr->setTexture(spriteFront[normal]);
     chickenSpr->setAnchorPoint(ccp(.5f, .5f));
     

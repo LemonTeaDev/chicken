@@ -32,6 +32,7 @@
         }
 		slot->addChild(chicken,CHICKEN_TAG,CHICKEN_TAG);
         addChild(slot);
+        *slotItr = slot;
 		i++;
 	}
 	
@@ -81,10 +82,15 @@ void ChickenField::AddChicken(int index, Chicken* chicken)
 
 Chicken* ChickenField::GetChicken(int index) const
 {
+    CCNode* node = chickenSlots[GetRealIndex(index)];
 	return dynamic_cast<Chicken*>(
-		chickenSlots[GetRealIndex(index)]->getChildByTag(CHICKEN_TAG));
+		node->getChildByTag(CHICKEN_TAG));
 }
-
+CCNode* ChickenField::GetChickenNode(int index) const
+{
+    CCNode* node = chickenSlots[GetRealIndex(index)];
+	return dynamic_cast<CCNode*>(node);
+}
 void ChickenField::RemoveChicken(int index)
 {
 	auto chicken = GetChicken(index);

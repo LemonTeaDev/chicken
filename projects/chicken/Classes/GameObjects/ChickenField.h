@@ -31,6 +31,7 @@ public:
 	// index는 1부터 8까지!
 	void AddChicken(int index, Chicken* chicken);
 	Chicken* GetChicken(int index) const;
+    CCNode* GetChickenNode(int index) const;
 	void RemoveChicken(int index);
 
 	// 빈 슬롯 찾기

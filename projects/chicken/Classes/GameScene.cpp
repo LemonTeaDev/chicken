@@ -138,14 +138,30 @@ void GameScene::ccTouchEnded(CCTouch* touch, CCEvent* event)
 void GameScene::masterApper(){
     CCLog("MASTER APPEAR");
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    CCPoint touchPoint = ccp(visibleSize.width/2, visibleSize.height/2);
+    ChickenField* chickenField = (ChickenField*)getChildByTag(GAME_SCENE_CHICKEN);
+    int randIdx = rand() % ChickenField::SLOT_COUNT + 1;
+    CCNode* chickenLayer = chickenField->GetChickenNode(randIdx);
+    
+    //CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+    CCPoint touchPoint = chickenLayer->getPosition();
+    //CCLog("%f %f",touchPoint.x,touchPoint.y);
     Master* master = Master::create();
     master->setAnchorPoint(ccp(0.5f,0.5f));
-    master->setPosition(ccp(touchPoint.x, touchPoint.y-40));
+    if (touchPoint.y > visibleSize.height/2) {
+        master->setPosition(touchPoint.x, visibleSize.height);
+        addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+        master->runStartAction(touchPoint,true);
+    }else{
+        master->setPosition(touchPoint.x, 0);
+        addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+        master->runStartAction(touchPoint,false);
+    }
     
+    /*
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
     master->runAction(sequence);
-    addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+     */
+    
     
 }
 void GameScene::menuCloseCallback(CCObject* pSender)

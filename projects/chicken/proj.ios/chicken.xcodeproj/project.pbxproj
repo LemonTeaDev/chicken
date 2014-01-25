@@ -1404,6 +1404,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AF22189422BD001AB582 /* UI */,
 				CDC4AED51893BF75001AB582 /* Layer */,
 				CDB87A581893870A008C05DB /* GameObjects */,
 				CDE6ABA218936583005F1D97 /* Utility */,
@@ -1994,6 +1995,14 @@
 				CDC4AEDB1893DFEB001AB582 /* bg_01.mp3 */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		CDC4AF22189422BD001AB582 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			path = ../Classes/UI;
 			sourceTree = "<group>";
 		};
 		CDE6ABA218936583005F1D97 /* Utility */ = {
