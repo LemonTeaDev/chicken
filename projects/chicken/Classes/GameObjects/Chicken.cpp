@@ -15,6 +15,15 @@
 	spriteBack[normal] = CCSprite::create("normal_chicken_normal_b.png");
 	spriteBack[fat] = CCSprite::create("normal_chicken_fat_b.png");
 
+	//Eat animation Sprites
+	spriteFront[FatStatus::slim] = CCSprite::create("normal_chicken_slim_f_eat.png");
+	spriteFront[FatStatus::normal] = CCSprite::create("normal_chicken_normal_f_eat.png");
+	spriteFront[FatStatus::fat] = CCSprite::create("normal_chicken_fat_f_eat.png");
+	spriteBack[FatStatus::slim] = CCSprite::create("normal_chicken_slim_b_eat.png");
+	spriteBack[FatStatus::normal] = CCSprite::create("normal_chicken_normal_b_eat.png");
+	spriteBack[FatStatus::fat] = CCSprite::create("normal_chicken_fat_b_eat.png");
+	
+
 	InitializeLifeMax();
 	InitializeLifeFatFactors();
 	SetDigestSpeed(4);
