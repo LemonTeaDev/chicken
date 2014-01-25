@@ -14,16 +14,25 @@
 
 	InitializeLayerCenterPos();
 
-	// Â¥ï¬?Î©Î©?‘â€?Â«?œÂ¥Ã?	int i = 0;
+	// Â¥ï¬?Î©Î©?‘â€?Â«?œÂ¥Ã?
+    int i = 0;
 	for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
 	{
 		auto slot = *slotItr;
-		slot = CCLayerColor::create(ccc4(255, rand()%255, rand()%255, 255));
+		slot = CCNode::create();
 		slot->setContentSize(CCSizeMake(CHICKEN_SLOT_WIDTH, CHICKEN_SLOT_HEIGHT));
         slot->setAnchorPoint(ccp(0.0f, 0.0f));
-		//slot->setPosition(layerCenterPos[i]);
-		this->addChild(slot);
-		//i++;
+		slot->setPosition(layerCenterPos[i]);
+        
+        Chicken* chicken = Chicken::create();
+        if (i < 4) {
+            chicken->SetChickenSide(Chicken::front);
+        }else{
+            chicken->SetChickenSide(Chicken::back);
+        }
+		slot->addChild(chicken,CHICKEN_TAG,CHICKEN_TAG);
+        addChild(slot);
+		i++;
 	}
 	
 	return true;
@@ -51,14 +60,14 @@ void ChickenField::InitializeLayerCenterPos()
 {
 	int i = 0;
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-	layerCenterPos[i++] = CCPointMake(218-86, visibleSize.height-165-103);
-	layerCenterPos[i++] = CCPointMake(468-86, visibleSize.height-165-103);
-	layerCenterPos[i++] = CCPointMake(700-86, visibleSize.height-165-103);
-	layerCenterPos[i++] = CCPointMake(938-86, visibleSize.height-165-103);
-	layerCenterPos[i++] = CCPointMake(218-86, visibleSize.height-490-103);
-	layerCenterPos[i++] = CCPointMake(468-86, visibleSize.height-490-103);
-	layerCenterPos[i++] = CCPointMake(700-86, visibleSize.height-490-103);
-	layerCenterPos[i++] = CCPointMake(938-86, visibleSize.height-490-103);
+	layerCenterPos[i++] = CCPointMake(218, visibleSize.height-165);
+	layerCenterPos[i++] = CCPointMake(468, visibleSize.height-165);
+	layerCenterPos[i++] = CCPointMake(700, visibleSize.height-165);
+	layerCenterPos[i++] = CCPointMake(938, visibleSize.height-165);
+	layerCenterPos[i++] = CCPointMake(218, visibleSize.height-490);
+	layerCenterPos[i++] = CCPointMake(468, visibleSize.height-490);
+	layerCenterPos[i++] = CCPointMake(700, visibleSize.height-490);
+	layerCenterPos[i++] = CCPointMake(938, visibleSize.height-490);
 }
 
 void ChickenField::AddChicken(int index, Chicken* chicken)
