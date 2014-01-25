@@ -1,5 +1,5 @@
 #include "Belt.h"
-#include "CocosHelper.h"
+#include "Utility/CocosHelper.h"
 #include "Chicken.h"
 #include "Food.h"
 #include <algorithm>
