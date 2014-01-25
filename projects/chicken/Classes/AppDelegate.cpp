@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "StartScene.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -26,6 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     CCScene *pScene = StartScene::scene();
+	CCScene *pGameScene = GameScene::scene();
 
     // run
     pDirector->runWithScene(pScene);

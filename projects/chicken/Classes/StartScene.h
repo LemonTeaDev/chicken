@@ -13,6 +13,8 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
+	void menuStartCallback(CCObject* pSender);
+
     
     // implement the "static node()" method manually
     CREATE_FUNC(StartScene);
