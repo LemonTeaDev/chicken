@@ -53,7 +53,6 @@ bool GameScene::init()
     // conveyer belt + gears
     Belt* belt = Belt::create();
     addChild(belt,GAME_SCENE_BELT,GAME_SCENE_BELT);
-	belt->drawGear();
 
     // lights
     Light* light = Light::create();
@@ -75,7 +74,7 @@ bool GameScene::init()
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
     // dim background
-    CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
+    //CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
     /*
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x-100, fogSpr->getPosition().y)),CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x+100, fogSpr->getPosition().y)), NULL);
     fogSpr->runAction(CCRepeatForever::create(sequence));
