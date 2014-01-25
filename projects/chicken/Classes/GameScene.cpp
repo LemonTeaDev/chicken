@@ -1,18 +1,25 @@
 #include "GameScene.h"
 #include "GameOverScene.h"
-#include "Belt.h"
-#include "Light.h"
-#include "CocosHelper.h"
-#include "SoundManager.h"
-#include "Master.h"
+#include "GameObjects/Belt.h"
+#include "GameObjects/Light.h"
+#include "GameObjects/Master.h"
+#include "Utility/CocosHelper.h"
+#include "Utility/SoundManager.h"
 #include "GameObjects/ChickenField.h"
-#include "GameManager.h"
-GameScene::GameScene(){
+#include "Utility/GameManager.h"
+
+USING_NS_CC;
+    
+GameScene::GameScene()
+{
     
 }
-GameScene::~GameScene(){
+
+GameScene::~GameScene()
+{
     
 }
+
 CCScene* GameScene::scene()
 {
     // 'scene' is an autorelease object
@@ -43,12 +50,11 @@ bool GameScene::init()
     CCLog("%f %f",visibleSize.width, visibleSize.height);
     CocosHelper::addSprite(this, "back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
     
-    // 컨베이어 벨트 + 기어즈
+    // conveyer belt + gears
     Belt* belt = Belt::create();
     addChild(belt,GAME_SCENE_BELT,GAME_SCENE_BELT);
-	belt->drawGear();
 
-    // 불빛들
+    // lights
     Light* light = Light::create();
     light->setPosition(ccp(332, visibleSize.height-46));
     addChild(light,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
@@ -67,8 +73,8 @@ bool GameScene::init()
     light3->setPosition(ccp(803, visibleSize.height-46));
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
-    // 희미한 배경
-    CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
+    // dim background
+    //CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
     /*
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x-100, fogSpr->getPosition().y)),CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x+100, fogSpr->getPosition().y)), NULL);
     fogSpr->runAction(CCRepeatForever::create(sequence));

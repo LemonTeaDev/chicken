@@ -47,6 +47,8 @@ bool Belt::init()
 	isReverse = false;
 
     drawBackground();
+	drawGear();
+	runBelt();
 	scheduleUpdate();
 
     return true;
@@ -67,8 +69,6 @@ float Belt::SpeedToTimeTick(float speed) const
 void Belt::drawBackground(){
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     beltSpr = CocosHelper::addSprite(this, "belt-01.png", ccp(visibleSize.width/2, 220), 0, true, ccp(0.5f, 0.5f));
-    
-    runBelt();
 }
 
 void Belt::runBelt()
@@ -90,16 +90,35 @@ void Belt::runBelt()
     }else{
         beltSpr->runAction(beltSprAnimate);
     }
+
+	// move food
+	// chicken width hard coded..
+	CCMoveBy* foodMover = CCMoveBy::create(SpeedToTimeTick(beltSpeed), CCPointMake(250, 0));
+	CCRepeatForever* foodMoverRepeated = CCRepeatForever::create(foodMover);
+	for (auto food = foodList.begin(); food != foodList.end(); ++food)
+	{
+		if (*food != nullptr)
+		{
+			(*food)->runAction(foodMoverRepeated);
+		}
+	}
+
+	// run gear
+	for (int i = 0; i < 6; i++)
+	{
+		CCRotateBy* rotateAction = CCRotateBy::create(3.0f, 60.0f);
+		gear[i]->runAction(CCRepeatForever::create(rotateAction));
+	}
+
 }
 
 void Belt::drawGear()
 {
-
 	//draw Gears
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
-	//왼쪽 기어
+	// left gear
 	gear[0] = CCSprite::create("gear3.png");
 	gear[1] = CCSprite::create("gear2.png");
 	gear[2] = CCSprite::create("gear1.png");
@@ -108,7 +127,7 @@ void Belt::drawGear()
 	gear[1]->setPosition(ccp(origin.x + gear[1]->getContentSize().width / 2 + 4.0, 220 - 60.0));
 	gear[2]->setPosition(ccp(origin.x + (gear[2]->getContentSize().width) * 3 - 4.5, 220 - 75.0));
 
-	//오른쪽 기어
+	// right gear
 	gear[3] = CCSprite::create("gear3.png");
 	gear[4] = CCSprite::create("gear2.png");
 	gear[5] = CCSprite::create("gear1.png");
@@ -117,18 +136,13 @@ void Belt::drawGear()
 	gear[4]->setPosition(ccp(visibleSize.width - gear[1]->getContentSize().width / 2 - 4.0, 220 - 60.0));
 	gear[5]->setPosition(ccp(visibleSize.width - (gear[2]->getContentSize().width) * 3 + 4.5, 220 - 75.0));
 
-
-
-
 	for (int i = 0; i < 6; i++)
 	{
-		this->addChild(gear[i], 2);
+		this->addChild(gear[i], 3);
 		gear[i]->setAnchorPoint(CCPointMake(0.5f, 0.5f));
-		CCRotateBy* rotateAction = CCRotateBy::create(3.0f, 60.0f);
-		gear[i]->runAction(CCRepeatForever::create(rotateAction));
 	}
-
 }
+
 void Belt::beltSpeedUp(float degree)
 {
 	if (degree < 0)
@@ -153,13 +167,20 @@ void Belt::beltSpeedDown(float degree)
 
 	beltSpeed = max(MIN_SPEED, beltSpeed - degree);
 
-   beltSpr->stopAllActions();
+	beltSpr->stopAllActions();
 	runBelt();
 }
 
 void Belt::beltPause(float time)
 {
 	beltSpr->stopAllActions();
+
+	// stop gears
+	for (int i = 0; i < 6; i++)
+	{
+		gear[i]->stopAllActions();
+	}
+
 	scheduleOnce(schedule_selector(Belt::runBelt), 1.0f);
 }
 
@@ -216,7 +237,16 @@ void Belt::loadFood(Food* pFood)
 	if (pFood != nullptr)
 	{
 		foodList.push_back(pFood);
-		// TODO 음식을 벨트에 올린다 (addchild)
+
+		if (getIsReverse())
+		{
+			pFood->setPosition(CCPointMake(-pFood->getContentSize().width, getPositionY()));
+		}
+		else
+		{
+			pFood->setPosition(CCPointMake(getContentSize().width + pFood->getContentSize().width, getPositionY()));
+		}
+		addChild(pFood);
 	}
 }
 

@@ -27,7 +27,7 @@ public:
     void beltSpeedDown(float degree);
 	void beltPause(float time);
     void beltReverse();
-	bool GetIsReverse() const { return isReverse; }
+	bool getIsReverse() const { return isReverse; }
 
 	Food* findEatableFood(CCPoint chickenLocation);
 	void loadFood(Food* pFood);

@@ -82,7 +82,7 @@ bool Chicken::init()
 }
 void Chicken::chickenTouch(CCObject* pSender){
     CCLog("chickenTouch");
-    SetChickenEvent(eat);
+    SetChickenEvent(cry);
 }
 /////////////////////////////////////////////////
 // life : fatness factor initialize
