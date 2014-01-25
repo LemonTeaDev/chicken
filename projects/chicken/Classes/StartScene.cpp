@@ -30,10 +30,9 @@ bool StartScene::init()
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin(); // left down corner
 
 
-	
-	
-	CCMenuItemImage* pClose = CCMenuItemImage::create("CloseNormal.png", "CloseNormal.png", this, menu_selector(StartScene::menuCloseCallback));
-	CCMenuItemImage* pStart = CCMenuItemImage::create("CloseNormal.png", "CloseNormal.png", this, menu_selector(StartScene::menuStartCallback));
+
+	CCMenuItemImage* pClose = CCMenuItemImage::create("quit_test.png", "quit_test.png", this, menu_selector(StartScene::menuCloseCallback));
+	CCMenuItemImage* pStart = CCMenuItemImage::create("start_test.png", "start_test.png", this, menu_selector(StartScene::menuStartCallback));
 
 
 	pClose->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
@@ -70,7 +69,7 @@ bool StartScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
+    CCLabelTTF* pLabel = CCLabelTTF::create("Hey", "Arial", 24);
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
@@ -80,7 +79,7 @@ bool StartScene::init()
     this->addChild(pLabel, 1);
 
     // add "StartScene" splash screen"
-    CCSprite* pSprite = CCSprite::create("../Resources/StartScene.png");
+    CCSprite* pSprite = CCSprite::create("StartScene.png");
 
     // position the sprite on the center of the screen
     pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));

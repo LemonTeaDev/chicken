@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes">
+      <UniqueIdentifier>{369c8f4d-bf8f-457f-8fe0-d2e8f90bbfba}</UniqueIdentifier>
+    </Filter>
+<<<<<<< HEAD
+=======
+    <Filter Include="Classes\Game Objects">
+      <UniqueIdentifier>{fc63b0c4-3c6b-463d-be53-096f05a55ded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game Objects\Food Effects">
+      <UniqueIdentifier>{9e306fad-0cdf-43f7-8456-f1872d8b886d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game Objects\Logical">
+      <UniqueIdentifier>{1853e7ee-274e-4ac8-bb8f-1fc3997c546c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game Objects\Food Effects\Base">
+      <UniqueIdentifier>{7c44ef29-e69d-4655-aa60-67f454beca70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Utility">
+      <UniqueIdentifier>{ccbc3595-4e34-47f3-8cc4-21065070158b}</UniqueIdentifier>
+    </Filter>
+>>>>>>> ff15423f684f0a4e31677419b4b3552ada3f01c2
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOverScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="..\Classes\GameObjects\Belt.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\Chicken.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\ChickenField.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\Food.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\GainWeight.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\LoseWeight.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\FoodFactory.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\Light.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\Master.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\Player.cpp" />
+    <ClCompile Include="..\Classes\Utility\CocosHelper.cpp" />
+    <ClCompile Include="..\Classes\Utility\Localiztion.cpp" />
+    <ClCompile Include="..\Classes\Utility\SaveData.cpp" />
+=======
+    <ClCompile Include="..\Classes\GameObjects\Belt.cpp">
+      <Filter>Classes\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Chicken.cpp">
+      <Filter>Classes\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Food.cpp">
+      <Filter>Classes\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Master.cpp">
+      <Filter>Classes\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\GainWeight.cpp">
+      <Filter>Classes\Game Objects\Food Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\LoseWeight.cpp">
+      <Filter>Classes\Game Objects\Food Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\ChickenField.cpp">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\FoodFactory.cpp">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.cpp">
+      <Filter>Classes\Game Objects\Food Effects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Player.cpp">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Light.cpp">
+      <Filter>Classes\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Utility\CocosHelper.cpp">
+      <Filter>Classes\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Utility\Localiztion.cpp">
+      <Filter>Classes\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Utility\SaveData.cpp">
+      <Filter>Classes\Utility</Filter>
+    </ClCompile>
+>>>>>>> ff15423f684f0a4e31677419b4b3552ada3f01c2
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOverScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="..\Classes\GameObjects\Belt.h" />
+    <ClInclude Include="..\Classes\GameObjects\Chicken.h" />
+    <ClInclude Include="..\Classes\GameObjects\ChickenField.h" />
+    <ClInclude Include="..\Classes\GameObjects\Food.h" />
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\GainWeight.h" />
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.h" />
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\LoseWeight.h" />
+    <ClInclude Include="..\Classes\GameObjects\FoodFactory.h" />
+    <ClInclude Include="..\Classes\GameObjects\Light.h" />
+    <ClInclude Include="..\Classes\GameObjects\Master.h" />
+    <ClInclude Include="..\Classes\GameObjects\Player.h" />
+    <ClInclude Include="..\Classes\Utility\CocosHelper.h" />
+    <ClInclude Include="..\Classes\Utility\Localiztion.h" />
+    <ClInclude Include="..\Classes\Utility\SaveData.h" />
+=======
+    <ClInclude Include="..\Classes\GameObjects\Belt.h">
+      <Filter>Classes\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Chicken.h">
+      <Filter>Classes\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Food.h">
+      <Filter>Classes\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Master.h">
+      <Filter>Classes\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\GainWeight.h">
+      <Filter>Classes\Game Objects\Food Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\LoseWeight.h">
+      <Filter>Classes\Game Objects\Food Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\ChickenField.h">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\FoodFactory.h">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.h">
+      <Filter>Classes\Game Objects\Food Effects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Player.h">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Light.h">
+      <Filter>Classes\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Utility\CocosHelper.h">
+      <Filter>Classes\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Utility\Localiztion.h">
+      <Filter>Classes\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Utility\SaveData.h">
+      <Filter>Classes\Utility</Filter>
+    </ClInclude>
+>>>>>>> ff15423f684f0a4e31677419b4b3552ada3f01c2
+  </ItemGroup>
+</Project>

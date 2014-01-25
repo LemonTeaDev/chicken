@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "GameOverScene.h"
 
 USING_NS_CC;
 
@@ -27,17 +28,19 @@ bool GameScene::init()
         return false;
     }
     
+	
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
-
+	
     CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - pLabel->getContentSize().height));
 
     this->addChild(pLabel, 1);
 
- //   CCSprite* pSprite = CCSprite::create("../Resources/GameScene.png");
+
+ //   CCSprite* pSprite = CCSprite::create("GameScene.png");
 //    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
 //    this->addChild(pSprite, 0);
@@ -57,3 +60,10 @@ void GameScene::menuCloseCallback(CCObject* pSender)
 #endif
 #endif
 }
+
+void GameScene::menuGameOverCallback(CCObject* pSender)
+{
+	CCScene *pScene = GameOverScene::scene();
+	CCDirector::sharedDirector()->replaceScene(pScene);
+}
+

@@ -13,6 +13,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
+	void menuGameOverCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
 
