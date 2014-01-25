@@ -1,12 +1,12 @@
 #include "GameScene.h"
 #include "GameOverScene.h"
-#include "GameObjects/Belt.h"
-#include "GameObjects/Light.h"
-#include "GameObjects/Master.h"
-#include "Utility/CocosHelper.h"
-#include "Utility/SoundManager.h"
-#include "GameObjects/ChickenField.h"
-#include "Utility/GameManager.h"
+#include "Belt.h"
+#include "Light.h"
+#include "Master.h"
+#include "CocosHelper.h"
+#include "SoundManager.h"
+#include "ChickenField.h"
+#include "GameManager.h"
 
 USING_NS_CC;
     
@@ -17,7 +17,6 @@ GameScene::GameScene()
 
 GameScene::~GameScene()
 {
-    
 }
 
 CCScene* GameScene::scene()
@@ -29,7 +28,7 @@ CCScene* GameScene::scene()
     GameScene *layer = GameScene::create();
 
     // add layer as a child to scene
-    scene->addChild(layer);
+	scene->addChild(layer, 0, 0);
     // return the scene
     return scene;
 }

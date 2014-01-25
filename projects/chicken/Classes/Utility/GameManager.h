@@ -59,6 +59,7 @@ protected:
     CCObject* listener;
 private:
     GameState *state;
+	
     //CC_SYNTHESIZE(SimpleAudioEngine *, audioEngine, AudioEngine);
 };
 

@@ -48,6 +48,7 @@ public:
     void UpdateHealthBar();
 	void IncreaseLife(unsigned int delta);
 	void DecreaseLife(unsigned int delta);
+	void SetLife(unsigned int life);
 	
 	FatStatus GetFatStatus() const;
 

@@ -1,6 +1,9 @@
 #include "Chicken.h"
 #include "Food.h"
 #include "CocosHelper.h"
+#include "GameScene.h"
+#include "Belt.h"
+
 /////////////////////////////////////////////////
 // init
 /////////////////////////////////////////////////
@@ -87,7 +90,25 @@ bool Chicken::init()
 }
 void Chicken::chickenTouch(CCObject* pSender){
     CCLog("chickenTouch");
-    SetChickenEvent(cry);
+
+	GameScene* pGameScene =
+		dynamic_cast<GameScene*>(
+		CCDirector::sharedDirector()->getRunningScene()->getChildByTag(0));
+	Belt* pBelt = nullptr;
+	if (pGameScene != nullptr)
+	{
+		pBelt = dynamic_cast<Belt*>(
+			pGameScene->getChildByTag(GAME_SCENE_BELT));
+	}
+
+	if (pBelt != nullptr && pBelt->findEatableFood(getPosition()))
+	{
+		SetChickenEvent(eat);
+	}
+	else
+	{
+		SetChickenEvent(cry);
+	}
 }
 /////////////////////////////////////////////////
 // life : fatness factor initialize
@@ -198,8 +219,8 @@ void Chicken::DecreaseLife(unsigned int delta)
 /////////////////////////////////////////////////
 void Chicken::Eat(Food* food)
 {
-	// TODO implement this!
-	// sprite animation ¤¡¤¡
+	SetChickenEvent(eat);
+
 }
 
 /////////////////////////////////////////////////

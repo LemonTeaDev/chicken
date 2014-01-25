@@ -2,8 +2,10 @@
 #include "CocosHelper.h"
 #include "Chicken.h"
 #include "Food.h"
+#include "Feed.h"
 #include <algorithm>
 #include "CocosHelper.h"
+#include <random>
 
 const float Belt::MIN_SPEED = 0.01f;
 const float Belt::MAX_SPEED = 100.0f;
@@ -93,12 +95,14 @@ void Belt::runBelt()
 
 	// move food
 	// chicken width hard coded..
-	CCMoveBy* foodMover = CCMoveBy::create(SpeedToTimeTick(beltSpeed), CCPointMake(250, 0));
+	int reverse = isReverse? -1 : 1;
+	CCMoveBy* foodMover = CCMoveBy::create(SpeedToTimeTick(beltSpeed), CCPointMake(reverse * 250, 0));
 	CCRepeatForever* foodMoverRepeated = CCRepeatForever::create(foodMover);
 	for (auto food = foodList.begin(); food != foodList.end(); ++food)
 	{
 		if (*food != nullptr)
 		{
+			(*food)->stopAllActions();
 			(*food)->runAction(foodMoverRepeated);
 		}
 	}
@@ -246,7 +250,13 @@ void Belt::loadFood(Food* pFood)
 		{
 			pFood->setPosition(CCPointMake(getContentSize().width + pFood->getContentSize().width, getPositionY()));
 		}
+        
+        //pFood->setPosition(ccp(1400, 293));
 		addChild(pFood);
+		int reverse = isReverse ? -1 : 1;
+		CCMoveBy* foodMover = CCMoveBy::create(SpeedToTimeTick(beltSpeed), CCPointMake(reverse * 250, 0));
+		CCRepeatForever* foodMoverRepeated = CCRepeatForever::create(foodMover);
+		pFood->runAction(foodMoverRepeated);
 	}
 }
 
@@ -261,5 +271,26 @@ void Belt::unloadFood(Food* pFood, bool cleanup /* = true */)
 			pFood->removeFromParentAndCleanup(cleanup);
 			pFood = nullptr;
 		}
+	}
+}
+
+void Belt::update(float dt)
+{
+	static float time = 0;
+	time += dt;
+	if (time > 1000000)
+	{
+		time -= 1000000;
+	}
+
+	int msTime = time * 1000;
+	int tt = SpeedToTimeTick(beltSpeed) * 5 * 1000;
+	if (msTime % tt <= 1000)
+	{
+		std::uniform_int_distribution<int> dist(1, 100);
+		int randomValue = dist(randomEngine);
+		
+		Food* pFood = Feed::create();
+		loadFood(pFood);
 	}
 }

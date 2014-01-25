@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include <deque>
+#include <random>
 USING_NS_CC;
 
 using namespace std;
@@ -20,6 +21,7 @@ public:
 public:
     virtual ~Belt();
 	virtual bool init() override;
+	virtual void update(float dt) override;
     void drawBackground();
     static Belt* create();
     void runBelt();
@@ -44,5 +46,7 @@ private:
 	float beltSpeed;
 	bool isReverse;
 	CCSprite* gear[6];//3개의 다른 기어
+
+	mutable std::mt19937 randomEngine;
 };
 #endif

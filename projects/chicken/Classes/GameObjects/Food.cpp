@@ -1,5 +1,6 @@
 #include "Food.h"
 #include "Belt.h"
+#include "Chicken.h"
 
 /* virtual */
 bool Food::init()
