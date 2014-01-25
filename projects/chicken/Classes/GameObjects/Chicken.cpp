@@ -7,12 +7,12 @@
 /* virtual */ bool Chicken::init()
 {
 	// Load Sprites
-	spriteFront[FatStatus::slim] = CCSprite::create("../../Resources/normal_chicken_slim_f.png");
-	spriteFront[FatStatus::normal] = CCSprite::create("../../Resources/normal_chicken_normal_f.png");
-	spriteFront[FatStatus::fat] = CCSprite::create("../../Resources/normal_chicken_fat_f.png");
-	spriteBack[FatStatus::slim] = CCSprite::create("../../Resources/normal_chicken_slim_b.png");
-	spriteBack[FatStatus::normal] = CCSprite::create("../../Resources/normal_chicken_normal_b.png");
-	spriteBack[FatStatus::fat] = CCSprite::create("../../Resources/normal_chicken_fat_b.png");
+	spriteFront[slim] = CCSprite::create("../../Resources/normal_chicken_slim_f.png");
+	spriteFront[normal] = CCSprite::create("../../Resources/normal_chicken_normal_f.png");
+	spriteFront[fat] = CCSprite::create("../../Resources/normal_chicken_fat_f.png");
+	spriteBack[slim] = CCSprite::create("../../Resources/normal_chicken_slim_b.png");
+	spriteBack[normal] = CCSprite::create("../../Resources/normal_chicken_normal_b.png");
+	spriteBack[fat] = CCSprite::create("../../Resources/normal_chicken_fat_b.png");
 
 	InitializeLifeMax();
 	InitializeLifeFatFactors();
@@ -26,9 +26,9 @@
 /////////////////////////////////////////////////
 /* virtual */ void Chicken::InitializeLifeFatFactors()
 {
-	lifeFatFactor[FatStatus::slim] = 0;
-	lifeFatFactor[FatStatus::normal] = 30;
-	lifeFatFactor[FatStatus::fat] = 70;
+	lifeFatFactor[slim] = 0;
+	lifeFatFactor[normal] = 30;
+	lifeFatFactor[fat] = 70;
 }
 
 /////////////////////////////////////////////////
@@ -36,19 +36,19 @@
 /////////////////////////////////////////////////
 Chicken::FatStatus Chicken::GetFatStatus() const
 {
-	if (lifeFatFactor[FatStatus::slim] <= life &&
-		life < lifeFatFactor[FatStatus::normal])
+	if (lifeFatFactor[slim] <= life &&
+		life < lifeFatFactor[normal])
 	{
-		return FatStatus::slim;
+		return slim;
 	}
-	else if (lifeFatFactor[FatStatus::normal] <= life &&
-		life < lifeFatFactor[FatStatus::fat])
+	else if (lifeFatFactor[normal] <= life &&
+		life < lifeFatFactor[fat])
 	{
-		return FatStatus::normal;
+		return normal;
 	}
 	else
 	{
-		return FatStatus::fat;
+		return fat;
 	}
 }
 

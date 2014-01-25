@@ -13,11 +13,13 @@ public:
     virtual bool init();
     void drawBackground();
     static Belt* create();
+    void runBeltAnimation(float speed, bool isReverse);
     void beltSpeedUp(float degree);
     void beltSpeedDown(float degree);
     void beltReverse();
+    
 private:
     CCSprite* beltSpr;
-    CCAnimate *beltSprAnimate;
+    int beltIdx;
 };
 #endif

@@ -32,8 +32,8 @@ bool StartScene::init()
 
 	
 	
-	CCMenuItemImage* pClose = CCMenuItemImage::create("../Resources/quit_test.png", "../Resources/quit_test.png", this, menu_selector(StartScene::menuCloseCallback));
-	CCMenuItemImage* pStart = CCMenuItemImage::create("../Resources/start_test.png", "../Resources/start_test.png", this, menu_selector(StartScene::menuStartCallback));
+	CCMenuItemImage* pClose = CCMenuItemImage::create("CloseNormal.png", "CloseNormal.png", this, menu_selector(StartScene::menuCloseCallback));
+	CCMenuItemImage* pStart = CCMenuItemImage::create("CloseNormal.png", "CloseNormal.png", this, menu_selector(StartScene::menuStartCallback));
 
 
 	pClose->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
@@ -95,23 +95,17 @@ bool StartScene::init()
 
 void StartScene::menuCloseCallback(CCObject* pSender)
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-	CCMessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
-#else
-    CCDirector::sharedDirector()->end();
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
-#endif
-#endif
+    CCMenuItemImage *item = dynamic_cast<CCMenuItemImage*>(pSender);
+    
+    CCMenu* menu = (CCMenu*)(item->getParent());
+    StartScene* scene = (StartScene*)menu->getParent();
+    
 }
 
 
 void StartScene::menuStartCallback(CCObject* pSender)
 {
-	//shifts to start scene
-
-	CCScene *pScene = GameScene::scene();
-	CCDirector::sharedDirector()->replaceScene(pScene);
+	
 
 
 }

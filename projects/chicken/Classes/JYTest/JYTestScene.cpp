@@ -43,33 +43,60 @@ bool JYTestScene::init()
         return false;
     }
     belt = Belt::create();
-    belt->drawBackground();
-    addChild(belt,0,0);
+    addChild(belt,0);
     
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
-    CCMenuItemImage* pClose = CCMenuItemImage::create("../Resources/quit_test.png", "../Resources/quit_test.png", this, menu_selector(JYTestScene::menuCloseCallback));
-	CCMenuItemImage* pStart = CCMenuItemImage::create("../Resources/start_test.png", "../Resources/start_test.png", this, menu_selector(JYTestScene::menuStartCallback));
+    CCMenuItem* pUp = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(JYTestScene::menuCloseCallback));
+	pUp->setTag(1);
+    CCMenuItem* pDown = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(JYTestScene::menuCloseCallback));
+    pDown->setTag(2);
+    CCMenuItem* pReverse = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(JYTestScene::menuCloseCallback));
+    pReverse->setTag(3);
     
-    
-	pClose->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));
-	pStart->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2 - pClose->getContentSize().height));
-    
-	CCMenu* pMenu = CCMenu::create(pClose, pStart, NULL);
-    pMenu->setAnchorPoint(ccp(0.5f,0.5f));
-	pMenu->setPosition(CCPointMake(0, 0));
-	addChild(pMenu, 1,1);
-    
+	pUp->setPosition(ccp(50, origin.y + visibleSize.height / 2));
+	pDown->setPosition(ccp(50, origin.y + visibleSize.height / 2 - pUp->getContentSize().height-30));
+    pReverse->setPosition(ccp(50, origin.y + visibleSize.height / 2 - pUp->getContentSize().height-150));
+    CCArray* menuItemArr = CCArray::create(pUp,pDown,pReverse,NULL);
+	CCMenu* pMenu = CCMenu::createWithArray(menuItemArr);
 
+    pMenu->setPosition(CCPointZero);
+	addChild(pMenu, 1);
+    
+    CCLog("this : %p",this);
     return true;
 }
 void JYTestScene::menuCloseCallback(CCObject* pSender)
 {
-    belt->beltReverse();
+    CCMenuItem* pMenuItem = (CCMenuItem *)(pSender);
+    
+	int tag = (int)pMenuItem->getTag();
+    CCLog("TAG : %d",tag);
+    if (tag == 1) {
+        CCMenu* menu = (CCMenu*)pMenuItem->getParent();
+        JYTestScene* scene = (JYTestScene*)menu->getParent();
+        scene->belt->beltSpeedUp(10.0f);
+    }else if (tag == 2){
+        CCMenu* menu = (CCMenu*)(((CCNode*)(pSender))->getParent());
+        JYTestScene* scene = (JYTestScene*)menu->getParent();
+        scene->belt->beltSpeedDown(10.0f);
+    }else if(tag == 3){
+        CCMenu* menu = (CCMenu*)(((CCNode*)(pSender))->getParent());
+        JYTestScene* scene = (JYTestScene*)menu->getParent();
+        scene->belt->beltReverse();
+    }
 }
 
 void JYTestScene::menuStartCallback(CCObject* pSender)
 {
-    belt->beltSpeedUp(10.0f);
+    CCMenu* menu = (CCMenu*)(((CCNode*)(pSender))->getParent());
+    JYTestScene* scene = (JYTestScene*)menu->getParent();
+    scene->belt->beltSpeedUp(10.0f);
+}
+void JYTestScene::menuReverseCallback(CCObject* pSender)
+{
+    CCMenu* menu = (CCMenu*)(((CCNode*)(pSender))->getParent());
+    JYTestScene* scene = (JYTestScene*)menu->getParent();
+    scene->belt->beltReverse();
 }
