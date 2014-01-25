@@ -92,19 +92,28 @@ bool Chicken::init()
 
 	return true;
 }
+
+namespace
+{
+	static Belt* GetBelt(Chicken* pChicken)
+	{
+		GameScene* pGameScene =
+			dynamic_cast<GameScene*>(
+			CCDirector::sharedDirector()->getRunningScene()->getChildByTag(0));
+		Belt* pBelt = nullptr;
+		if (pGameScene != nullptr)
+		{
+			pBelt = dynamic_cast<Belt*>(
+				pGameScene->getChildByTag(GAME_SCENE_BELT));
+		}
+		return pBelt;
+	}
+}
+
 void Chicken::chickenTouch(CCObject* pSender){
     CCLog("chickenTouch");
 
-	GameScene* pGameScene =
-		dynamic_cast<GameScene*>(
-		CCDirector::sharedDirector()->getRunningScene()->getChildByTag(0));
-	Belt* pBelt = nullptr;
-	if (pGameScene != nullptr)
-	{
-		pBelt = dynamic_cast<Belt*>(
-			pGameScene->getChildByTag(GAME_SCENE_BELT));
-	}
-
+	Belt* pBelt = GetBelt(this);
 	Food* pFood = nullptr;
 	if (pBelt != nullptr && (pFood = pBelt->findEatableFood(this)) != nullptr)
 	{
@@ -207,6 +216,12 @@ void Chicken::DecreaseLife(unsigned int delta)
     UpdateHealthBar();
 }
 
+void Chicken::SetLife(unsigned int life)
+{
+	this->life = max(min(lifeMax, life), 0);
+	UpdateHealthBar();
+}
+
 /////////////////////////////////////////////////
 // nom nom nom nom
 /////////////////////////////////////////////////
@@ -214,6 +229,8 @@ void Chicken::Eat(Food* food)
 {
 	SetChickenEvent(eat);
 	food->removeFromParentAndCleanup(true);
+	food->doEffect(this); // effect to chicken
+	food->doEffect(GetBelt(this));	// effect to belt
 }
 
 /////////////////////////////////////////////////
