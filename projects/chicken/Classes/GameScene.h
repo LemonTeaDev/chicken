@@ -9,6 +9,7 @@ typedef enum eGameSceneTag{
     GAME_SCENE_LIGHT,
     GAME_SCENE_FOG,
     GAME_SCENE_MASTER,
+    GAME_SCENE_TIME,
     GAME_SCENE_MAX
 }eGameSceneTag;
 
@@ -29,6 +30,7 @@ public:
     void ccTouchEnded(CCTouch* touch, CCEvent* event);
     
     void masterApper();
+    void masterProgress(float dt);
     void menuCloseCallback(CCObject* pSender);
     void menuStartCallback(CCObject* pSender);
     void menuReverseCallback(CCObject* pSender);

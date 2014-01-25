@@ -256,6 +256,8 @@ void Belt::loadFood(Food* pFood)
 		{
 			pFood->setPosition(CCPointMake(-100, 293));
 		}
+        
+        //pFood->setPosition(ccp(1400, 293));
 		addChild(pFood);
 		int reverse = isReverse ? -1 : 1;
 		CCMoveBy* foodMover = CCMoveBy::create(SpeedToTimeTick(beltSpeed), CCPointMake(reverse * 250, 0));

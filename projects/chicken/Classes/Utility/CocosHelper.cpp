@@ -76,3 +76,15 @@ CCPoint CocosHelper::getRightBottomPos(CCNode* node)
 			node->getPositionY() - (contentSize.height * anchorPoint.y));
 	}
 }
+
+CCLabelBMFont*
+CocosHelper::addLabelFnt(CCNode *parent, const char* fontFile, CCPoint position, int tag, const char* str, CCPoint anchor, bool autoSize)
+{
+    CCLabelBMFont *label = CCLabelBMFont::create(str, fontFile);
+    label->setPosition(position);
+    label->setAnchorPoint(anchor);
+    
+    parent->addChild(label, tag, tag);
+    
+    return label;
+}

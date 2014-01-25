@@ -31,7 +31,7 @@ GameManager* GameManager::sharedGameManager(){
 bool GameManager::init(){
     state = new GameStateNone;
     state->setModel(this);
-    masterApperTime = 3.0f;
+    masterApperTime = 30.0f;
     return true;
 }
 void
@@ -72,10 +72,21 @@ void GameManager::setMasterAppearListener(SEL_CallFunc cb, CCNode* node){
     listener = node;
     masterAppearCB = cb;
 }
+void GameManager::setMasterAppearProgressListener(SEL_SCHEDULE cb, CCNode* node){
+    listener = node;
+    masterAppearProgressCB = cb;
+}
 void GameManager::masterAppear(){
     
     GameScene* scene = dynamic_cast<GameScene*>(listener);
     if (scene) {
         (scene->*masterAppearCB)();
+    }
+}
+void GameManager::masterProgress(float dt){
+    
+    GameScene* scene = dynamic_cast<GameScene*>(listener);
+    if (scene) {
+        (scene->*masterAppearProgressCB)(dt);
     }
 }

@@ -50,9 +50,12 @@ public:
     CC_SYNTHESIZE(float, masterApperTime, MasterApperTime);
     
     void setMasterAppearListener(SEL_CallFunc cb, CCNode* node);
+    void setMasterAppearProgressListener(SEL_SCHEDULE cb, CCNode* node);
     void masterAppear();
+    void masterProgress(float dt);
 protected:
     SEL_CallFunc masterAppearCB;
+    SEL_SCHEDULE masterAppearProgressCB;
     CCObject* listener;
 private:
     GameState *state;
