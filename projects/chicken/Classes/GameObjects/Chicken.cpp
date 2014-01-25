@@ -112,8 +112,11 @@ namespace
 }
 
 void Chicken::chickenTouch(CCObject* pSender){
-    CCLog("chickenTouch");
-
+    //CCLog("chickenTouch");
+    CCMenu* menu = (CCMenu*)(((CCNode*)(pSender))->getParent());
+    Chicken* chicken =(Chicken*)menu->getParent();
+    chicken->runAction(CCSequence::create(CCScaleTo::create(0.3f, 1.2f),CCScaleTo::create(0.3f, 1.0f),NULL));
+    
 	Belt* pBelt = GetBelt(this);
 	Food* pFood = nullptr;
 	if (pBelt != nullptr && (pFood = pBelt->findEatableFood(this)) != nullptr)
@@ -349,7 +352,6 @@ void Chicken::Digest()
 {
     int range = (rand() % digestRange) - digestRange;
 	DecreaseLife(digestValue+range);
-    CCLog("Digest : %d",life);
     if (life > 0 && life < lifeMax) {
         CCDelayTime* delayTime = CCDelayTime::create(GetDigestSpeed());
         CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Chicken::Digest));
