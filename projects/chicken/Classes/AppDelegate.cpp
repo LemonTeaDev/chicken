@@ -1,6 +1,10 @@
 #include "AppDelegate.h"
 #include "StartScene.h"
 #include "GameOverScene.h"
+#ifdef _JY_TEST_
+#include "JYTestScene.h"
+#endif
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -27,11 +31,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 
+#ifndef _JY_TEST_
+    CCScene *pGameScene = GameScene::scene();
+#else
+    CCScene *pScene = JYTestScene::scene();
+#endif
+	
     CCScene *pScene = StartScene::scene();
 	//CCScene *pScene = GameOverScene::scene();
-	CCScene *pGameScene = StartScene::scene();
+	//CCScene *pGameScene = StartScene::scene();
 	//CCScene *pGameScene = GameOverScene::scene();
-
 
     // run
     pDirector->runWithScene(pScene);

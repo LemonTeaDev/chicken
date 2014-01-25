@@ -231,6 +231,30 @@
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		CDB87A4E18936F6D008C05DB /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A4818936F6D008C05DB /* GameOverScene.cpp */; };
+		CDB87A4F18936F6D008C05DB /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A4A18936F6D008C05DB /* GameScene.cpp */; };
+		CDB87A5018936F6D008C05DB /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A4C18936F6D008C05DB /* StartScene.cpp */; };
+		CDB87A5318937016008C05DB /* SaveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A5118937016008C05DB /* SaveData.cpp */; };
+		CDB87A57189371DC008C05DB /* JYTestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A55189371DC008C05DB /* JYTestScene.cpp */; };
+		CDB87A701893870A008C05DB /* Belt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A591893870A008C05DB /* Belt.cpp */; };
+		CDB87A711893870A008C05DB /* Chicken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A5B1893870A008C05DB /* Chicken.cpp */; };
+		CDB87A721893870A008C05DB /* ChickenField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A5D1893870A008C05DB /* ChickenField.cpp */; };
+		CDB87A731893870A008C05DB /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A5F1893870A008C05DB /* Food.cpp */; };
+		CDB87A741893870A008C05DB /* GainWeight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A621893870A008C05DB /* GainWeight.cpp */; };
+		CDB87A751893870A008C05DB /* IFoodEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A641893870A008C05DB /* IFoodEffect.cpp */; };
+		CDB87A761893870A008C05DB /* LoseWeight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A661893870A008C05DB /* LoseWeight.cpp */; };
+		CDB87A771893870A008C05DB /* FoodFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A681893870A008C05DB /* FoodFactory.cpp */; };
+		CDB87A781893870A008C05DB /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6A1893870A008C05DB /* Light.cpp */; };
+		CDB87A791893870A008C05DB /* Master.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6C1893870A008C05DB /* Master.cpp */; };
+		CDB87A7A1893870A008C05DB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6E1893870A008C05DB /* Player.cpp */; };
+		CDB87A8118938F47008C05DB /* belt-01.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7B18938F47008C05DB /* belt-01.png */; };
+		CDB87A8218938F47008C05DB /* belt-02.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7C18938F47008C05DB /* belt-02.png */; };
+		CDB87A8318938F47008C05DB /* belt-03.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7D18938F47008C05DB /* belt-03.png */; };
+		CDB87A8418938F47008C05DB /* belt-04.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7E18938F47008C05DB /* belt-04.png */; };
+		CDB87A8518938F47008C05DB /* belt-05.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7F18938F47008C05DB /* belt-05.png */; };
+		CDB87A8618938F47008C05DB /* belt-06.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A8018938F47008C05DB /* belt-06.png */; };
+		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
+		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
 		D446FD6E16102124000ADA7B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D446FD6D16102124000ADA7B /* Default@2x.png */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -720,6 +744,48 @@
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CDB87A4818936F6D008C05DB /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
+		CDB87A4918936F6D008C05DB /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../Classes/GameOverScene.h; sourceTree = "<group>"; };
+		CDB87A4A18936F6D008C05DB /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
+		CDB87A4B18936F6D008C05DB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
+		CDB87A4C18936F6D008C05DB /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartScene.cpp; path = ../Classes/StartScene.cpp; sourceTree = "<group>"; };
+		CDB87A4D18936F6D008C05DB /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = ../Classes/StartScene.h; sourceTree = "<group>"; };
+		CDB87A5118937016008C05DB /* SaveData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SaveData.cpp; sourceTree = "<group>"; };
+		CDB87A5218937016008C05DB /* SaveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveData.h; sourceTree = "<group>"; };
+		CDB87A55189371DC008C05DB /* JYTestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JYTestScene.cpp; sourceTree = "<group>"; };
+		CDB87A56189371DC008C05DB /* JYTestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTestScene.h; sourceTree = "<group>"; };
+		CDB87A591893870A008C05DB /* Belt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Belt.cpp; sourceTree = "<group>"; };
+		CDB87A5A1893870A008C05DB /* Belt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Belt.h; sourceTree = "<group>"; };
+		CDB87A5B1893870A008C05DB /* Chicken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chicken.cpp; sourceTree = "<group>"; };
+		CDB87A5C1893870A008C05DB /* Chicken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chicken.h; sourceTree = "<group>"; };
+		CDB87A5D1893870A008C05DB /* ChickenField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChickenField.cpp; sourceTree = "<group>"; };
+		CDB87A5E1893870A008C05DB /* ChickenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChickenField.h; sourceTree = "<group>"; };
+		CDB87A5F1893870A008C05DB /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Food.cpp; sourceTree = "<group>"; };
+		CDB87A601893870A008C05DB /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		CDB87A621893870A008C05DB /* GainWeight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GainWeight.cpp; sourceTree = "<group>"; };
+		CDB87A631893870A008C05DB /* GainWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GainWeight.h; sourceTree = "<group>"; };
+		CDB87A641893870A008C05DB /* IFoodEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IFoodEffect.cpp; sourceTree = "<group>"; };
+		CDB87A651893870A008C05DB /* IFoodEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFoodEffect.h; sourceTree = "<group>"; };
+		CDB87A661893870A008C05DB /* LoseWeight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoseWeight.cpp; sourceTree = "<group>"; };
+		CDB87A671893870A008C05DB /* LoseWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoseWeight.h; sourceTree = "<group>"; };
+		CDB87A681893870A008C05DB /* FoodFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FoodFactory.cpp; sourceTree = "<group>"; };
+		CDB87A691893870A008C05DB /* FoodFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodFactory.h; sourceTree = "<group>"; };
+		CDB87A6A1893870A008C05DB /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		CDB87A6B1893870A008C05DB /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
+		CDB87A6C1893870A008C05DB /* Master.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Master.cpp; sourceTree = "<group>"; };
+		CDB87A6D1893870A008C05DB /* Master.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Master.h; sourceTree = "<group>"; };
+		CDB87A6E1893870A008C05DB /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		CDB87A6F1893870A008C05DB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		CDB87A7B18938F47008C05DB /* belt-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-01.png"; sourceTree = "<group>"; };
+		CDB87A7C18938F47008C05DB /* belt-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-02.png"; sourceTree = "<group>"; };
+		CDB87A7D18938F47008C05DB /* belt-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-03.png"; sourceTree = "<group>"; };
+		CDB87A7E18938F47008C05DB /* belt-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-04.png"; sourceTree = "<group>"; };
+		CDB87A7F18938F47008C05DB /* belt-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-05.png"; sourceTree = "<group>"; };
+		CDB87A8018938F47008C05DB /* belt-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-06.png"; sourceTree = "<group>"; };
+		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
+		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
+		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
+		CDE6ABA718936CE2005F1D97 /* Localiztion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localiztion.h; sourceTree = "<group>"; };
 		D41A0AD0160F154A004552AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../proj.ios/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D446FD6D16102124000ADA7B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../proj.ios/Default@2x.png"; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -1248,6 +1314,15 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CDB87A581893870A008C05DB /* GameObjects */,
+				CDE6ABA218936583005F1D97 /* Utility */,
+				CDB87A54189371CC008C05DB /* JYTest */,
+				CDB87A4818936F6D008C05DB /* GameOverScene.cpp */,
+				CDB87A4918936F6D008C05DB /* GameOverScene.h */,
+				CDB87A4A18936F6D008C05DB /* GameScene.cpp */,
+				CDB87A4B18936F6D008C05DB /* GameScene.h */,
+				CDB87A4C18936F6D008C05DB /* StartScene.cpp */,
+				CDB87A4D18936F6D008C05DB /* StartScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -1706,6 +1781,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDB87A7B18938F47008C05DB /* belt-01.png */,
+				CDB87A7C18938F47008C05DB /* belt-02.png */,
+				CDB87A7D18938F47008C05DB /* belt-03.png */,
+				CDB87A7E18938F47008C05DB /* belt-04.png */,
+				CDB87A7F18938F47008C05DB /* belt-05.png */,
+				CDB87A8018938F47008C05DB /* belt-06.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -1719,6 +1800,68 @@
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		CDB87A54189371CC008C05DB /* JYTest */ = {
+			isa = PBXGroup;
+			children = (
+				CDB87A55189371DC008C05DB /* JYTestScene.cpp */,
+				CDB87A56189371DC008C05DB /* JYTestScene.h */,
+			);
+			name = JYTest;
+			path = ../Classes/JYTest;
+			sourceTree = "<group>";
+		};
+		CDB87A581893870A008C05DB /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				CDB87A591893870A008C05DB /* Belt.cpp */,
+				CDB87A5A1893870A008C05DB /* Belt.h */,
+				CDB87A5B1893870A008C05DB /* Chicken.cpp */,
+				CDB87A5C1893870A008C05DB /* Chicken.h */,
+				CDB87A5D1893870A008C05DB /* ChickenField.cpp */,
+				CDB87A5E1893870A008C05DB /* ChickenField.h */,
+				CDB87A5F1893870A008C05DB /* Food.cpp */,
+				CDB87A601893870A008C05DB /* Food.h */,
+				CDB87A611893870A008C05DB /* FoodEffect */,
+				CDB87A681893870A008C05DB /* FoodFactory.cpp */,
+				CDB87A691893870A008C05DB /* FoodFactory.h */,
+				CDB87A6A1893870A008C05DB /* Light.cpp */,
+				CDB87A6B1893870A008C05DB /* Light.h */,
+				CDB87A6C1893870A008C05DB /* Master.cpp */,
+				CDB87A6D1893870A008C05DB /* Master.h */,
+				CDB87A6E1893870A008C05DB /* Player.cpp */,
+				CDB87A6F1893870A008C05DB /* Player.h */,
+			);
+			name = GameObjects;
+			path = ../Classes/GameObjects;
+			sourceTree = "<group>";
+		};
+		CDB87A611893870A008C05DB /* FoodEffect */ = {
+			isa = PBXGroup;
+			children = (
+				CDB87A621893870A008C05DB /* GainWeight.cpp */,
+				CDB87A631893870A008C05DB /* GainWeight.h */,
+				CDB87A641893870A008C05DB /* IFoodEffect.cpp */,
+				CDB87A651893870A008C05DB /* IFoodEffect.h */,
+				CDB87A661893870A008C05DB /* LoseWeight.cpp */,
+				CDB87A671893870A008C05DB /* LoseWeight.h */,
+			);
+			path = FoodEffect;
+			sourceTree = "<group>";
+		};
+		CDE6ABA218936583005F1D97 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6ABA318936593005F1D97 /* CocosHelper.cpp */,
+				CDE6ABA418936593005F1D97 /* CocosHelper.h */,
+				CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */,
+				CDE6ABA718936CE2005F1D97 /* Localiztion.h */,
+				CDB87A5118937016008C05DB /* SaveData.cpp */,
+				CDB87A5218937016008C05DB /* SaveData.h */,
+			);
+			name = Utility;
+			path = ../Classes/Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1749,6 +1892,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 3DPPXS9XMF;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "chicken" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1794,13 +1942,19 @@
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
+				CDB87A8218938F47008C05DB /* belt-02.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				CDB87A8518938F47008C05DB /* belt-05.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
+				CDB87A8318938F47008C05DB /* belt-03.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				CDB87A8118938F47008C05DB /* belt-01.png in Resources */,
+				CDB87A8618938F47008C05DB /* belt-06.png in Resources */,
+				CDB87A8418938F47008C05DB /* belt-04.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,11 +1991,13 @@
 				15A3D9141682F7D5002FB0C5 /* b2Island.cpp in Sources */,
 				15A3D9151682F7D5002FB0C5 /* b2World.cpp in Sources */,
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
+				CDB87A4E18936F6D008C05DB /* GameOverScene.cpp in Sources */,
 				15A3D9171682F7D5002FB0C5 /* b2ChainAndCircleContact.cpp in Sources */,
 				15A3D9181682F7D5002FB0C5 /* b2ChainAndPolygonContact.cpp in Sources */,
 				375BD5111868454E0024609E /* CCActionManager.cpp in Sources */,
 				15A3D9191682F7D5002FB0C5 /* b2CircleContact.cpp in Sources */,
 				15A3D91A1682F7D5002FB0C5 /* b2Contact.cpp in Sources */,
+				CDB87A771893870A008C05DB /* FoodFactory.cpp in Sources */,
 				15A3D91B1682F7D5002FB0C5 /* b2ContactSolver.cpp in Sources */,
 				15A3D91C1682F7D5002FB0C5 /* b2EdgeAndCircleContact.cpp in Sources */,
 				15A3D91D1682F7D5002FB0C5 /* b2EdgeAndPolygonContact.cpp in Sources */,
@@ -1850,6 +2006,7 @@
 				15A3D9201682F7D5002FB0C5 /* b2DistanceJoint.cpp in Sources */,
 				15A3D9211682F7D5002FB0C5 /* b2FrictionJoint.cpp in Sources */,
 				15A3D9221682F7D5002FB0C5 /* b2GearJoint.cpp in Sources */,
+				CDB87A751893870A008C05DB /* IFoodEffect.cpp in Sources */,
 				15A3D9231682F7D5002FB0C5 /* b2Joint.cpp in Sources */,
 				15A3D9241682F7D5002FB0C5 /* b2MouseJoint.cpp in Sources */,
 				15A3D9251682F7D5002FB0C5 /* b2PrismaticJoint.cpp in Sources */,
@@ -1886,6 +2043,8 @@
 				15A3D9AE1682F7F9002FB0C5 /* cpSpaceQuery.c in Sources */,
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
+				CDB87A5318937016008C05DB /* SaveData.cpp in Sources */,
+				CDB87A711893870A008C05DB /* Chicken.cpp in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
 				15A3D9B21682F7F9002FB0C5 /* cpVect.c in Sources */,
 				15A3DA311682F826002FB0C5 /* CCBAnimationManager.cpp in Sources */,
@@ -1895,6 +2054,7 @@
 				15A3DA351682F826002FB0C5 /* CCBSequence.cpp in Sources */,
 				15A3DA361682F826002FB0C5 /* CCBSequenceProperty.cpp in Sources */,
 				46513EB1187BFBA200B5ABE1 /* UITouchGroup.cpp in Sources */,
+				CDB87A791893870A008C05DB /* Master.cpp in Sources */,
 				15A3DA371682F826002FB0C5 /* CCBValue.cpp in Sources */,
 				15A3DA381682F826002FB0C5 /* CCControlButtonLoader.cpp in Sources */,
 				15A3DA391682F826002FB0C5 /* CCControlLoader.cpp in Sources */,
@@ -1906,18 +2066,23 @@
 				15A3DA3F1682F826002FB0C5 /* CCLayerLoader.cpp in Sources */,
 				15A3DA401682F826002FB0C5 /* CCMenuItemImageLoader.cpp in Sources */,
 				375BD5101868454E0024609E /* CCActionFrameEasing.cpp in Sources */,
+				CDB87A7A1893870A008C05DB /* Player.cpp in Sources */,
 				15A3DA411682F826002FB0C5 /* CCMenuItemLoader.cpp in Sources */,
 				15A3DA421682F826002FB0C5 /* CCNode+CCBRelativePositioning.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
+				CDB87A701893870A008C05DB /* Belt.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
+				CDB87A57189371DC008C05DB /* JYTestScene.cpp in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,
+				CDB87A731893870A008C05DB /* Food.cpp in Sources */,
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,
 				15A3DA4C1682F826002FB0C5 /* CCControlHuePicker.cpp in Sources */,
+				CDB87A721893870A008C05DB /* ChickenField.cpp in Sources */,
 				375BD50F1868454E0024609E /* CCActionFrame.cpp in Sources */,
 				15A3DA4D1682F826002FB0C5 /* CCControlPotentiometer.cpp in Sources */,
 				15A3DA4E1682F826002FB0C5 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
@@ -1937,9 +2102,11 @@
 				15A3DA5D1682F826002FB0C5 /* HttpClient.cpp in Sources */,
 				15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */,
 				375BD5131868454E0024609E /* CCActionObject.cpp in Sources */,
+				CDB87A781893870A008C05DB /* Light.cpp in Sources */,
 				15A3DA5F1682F826002FB0C5 /* CCPhysicsSprite.cpp in Sources */,
 				15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */,
 				15A3DAEC1682F8A6002FB0C5 /* CDOpenALSupport.m in Sources */,
+				CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */,
 				15A3DAED1682F8A6002FB0C5 /* CocosDenshion.m in Sources */,
 				15A3DAEE1682F8A6002FB0C5 /* SimpleAudioEngine.mm in Sources */,
 				15A3DAEF1682F8A6002FB0C5 /* SimpleAudioEngine_objc.m in Sources */,
@@ -1972,12 +2139,15 @@
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,
 				1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */,
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
+				CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */,
 				375BD4C51868411B0024609E /* TriggerMng.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
+				CDB87A4F18936F6D008C05DB /* GameScene.cpp in Sources */,
 				379BB99A17F03F3700829B88 /* CCArmatureAnimation.cpp in Sources */,
 				379BB99B17F03F3700829B88 /* CCProcessBase.cpp in Sources */,
 				379BB99C17F03F3700829B88 /* CCTween.cpp in Sources */,
 				379BB99D17F03F3700829B88 /* CCArmature.cpp in Sources */,
+				CDB87A761893870A008C05DB /* LoseWeight.cpp in Sources */,
 				379BB99E17F03F3700829B88 /* CCBone.cpp in Sources */,
 				379BB99F17F03F3700829B88 /* CCDatas.cpp in Sources */,
 				379BB9A017F03F3700829B88 /* CCBatchNode.cpp in Sources */,
@@ -1989,6 +2159,7 @@
 				379BB9A617F03F3700829B88 /* CCArmatureDataManager.cpp in Sources */,
 				379BB9A717F03F3700829B88 /* CCArmatureDefine.cpp in Sources */,
 				379BB9A817F03F3700829B88 /* CCDataReaderHelper.cpp in Sources */,
+				CDB87A741893870A008C05DB /* GainWeight.cpp in Sources */,
 				379BB9A917F03F3700829B88 /* CCSpriteFrameCacheHelper.cpp in Sources */,
 				379BB9AA17F03F3700829B88 /* CCTransformHelp.cpp in Sources */,
 				379BB9AB17F03F3700829B88 /* CCTweenFunction.cpp in Sources */,
@@ -1998,6 +2169,7 @@
 				379BB9AF17F03F3700829B88 /* CCComController.cpp in Sources */,
 				379BB9B017F03F3700829B88 /* CCComRender.cpp in Sources */,
 				379BB9B117F03F3700829B88 /* CCInputDelegate.cpp in Sources */,
+				CDB87A5018936F6D008C05DB /* StartScene.cpp in Sources */,
 				379BB9B317F03F3700829B88 /* UIWidget.cpp in Sources */,
 				379BB9B417F03F3700829B88 /* UILayout.cpp in Sources */,
 				379BB9B617F03F3700829B88 /* UILayoutParameter.cpp in Sources */,
@@ -2073,7 +2245,10 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
 				);
-				OTHER_CFLAGS = "-O2";
+				OTHER_CFLAGS = (
+					"-O2",
+					"-D_JY_TEST_=1",
+				);
 				PRODUCT_NAME = chicken;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2121,6 +2296,10 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
 				);
+				OTHER_CFLAGS = (
+					"-O2",
+					"-D_JY_TEST_=1",
+				);
 				PRODUCT_NAME = chicken;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2139,6 +2318,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-D_JY_TEST_=1";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 i386";
 			};
@@ -2152,7 +2332,10 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-D_JY_TEST_=1",
+				);
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 i386";
 			};
