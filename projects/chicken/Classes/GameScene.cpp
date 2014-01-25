@@ -1,17 +1,22 @@
 #include "GameScene.h"
 #include "GameOverScene.h"
-#include "Belt.h"
-#include "Light.h"
-#include "CocosHelper.h"
+#include "GameObjects/Belt.h"
+#include "GameObjects/Light.h"
+#include "Utility/CocosHelper.h"
 #include "GameObjects/ChickenField.h"
 
 USING_NS_CC;
-GameScene::GameScene(){
+
+GameScene::GameScene()
+{
     
 }
-GameScene::~GameScene(){
+
+GameScene::~GameScene()
+{
     
 }
+
 CCScene* GameScene::scene()
 {
     // 'scene' is an autorelease object
@@ -38,14 +43,14 @@ bool GameScene::init()
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
     CCLog("%f %f",visibleSize.width, visibleSize.height);
-    CocosHelper::addSprite(this, "../Resources/back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
+    CocosHelper::addSprite(this, "back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
     
-    // 컨베이어 벨트 + 기어즈
-    Belt* belt = Belt::create();
+    // conveyer belt + gears
+	Belt* belt = Belt::create();
     addChild(belt,GAME_SCENE_BELT,GAME_SCENE_BELT);
 	belt->drawGear();
 
-    // 불빛들
+    // lights
     Light* light = Light::create();
     light->setPosition(ccp(332, visibleSize.height-46));
     addChild(light,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
@@ -64,7 +69,7 @@ bool GameScene::init()
     light3->setPosition(ccp(803, visibleSize.height-46));
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
-    // 희미한 배경
+    // dim background
     /*
     CCSprite* fogSpr = CocosHelper::addSprite(this, "Front-ef.jpg", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x-100, fogSpr->getPosition().y)),CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x+100, fogSpr->getPosition().y)), NULL);

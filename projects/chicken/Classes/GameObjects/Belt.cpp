@@ -3,7 +3,7 @@
 #include "Chicken.h"
 #include "Food.h"
 #include <algorithm>
-#include "CocosHelper.h"
+#include "Utility/CocosHelper.h"
 
 const float Belt::MIN_SPEED = 0.01f;
 const float Belt::MAX_SPEED = 100.0f;

@@ -14,7 +14,8 @@
 
 	InitializeLayerCenterPos();
 
-	// Â¥ï¬?Î©Î©?‘â€?Â«?œÂ¥Ã?	int i = 0;
+	// create slots for chickens
+	int i = 0;
 	for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
 	{
 		auto slot = *slotItr;
