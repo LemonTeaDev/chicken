@@ -254,7 +254,6 @@
 		CDB87A8518938F47008C05DB /* belt-05.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7F18938F47008C05DB /* belt-05.png */; };
 		CDB87A8618938F47008C05DB /* belt-06.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A8018938F47008C05DB /* belt-06.png */; };
 		CDC4AEC51893BE0C001AB582 /* back-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEB51893BE0C001AB582 /* back-1.png */; };
-		CDC4AEC61893BE0C001AB582 /* Front-ef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEB61893BE0C001AB582 /* Front-ef.jpg */; };
 		CDC4AEC71893BE0C001AB582 /* gear1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEB71893BE0C001AB582 /* gear1.png */; };
 		CDC4AEC81893BE0C001AB582 /* gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEB81893BE0C001AB582 /* gear2.png */; };
 		CDC4AEC91893BE0C001AB582 /* gear3.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEB91893BE0C001AB582 /* gear3.png */; };
@@ -269,6 +268,24 @@
 		CDC4AED21893BE0C001AB582 /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEC21893BE0C001AB582 /* replay.png */; };
 		CDC4AED31893BE0C001AB582 /* start_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEC31893BE0C001AB582 /* start_test.png */; };
 		CDC4AED41893BE0C001AB582 /* StartScene.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEC41893BE0C001AB582 /* StartScene.png */; };
+		CDC4AED81893DE51001AB582 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDC4AED61893DE51001AB582 /* SoundManager.cpp */; };
+		CDC4AEDC1893DFEB001AB582 /* bg_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEDB1893DFEB001AB582 /* bg_01.mp3 */; };
+		CDC4AEED1893E173001AB582 /* front-ef.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEDD1893E173001AB582 /* front-ef.png */; };
+		CDC4AEEE1893E173001AB582 /* hand_01.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEDE1893E173001AB582 /* hand_01.png */; };
+		CDC4AEEF1893E173001AB582 /* hand_02.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEDF1893E173001AB582 /* hand_02.png */; };
+		CDC4AEF01893E173001AB582 /* nomal_chicken_fat_b_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE01893E173001AB582 /* nomal_chicken_fat_b_eat.png */; };
+		CDC4AEF11893E173001AB582 /* nomal_chicken_fat_b_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE11893E173001AB582 /* nomal_chicken_fat_b_stand.png */; };
+		CDC4AEF21893E173001AB582 /* nomal_chicken_fat_f_cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE21893E173001AB582 /* nomal_chicken_fat_f_cry.png */; };
+		CDC4AEF31893E173001AB582 /* nomal_chicken_fat_f_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE31893E173001AB582 /* nomal_chicken_fat_f_eat.png */; };
+		CDC4AEF41893E173001AB582 /* nomal_chicken_fat_f_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE41893E173001AB582 /* nomal_chicken_fat_f_stand.png */; };
+		CDC4AEF51893E173001AB582 /* nomal_chicken_nomal_b_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE51893E173001AB582 /* nomal_chicken_nomal_b_eat.png */; };
+		CDC4AEF61893E173001AB582 /* nomal_chicken_nomal_b_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE61893E173001AB582 /* nomal_chicken_nomal_b_stand.png */; };
+		CDC4AEF71893E173001AB582 /* nomal_chicken_nomal_f_cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE71893E173001AB582 /* nomal_chicken_nomal_f_cry.png */; };
+		CDC4AEF81893E173001AB582 /* nomal_chicken_slim_b_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE81893E173001AB582 /* nomal_chicken_slim_b_eat.png */; };
+		CDC4AEF91893E173001AB582 /* nomal_chicken_slim_b_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEE91893E173001AB582 /* nomal_chicken_slim_b_stand.png */; };
+		CDC4AEFA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEEA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png */; };
+		CDC4AEFB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEEB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png */; };
+		CDC4AEFC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEEC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -799,7 +816,6 @@
 		CDB87A7F18938F47008C05DB /* belt-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-05.png"; sourceTree = "<group>"; };
 		CDB87A8018938F47008C05DB /* belt-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-06.png"; sourceTree = "<group>"; };
 		CDC4AEB51893BE0C001AB582 /* back-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-1.png"; sourceTree = "<group>"; };
-		CDC4AEB61893BE0C001AB582 /* Front-ef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Front-ef.jpg"; sourceTree = "<group>"; };
 		CDC4AEB71893BE0C001AB582 /* gear1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear1.png; sourceTree = "<group>"; };
 		CDC4AEB81893BE0C001AB582 /* gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear2.png; sourceTree = "<group>"; };
 		CDC4AEB91893BE0C001AB582 /* gear3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear3.png; sourceTree = "<group>"; };
@@ -814,6 +830,25 @@
 		CDC4AEC21893BE0C001AB582 /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replay.png; sourceTree = "<group>"; };
 		CDC4AEC31893BE0C001AB582 /* start_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_test.png; sourceTree = "<group>"; };
 		CDC4AEC41893BE0C001AB582 /* StartScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartScene.png; sourceTree = "<group>"; };
+		CDC4AED61893DE51001AB582 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundManager.cpp; sourceTree = "<group>"; };
+		CDC4AED71893DE51001AB582 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		CDC4AEDB1893DFEB001AB582 /* bg_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg_01.mp3; sourceTree = "<group>"; };
+		CDC4AEDD1893E173001AB582 /* front-ef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-ef.png"; sourceTree = "<group>"; };
+		CDC4AEDE1893E173001AB582 /* hand_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand_01.png; sourceTree = "<group>"; };
+		CDC4AEDF1893E173001AB582 /* hand_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand_02.png; sourceTree = "<group>"; };
+		CDC4AEE01893E173001AB582 /* nomal_chicken_fat_b_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_fat_b_eat.png; sourceTree = "<group>"; };
+		CDC4AEE11893E173001AB582 /* nomal_chicken_fat_b_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_fat_b_stand.png; sourceTree = "<group>"; };
+		CDC4AEE21893E173001AB582 /* nomal_chicken_fat_f_cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_fat_f_cry.png; sourceTree = "<group>"; };
+		CDC4AEE31893E173001AB582 /* nomal_chicken_fat_f_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_fat_f_eat.png; sourceTree = "<group>"; };
+		CDC4AEE41893E173001AB582 /* nomal_chicken_fat_f_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_fat_f_stand.png; sourceTree = "<group>"; };
+		CDC4AEE51893E173001AB582 /* nomal_chicken_nomal_b_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_nomal_b_eat.png; sourceTree = "<group>"; };
+		CDC4AEE61893E173001AB582 /* nomal_chicken_nomal_b_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_nomal_b_stand.png; sourceTree = "<group>"; };
+		CDC4AEE71893E173001AB582 /* nomal_chicken_nomal_f_cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_nomal_f_cry.png; sourceTree = "<group>"; };
+		CDC4AEE81893E173001AB582 /* nomal_chicken_slim_b_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_slim_b_eat.png; sourceTree = "<group>"; };
+		CDC4AEE91893E173001AB582 /* nomal_chicken_slim_b_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_slim_b_stand.png; sourceTree = "<group>"; };
+		CDC4AEEA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_sliml_f_cry.png; sourceTree = "<group>"; };
+		CDC4AEEB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_sliml_f_eat.png; sourceTree = "<group>"; };
+		CDC4AEEC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_sliml_f_stand.png; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -1814,8 +1849,24 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AEDD1893E173001AB582 /* front-ef.png */,
+				CDC4AEDE1893E173001AB582 /* hand_01.png */,
+				CDC4AEDF1893E173001AB582 /* hand_02.png */,
+				CDC4AEE01893E173001AB582 /* nomal_chicken_fat_b_eat.png */,
+				CDC4AEE11893E173001AB582 /* nomal_chicken_fat_b_stand.png */,
+				CDC4AEE21893E173001AB582 /* nomal_chicken_fat_f_cry.png */,
+				CDC4AEE31893E173001AB582 /* nomal_chicken_fat_f_eat.png */,
+				CDC4AEE41893E173001AB582 /* nomal_chicken_fat_f_stand.png */,
+				CDC4AEE51893E173001AB582 /* nomal_chicken_nomal_b_eat.png */,
+				CDC4AEE61893E173001AB582 /* nomal_chicken_nomal_b_stand.png */,
+				CDC4AEE71893E173001AB582 /* nomal_chicken_nomal_f_cry.png */,
+				CDC4AEE81893E173001AB582 /* nomal_chicken_slim_b_eat.png */,
+				CDC4AEE91893E173001AB582 /* nomal_chicken_slim_b_stand.png */,
+				CDC4AEEA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png */,
+				CDC4AEEB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png */,
+				CDC4AEEC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png */,
+				CDC4AEDA1893DFEB001AB582 /* Sound */,
 				CDC4AEB51893BE0C001AB582 /* back-1.png */,
-				CDC4AEB61893BE0C001AB582 /* Front-ef.jpg */,
 				CDC4AEB71893BE0C001AB582 /* gear1.png */,
 				CDC4AEB81893BE0C001AB582 /* gear2.png */,
 				CDC4AEB91893BE0C001AB582 /* gear3.png */,
@@ -1907,6 +1958,14 @@
 			path = ../Classes/Layer;
 			sourceTree = "<group>";
 		};
+		CDC4AEDA1893DFEB001AB582 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				CDC4AEDB1893DFEB001AB582 /* bg_01.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		CDE6ABA218936583005F1D97 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -1916,6 +1975,8 @@
 				CDE6ABA718936CE2005F1D97 /* Localiztion.h */,
 				CDB87A5118937016008C05DB /* SaveData.cpp */,
 				CDB87A5218937016008C05DB /* SaveData.h */,
+				CDC4AED61893DE51001AB582 /* SoundManager.cpp */,
+				CDC4AED71893DE51001AB582 /* SoundManager.h */,
 			);
 			name = Utility;
 			path = ../Classes/Utility;
@@ -2000,33 +2061,49 @@
 				CDC4AED01893BE0C001AB582 /* quit_test.png in Resources */,
 				CDC4AEC71893BE0C001AB582 /* gear1.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
+				CDC4AEF61893E173001AB582 /* nomal_chicken_nomal_b_stand.png in Resources */,
+				CDC4AEF71893E173001AB582 /* nomal_chicken_nomal_f_cry.png in Resources */,
+				CDC4AEEE1893E173001AB582 /* hand_01.png in Resources */,
+				CDC4AEF81893E173001AB582 /* nomal_chicken_slim_b_eat.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				CDC4AED41893BE0C001AB582 /* StartScene.png in Resources */,
 				CDC4AECD1893BE0C001AB582 /* light-ef.png in Resources */,
 				CDC4AED21893BE0C001AB582 /* replay.png in Resources */,
+				CDC4AEFB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				CDC4AEF11893E173001AB582 /* nomal_chicken_fat_b_stand.png in Resources */,
 				CDC4AEC81893BE0C001AB582 /* gear2.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				CDB87A8218938F47008C05DB /* belt-02.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				CDC4AEC51893BE0C001AB582 /* back-1.png in Resources */,
+				CDC4AEFC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png in Resources */,
+				CDC4AEF31893E173001AB582 /* nomal_chicken_fat_f_eat.png in Resources */,
+				CDC4AEEF1893E173001AB582 /* hand_02.png in Resources */,
+				CDC4AEF01893E173001AB582 /* nomal_chicken_fat_b_eat.png in Resources */,
 				CDC4AED31893BE0C001AB582 /* start_test.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				CDB87A8518938F47008C05DB /* belt-05.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				CDC4AECC1893BE0C001AB582 /* light-3.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
+				CDC4AEED1893E173001AB582 /* front-ef.png in Resources */,
 				CDC4AECF1893BE0C001AB582 /* nomal_chicken_nomal_f_stand.png in Resources */,
 				CDC4AECE1893BE0C001AB582 /* nomal_chicken_nomal_f_eat.png in Resources */,
 				CDB87A8318938F47008C05DB /* belt-03.png in Resources */,
+				CDC4AEF21893E173001AB582 /* nomal_chicken_fat_f_cry.png in Resources */,
+				CDC4AEF91893E173001AB582 /* nomal_chicken_slim_b_stand.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				CDB87A8118938F47008C05DB /* belt-01.png in Resources */,
+				CDC4AEDC1893DFEB001AB582 /* bg_01.mp3 in Resources */,
 				CDB87A8618938F47008C05DB /* belt-06.png in Resources */,
+				CDC4AEF51893E173001AB582 /* nomal_chicken_nomal_b_eat.png in Resources */,
+				CDC4AEF41893E173001AB582 /* nomal_chicken_fat_f_stand.png in Resources */,
 				CDC4AED11893BE0C001AB582 /* quit.png in Resources */,
 				CDC4AECB1893BE0C001AB582 /* light-2.png in Resources */,
-				CDC4AEC61893BE0C001AB582 /* Front-ef.jpg in Resources */,
+				CDC4AEFA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png in Resources */,
 				CDB87A8418938F47008C05DB /* belt-04.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2207,6 +2284,7 @@
 				1A8F3B7C175E05DA00049216 /* Skeleton.cpp in Sources */,
 				1A8F3B7D175E05DA00049216 /* SkeletonData.cpp in Sources */,
 				1A8F3B7E175E05DA00049216 /* SkeletonJson.cpp in Sources */,
+				CDC4AED81893DE51001AB582 /* SoundManager.cpp in Sources */,
 				1A8F3B7F175E05DA00049216 /* Skin.cpp in Sources */,
 				1A8F3B80175E05DA00049216 /* Slot.cpp in Sources */,
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,

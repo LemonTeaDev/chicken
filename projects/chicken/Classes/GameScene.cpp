@@ -3,9 +3,10 @@
 #include "Belt.h"
 #include "Light.h"
 #include "CocosHelper.h"
+#include "SoundManager.h"
+#include "Master.h"
 #include "GameObjects/ChickenField.h"
 
-USING_NS_CC;
 GameScene::GameScene(){
     
 }
@@ -34,6 +35,8 @@ bool GameScene::init()
     {
         return false;
     }
+    SoundManager::sharedSoundManager()->playGameBgm();
+    
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
@@ -64,8 +67,8 @@ bool GameScene::init()
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
     // 희미한 배경
+    CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
     /*
-    CCSprite* fogSpr = CocosHelper::addSprite(this, "Front-ef.jpg", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x-100, fogSpr->getPosition().y)),CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x+100, fogSpr->getPosition().y)), NULL);
     fogSpr->runAction(CCRepeatForever::create(sequence));
     */
@@ -88,6 +91,31 @@ bool GameScene::init()
     
     CCLog("this : %p",this);
     return true;
+}
+void GameScene::onEnter(){
+    CCDirector* pDirector = CCDirector::sharedDirector();
+    pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+    CCNode::onEnter();
+}
+bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
+{
+    CCPoint touchPoint = touch->getLocation();
+    Master* master = Master::create();
+    master->setAnchorPoint(ccp(0.5f,0.5f));
+    master->setPosition(ccp(touchPoint.x, touchPoint.y));
+    
+    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
+    master->runAction(sequence);
+    addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+    return true;
+}
+void GameScene::ccTouchMoved(CCTouch* touch, CCEvent* event)
+{
+    CCPoint touchPoint = touch->getLocation();
+}
+void GameScene::ccTouchEnded(CCTouch* touch, CCEvent* event)
+{
+    
 }
 void GameScene::menuCloseCallback(CCObject* pSender)
 {

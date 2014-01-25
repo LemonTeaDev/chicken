@@ -1,14 +1,17 @@
 #pragma once
 
 #include "cocos2d.h"
+USING_NS_CC;
 typedef enum eGameSceneTag{
     GAME_SCENE_BG,
     GAME_SCENE_BELT,
     GAME_SCENE_CHICKEN,
     GAME_SCENE_LIGHT,
     GAME_SCENE_FOG,
+    GAME_SCENE_MASTER,
     GAME_SCENE_MAX
 }eGameSceneTag;
+
 class GameScene : public cocos2d::CCLayer
 {
 public:
@@ -16,8 +19,13 @@ public:
     ~GameScene();
     
     virtual bool init();
-    
+    virtual void onEnter();
     static cocos2d::CCScene* scene();
+    
+    
+    bool ccTouchBegan(CCTouch* touch, CCEvent* event);
+    void ccTouchMoved(CCTouch* touch, CCEvent* event);
+    void ccTouchEnded(CCTouch* touch, CCEvent* event);
     
     void menuCloseCallback(CCObject* pSender);
     void menuStartCallback(CCObject* pSender);
