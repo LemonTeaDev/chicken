@@ -12,7 +12,9 @@ bool Chicken::init()
 	{
 		return false;
 	}
-
+    InitializeLifeMax();
+	InitializeLifeFatFactors();
+	SetDigestSpeed(4);
 	// Load Sprites
     for (int i = 0 ; i < max; i++) {
         if ((FatStatus)i == slim) {
@@ -58,7 +60,7 @@ bool Chicken::init()
     }
     
     
-    chickenSpr = CocosHelper::addSprite(this, "nomal_chicken_nomal_b_stand.png", CCPointMake(0,0), 0);
+    chickenSpr = CocosHelper::addSprite(this, "nomal_chicken_nomal_b_stand.png", CCPointMake(0,0), CHICKEN_SPR);
     chickenSpr->setTexture(spriteFront[normal]);
     chickenSpr->setAnchorPoint(ccp(.5f, .5f));
     
@@ -66,15 +68,18 @@ bool Chicken::init()
     CCMenuItem* menuItem = CCMenuItem::create(this, menu_selector(Chicken::chickenTouch));
     //CCMenuItem* menuItem = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(Chicken::chickenTouch));
     menuItem->setContentSize(chickenSpr->getContentSize());
-    menuItem->setColor(ccGREEN);
+    
 	CCMenu* pMenu = CCMenu::createWithItem(menuItem);
     pMenu->setPosition(ccp(0, 0));
     pMenu->setAnchorPoint(ccp(0.5f, 0.5f));
-	addChild(pMenu);
+	addChild(pMenu,CHICKEN_MENU,CHICKEN_MENU);
 	
-	InitializeLifeMax();
-	InitializeLifeFatFactors();
-	SetDigestSpeed(4);
+    
+    healthSpr = CocosHelper::addSprite(this, "health_bar.png", CCPointMake(0,0), CHICKEN_HEALTHBAR, true, ccp(0.0f, 0.5f));
+    healthSpr->setAnchorPoint(ccp(0.0f, 0.5f));
+    //life = 25;
+    UpdateHealthBar();
+	
 
 	scheduleUpdate();
 
@@ -124,6 +129,7 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 //////////////////////////////////////////////////////
 /* virtual */ void Chicken::InitializeLifeMax()
 {
+    life = 50;
 	lifeMax = 100;
 }
 
@@ -143,7 +149,7 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 
 	if (static_cast<int>(time) % GetDigestSpeed() == 0)
 	{
-		DecreaseLife(1);
+		//DecreaseLife(1);
 	}
 }
 
@@ -151,7 +157,16 @@ unsigned int Chicken::GetLife() const
 {
 	return life;
 }
-
+void Chicken::UpdateHealthBar(){
+    if (life <= 25) {
+        healthSpr->setColor(ccc3(255,0,0));
+    }else if (life <= 75) {
+        healthSpr->setColor(ccc3(0,255,0));
+    }else{
+        healthSpr->setColor(ccc3(255,255,0));
+    }
+    healthSpr->setScaleX(((float)life/(float)lifeMax));
+}
 void Chicken::IncreaseLife(unsigned int delta)
 {
 	if (life + delta > lifeMax)
@@ -162,6 +177,7 @@ void Chicken::IncreaseLife(unsigned int delta)
 	{
 		life += delta;
 	}
+    UpdateHealthBar();
 }
 
 void Chicken::DecreaseLife(unsigned int delta)
@@ -174,6 +190,7 @@ void Chicken::DecreaseLife(unsigned int delta)
 	{
 		life = 0;
 	}
+    UpdateHealthBar();
 }
 
 /////////////////////////////////////////////////
@@ -202,8 +219,10 @@ void Chicken::SetChickenSide(ChickenSide chickenSide)
     
     if (chickenSide == front) {
         chickenSpr->setTexture(spriteFront[GetFatStatus()]);
+        healthSpr->setPosition(CCPointMake(-90,chickenSpr->getContentSize().height/2-40));
     }else if(chickenSide == back){
         chickenSpr->setTexture(spriteBack[GetFatStatus()]);
+        healthSpr->setPosition(CCPointMake(-90,-40));
     }
 }
 
