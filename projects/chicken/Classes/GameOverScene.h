@@ -13,7 +13,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
-	void menuClickCallback(CCObject* pSender);
+	void menuStartCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
     CREATE_FUNC(GameOverScene);

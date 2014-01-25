@@ -1,4 +1,5 @@
 #include "GameOverScene.h"
+#include "GameScene.h"
 #include "StartScene.h"
 #include "layers_scenes_transitions_nodes\CCTransitionPageTurn.h"
 #include "CCDirector.h"
@@ -30,9 +31,21 @@ bool GameOverScene::init()
 		return false;
 	}
 
+	
+
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
+	CCMenuItemImage *pReplay = CCMenuItemImage::create("../Resources/replay.png", "../Resources/replay.png", this, menu_selector(GameOverScene::menuStartCallback));
+	CCMenuItemImage *pQuit = CCMenuItemImage::create("../Resources/quit.png", "../Resources/quit.png", this, menu_selector(GameOverScene::menuCloseCallback));
+
+	pReplay->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
+	pQuit->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2 - pQuit->getContentSize().height));
+
+	CCMenu* pMenu = CCMenu::create(pReplay, pQuit, NULL);
+	pMenu->setPosition(CCPointZero);
+	this->addChild(pMenu, 1);
+	/*
 	/////////////////////////////
 	// 2. add a menu item with "X" image, which is clicked to quit the program
 	//    you may modify it.
@@ -77,16 +90,10 @@ bool GameOverScene::init()
 	this->addChild(pSprite, 0);
 
 	CCSprite* replay = CCSprite::create("../Resources/HelloWorld.png");
+	*/
 
 	return true;
 }
-
-void GameOverScene::menuClickCallback(CCObject* pSender)
-{
-	CCScene *pScene = StartScene::scene();
-	CCDirector::sharedDirector()->pushScene(pScene);
-}
-
 
 void GameOverScene::menuCloseCallback(CCObject* pSender)
 {
@@ -98,4 +105,10 @@ void GameOverScene::menuCloseCallback(CCObject* pSender)
 	exit(0);
 #endif
 #endif
+}
+
+void GameOverScene::menuStartCallback(CCObject* pSender)
+{
+	CCScene *pScene = GameScene::scene();
+	CCDirector::sharedDirector()->pushScene(pScene);
 }
