@@ -3,6 +3,8 @@
 #include "Chicken.h"
 #include "Food.h"
 #include "Feed.h"
+#include "DietPill.h"
+#include "BeltSpeedCtrl.h"
 #include <algorithm>
 #include "CocosHelper.h"
 #include <random>
@@ -282,8 +284,61 @@ void Belt::unloadFood(Food* pFood, bool cleanup /* = true */)
 
 void Belt::generateFoods()
 {
-	Food* pFood = Feed::create();
-	loadFood(pFood);
+	static uniform_int_distribution<int> dist(0, 100);
+
+	int randomNumber = dist(randomEngine);
+	if (0 <= randomNumber && randomNumber < 40)
+	{
+		// LV1 모이 (40%)
+		Food* pFood = Feed::create(1);
+		loadFood(pFood);
+	}
+	else if (40 <= randomNumber && randomNumber < 70)
+	{
+		// Lv2 모이 (30%)
+		Food* pFood = Feed::create(2);
+		loadFood(pFood);
+	}
+	else if (70 <= randomNumber && randomNumber < 80)
+	{
+		// LV3 모이 (10%)
+		Food* pFood = Feed::create(3);
+		loadFood(pFood);
+	}
+	else if (80 <= randomNumber && randomNumber < 90)
+	{
+		// LV1 다이어트약 (10%)
+		Food* pFood = DietPill::create(1);
+		loadFood(pFood);
+	}
+	else if (90 <= randomNumber && randomNumber < 93)
+	{
+		Food* pFood = DietPill::create(2);
+		loadFood(pFood);
+	}
+	else if (93 <= randomNumber && randomNumber < 95)
+	{
+		Food* pFood = DietPill::create(3);
+		loadFood(pFood);
+	}
+	else if (95 <= randomNumber && randomNumber < 96)
+	{
+		// 밸런스약
+		Food* pFood = DietPill::create(4);
+		loadFood(pFood);
+	}
+	else if (96 <= randomNumber && randomNumber < 98)
+	{
+		// 벨트속도 증가
+		Food* pFood = BeltSpeedCtrl::create(true);
+		loadFood(pFood);
+	}
+	else
+	{
+		// 벨트속도 감소
+		Food* pFood = BeltSpeedCtrl::create(false);
+		loadFood(pFood);
+	}
 
 	CCDelayTime* delayTime = CCDelayTime::create(SpeedToTimeTick(beltSpeed) * 5);
 	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Belt::generateFoods));

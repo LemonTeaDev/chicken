@@ -21,6 +21,8 @@
     <ClCompile Include="..\Classes\Utility\GameStateNone.cpp" />
     <ClCompile Include="..\Classes\Utility\SoundManager.cpp" />
     <ClCompile Include="..\Classes\GameObjects\Feed.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\DietPill.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\BeltSpeedCtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -43,5 +45,7 @@
     <ClInclude Include="..\Classes\Utility\GameStateNone.h" />
     <ClInclude Include="..\Classes\Utility\SoundManager.h" />
     <ClInclude Include="..\Classes\GameObjects\Feed.h" />
+    <ClInclude Include="..\Classes\GameObjects\DietPill.h" />
+    <ClInclude Include="..\Classes\GameObjects\BeltSpeedCtrl.h" />
   </ItemGroup>
 </Project>
