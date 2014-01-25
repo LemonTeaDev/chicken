@@ -1,23 +1,29 @@
 #pragma once
 
 #include "cocos2d.h"
-
+typedef enum eGameSceneTag{
+    GAME_SCENE_BG,
+    GAME_SCENE_BELT,
+    GAME_SCENE_LIGHT,
+    GAME_SCENE_MAX
+}eGameSceneTag;
 class GameScene : public cocos2d::CCLayer
 {
 public:
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();  
-
-    // there's no 'id' in cpp, so we recommend returning the class instance pointer
+    GameScene();
+    ~GameScene();
+    
+    virtual bool init();
+    
     static cocos2d::CCScene* scene();
     
-    // a selector callback
     void menuCloseCallback(CCObject* pSender);
-	void menuGameOverCallback(CCObject* pSender);
-    
-    // implement the "static node()" method manually
-
+    void menuStartCallback(CCObject* pSender);
+    void menuReverseCallback(CCObject* pSender);
     CREATE_FUNC(GameScene);
+    
+private:
+  
 };
 
 

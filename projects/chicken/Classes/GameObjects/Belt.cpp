@@ -1,5 +1,5 @@
 #include "Belt.h"
-#include "Utility/CocosHelper.h"
+#include "CocosHelper.h"
 
 
 Belt::~Belt(){
@@ -40,8 +40,7 @@ bool Belt::init()
  
 void Belt::drawBackground(){
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    beltSpr = CocosHelper::addSprite(this, "belt-01.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), 0);
-    beltSpr->setAnchorPoint(CCPointMake(0.5f, 0.5f));
+    beltSpr = CocosHelper::addSprite(this, "belt-01.png", ccp(visibleSize.width/2, 220), 0, true, ccp(0.5f, 0.5f));
     
     
     runBeltAnimation(0.5f,false);

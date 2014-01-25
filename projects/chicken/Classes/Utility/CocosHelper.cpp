@@ -12,6 +12,7 @@ CCSprite* CocosHelper::addSprite(CCNode *parent, const char* filename, CCPoint p
     CCSprite *child = CCSprite::create(filename);
     if (child == NULL)
     {
+        CCLog("not found texture : %s",filename);
         child = CCSprite::create(filename);
     }
     //position.y = 360 - position.y;
@@ -28,6 +29,7 @@ CCSprite* CocosHelper::addSpriteWithFrame(CCNode *parent, const char* filename, 
     CCSprite *child = CCSprite::createWithSpriteFrameName(filename);
     if (child == NULL)
     {
+        CCLog("not found spriteframe : %s",filename);
         child = CCSprite::create(filename);
     }
     //position.y = 360 - position.y;

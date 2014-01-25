@@ -20,6 +20,5 @@ public:
     
 private:
     CCSprite* beltSpr;
-    int beltIdx;
 };
 #endif
