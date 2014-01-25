@@ -1,10 +1,11 @@
 #include "Chicken.h"
 #include "Food.h"
-
+#include "CocosHelper.h"
 /////////////////////////////////////////////////
 // init
 /////////////////////////////////////////////////
-/* virtual */ bool Chicken::init()
+/* virtual */
+bool Chicken::init()
 {
 	// super init
 	if (!CCNode::init())
@@ -13,22 +14,64 @@
 	}
 
 	// Load Sprites
-	spriteFront[slim] = CCSprite::create("normal_chicken_slim_f.png");
-	spriteFront[normal] = CCSprite::create("normal_chicken_normal_f.png");
-	spriteFront[fat] = CCSprite::create("normal_chicken_fat_f.png");
-	spriteBack[slim] = CCSprite::create("normal_chicken_slim_b.png");
-	spriteBack[normal] = CCSprite::create("normal_chicken_normal_b.png");
-	spriteBack[fat] = CCSprite::create("normal_chicken_fat_b.png");
-
-	//Eat animation Sprites
-	spriteFront[slim] = CCSprite::create("normal_chicken_slim_f_eat.png");
-	spriteFront[normal] = CCSprite::create("normal_chicken_normal_f_eat.png");
-	spriteFront[fat] = CCSprite::create("normal_chicken_fat_f_eat.png");
-	spriteBack[slim] = CCSprite::create("normal_chicken_slim_b_eat.png");
-	spriteBack[normal] = CCSprite::create("normal_chicken_normal_b_eat.png");
-	spriteBack[fat] = CCSprite::create("normal_chicken_fat_b_eat.png");
+    for (int i = 0 ; i < max; i++) {
+        if ((FatStatus)i == slim) {
+            spriteFront[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_slim_f_stand.png");
+            spriteBack[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_slim_b_stand.png");
+        }
+        if ((FatStatus)i == normal) {
+            spriteFront[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_normal_f_stand.png");
+            spriteBack[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_normal_b_stand.png");
+        }
+        if ((FatStatus)i == fat) {
+            spriteFront[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_fat_f_stand.png");
+            spriteBack[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_fat_b_stand.png");
+        }
+    }
+    for (int i = 0 ; i < max; i++) {
+        if ((FatStatus)i == slim) {
+            spriteFront_Eat[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_slim_f_eat.png");
+            spriteBack_Eat[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_slim_b_eat.png");
+        }
+        if ((FatStatus)i == normal) {
+            spriteFront_Eat[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_normal_f_eat.png");
+            spriteBack_Eat[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_normal_b_eat.png");
+        }
+        if ((FatStatus)i == fat) {
+            spriteFront_Eat[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_fat_f_eat.png");
+            spriteBack_Eat[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_fat_b_eat.png");
+        }
+    }
+    for (int i = 0 ; i < max; i++) {
+        if ((FatStatus)i == slim) {
+            spriteFront_Cry[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_slim_f_cry.png");
+            spriteBack_Cry[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_slim_b_cry.png");
+        }
+        if ((FatStatus)i == normal) {
+            spriteFront_Cry[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_normal_f_cry.png");
+            spriteBack_Cry[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_normal_b_cry.png");
+        }
+        if ((FatStatus)i == fat) {
+            spriteFront_Cry[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_fat_f_cry.png");
+            spriteBack_Cry[(FatStatus)i] = CCTextureCache::sharedTextureCache()->addImage("nomal_chicken_fat_b_cry.png");
+        }
+    }
+    
+    
+    chickenSpr = CocosHelper::addSprite(this, "nomal_chicken_nomal_b_stand.png", CCPointMake(0,0), 0);
+    chickenSpr->setTexture(spriteFront[normal]);
+    chickenSpr->setAnchorPoint(ccp(.5f, .5f));
+    
+    
+    CCMenuItem* menuItem = CCMenuItem::create(this, menu_selector(Chicken::chickenTouch));
+    //CCMenuItem* menuItem = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(Chicken::chickenTouch));
+    menuItem->setContentSize(chickenSpr->getContentSize());
+    menuItem->setColor(ccGREEN);
+	CCMenu* pMenu = CCMenu::createWithItem(menuItem);
+    pMenu->setPosition(ccp(0, 0));
+    pMenu->setAnchorPoint(ccp(0.5f, 0.5f));
+	addChild(pMenu);
 	
-
 	InitializeLifeMax();
 	InitializeLifeFatFactors();
 	SetDigestSpeed(4);
@@ -37,7 +80,10 @@
 
 	return true;
 }
-
+void Chicken::chickenTouch(CCObject* pSender){
+    CCLog("chickenTouch");
+    SetChickenEvent(cry);
+}
 /////////////////////////////////////////////////
 // life : fatness factor initialize
 /////////////////////////////////////////////////
@@ -53,6 +99,10 @@
 /////////////////////////////////////////////////
 Chicken::FatStatus Chicken::GetFatStatus() const
 {
+#if 1
+    return fat;
+#endif
+    
 	if (lifeFatFactor[slim] <= life &&
 		life < lifeFatFactor[normal])
 	{
@@ -149,8 +199,66 @@ Chicken::ChickenSide Chicken::GetChickenSide() const
 void Chicken::SetChickenSide(ChickenSide chickenSide)
 {
 	side = chickenSide;
+    
+    if (chickenSide == front) {
+        chickenSpr->setTexture(spriteFront[GetFatStatus()]);
+    }else if(chickenSide == back){
+        chickenSpr->setTexture(spriteBack[GetFatStatus()]);
+    }
 }
 
+void Chicken::SetChickenEvent(EventStatus chickenEvent)
+{
+	if (chickenEvent == eat) {
+        CCAnimation* chickenSprAnimation = CCAnimation::create();
+        chickenSprAnimation->setDelayPerUnit(0.3f);
+        if (GetFatStatus() == slim) {
+            if (side == front) {
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_slim_f_eat.png");
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_slim_f_stand.png");
+            }else if (side == back){
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_slim_b_eat.png");
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_slim_b_stand.png");
+            }
+        }else if (GetFatStatus() == normal) {
+            if (side == front) {
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_normal_f_eat.png");
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_normal_f_stand.png");
+            }else if (side == back){
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_normal_b_eat.png");
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_normal_b_stand.png");
+            }
+        }else if (GetFatStatus() == fat) {
+            if (side == front) {
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_fat_f_eat.png");
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_fat_f_stand.png");
+            }else if (side == back){
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_fat_b_eat.png");
+                chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_fat_b_stand.png");
+            }
+        }
+        CCAnimate *animate = CCAnimate::create(chickenSprAnimation);
+        chickenSpr->runAction(animate);
+    }else if (chickenEvent == cry) {
+        if (side == back) {
+            return ;
+        }
+        CCAnimation* chickenSprAnimation = CCAnimation::create();
+        chickenSprAnimation->setDelayPerUnit(0.3f);
+        if (GetFatStatus() == slim) {
+            chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_slim_f_cry.png");
+            chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_slim_f_stand.png");
+        }else if (GetFatStatus() == normal) {
+            chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_normal_f_cry.png");
+            chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_normal_f_stand.png");
+        }else if (GetFatStatus() == fat) {
+            chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_fat_f_cry.png");
+            chickenSprAnimation->addSpriteFrameWithFileName("nomal_chicken_fat_f_stand.png");
+        }
+        CCAnimate *animate = CCAnimate::create(chickenSprAnimation);
+        chickenSpr->runAction(animate);
+    }
+}
 /////////////////////////////////////////////////
 // 닭의 소화 속도. 몇 초에 한번 포만감이 감소하나
 /////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 #include "Master.h"
-#include "Utility/CocosHelper.h"
+#include "CocosHelper.h"
 Master::~Master(){
     
 }

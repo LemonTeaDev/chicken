@@ -1,5 +1,5 @@
 #include "Light.h"
-#include "Utility/CocosHelper.h"
+#include "CocosHelper.h"
 
 
 Light::~Light(){

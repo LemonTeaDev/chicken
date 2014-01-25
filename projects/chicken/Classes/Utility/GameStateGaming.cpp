@@ -13,7 +13,6 @@ GameStateGaming::GameStateGaming(){
 }
 void GameStateGaming::update(float delta){
     accTime+=delta;
-    CCLog("accTime : %f",accTime);
     if (accTime > GameManager::sharedGameManager()->getMasterApperTime()) {
         GameManager::sharedGameManager()->masterAppear();
         accTime = 0.0f;

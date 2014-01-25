@@ -115,6 +115,7 @@ void GameScene::update(float delta){
 }
 bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
+    /*
     CCPoint touchPoint = touch->getLocation();
     Master* master = Master::create();
     master->setAnchorPoint(ccp(0.5f,0.5f));
@@ -123,6 +124,7 @@ bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
     master->runAction(sequence);
     addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+     */
     return true;
 }
 void GameScene::ccTouchMoved(CCTouch* touch, CCEvent* event)

@@ -19,8 +19,14 @@ public:
 		slim,
 		normal,
 		fat,
+        max,
 	};
 
+    enum EventStatus
+	{
+		eat,
+        cry
+	};
 	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 	virtual bool init();
 
@@ -32,7 +38,8 @@ public:
 
 public:
 	virtual void update(float dt);	// 비만도에 따른 sprite 업데이트 등, 실시간 업데이트 담당
-
+    void chickenTouch(CCObject* pSender);
+    
 	unsigned int GetLife() const;
 	void IncreaseLife(unsigned int delta);
 	void DecreaseLife(unsigned int delta);
@@ -48,7 +55,7 @@ public:
 	// 앞보는 치킨이냐, 뒤보는 치킨이냐
 	ChickenSide GetChickenSide() const;
 	void SetChickenSide(ChickenSide chickenSide);
-
+    void SetChickenEvent(EventStatus chickenEvent);
 protected:
 	virtual void InitializeLifeFatFactors();
 	virtual void InitializeLifeMax();
@@ -59,11 +66,13 @@ protected:
 	unsigned int life;
 	unsigned int lifeMax;
 
-	std::map<FatStatus, CCSprite*> spriteFront;
-	std::map<FatStatus, CCSprite*> spriteBack;
-	std::map<FatStatus, CCSprite*> spriteFront_Eat;
-	std::map<FatStatus, CCSprite*> spriteBack_Eat;
-
+    CCSprite* chickenSpr;
+	std::map<FatStatus, CCTexture2D*> spriteFront;
+	std::map<FatStatus, CCTexture2D*> spriteBack;
+	std::map<FatStatus, CCTexture2D*> spriteFront_Eat;
+	std::map<FatStatus, CCTexture2D*> spriteBack_Eat;
+    std::map<FatStatus, CCTexture2D*> spriteFront_Cry;
+	std::map<FatStatus, CCTexture2D*> spriteBack_Cry;
 	mutable std::map<FatStatus, unsigned int> lifeFatFactor;
 	
 	unsigned int digestSpeed;
