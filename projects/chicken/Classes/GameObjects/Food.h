@@ -20,6 +20,7 @@ public:
 
 	virtual void update(float dt) override;
 	virtual void removeFromParentAndCleanup(bool cleanup) override;
+	void _RemoveFromParentAndCleanup(bool cleanup);
 
 	virtual void doEffect(Chicken* pChicken) const {}
 	virtual void doEffect(Belt* pBelt) const {}

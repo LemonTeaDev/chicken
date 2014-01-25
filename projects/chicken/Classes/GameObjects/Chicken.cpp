@@ -82,9 +82,13 @@ bool Chicken::init()
     healthSpr->setAnchorPoint(ccp(0.0f, 0.5f));
     //life = 25;
     UpdateHealthBar();
-	
 
 	scheduleUpdate();
+
+	CCDelayTime* delayTime = CCDelayTime::create(GetDigestSpeed());
+	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Chicken::Digest));
+	CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
+	this->runAction(seq);
 
 	return true;
 }
@@ -101,9 +105,10 @@ void Chicken::chickenTouch(CCObject* pSender){
 			pGameScene->getChildByTag(GAME_SCENE_BELT));
 	}
 
-	if (pBelt != nullptr && pBelt->findEatableFood(getPosition()))
+	Food* pFood = nullptr;
+	if (pBelt != nullptr && (pFood = pBelt->findEatableFood(this)) != nullptr)
 	{
-		SetChickenEvent(eat);
+		Eat(pFood);
 	}
 	else
 	{
@@ -160,18 +165,6 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 /* virtual */ void Chicken::update(float dt)
 {
 	CCNode::update(dt);
-
-	static float time = 0;
-	time += dt;
-	if (time > 10)
-	{
-		time -= 10;
-	}
-
-	if (static_cast<int>(time) % GetDigestSpeed() == 0)
-	{
-		//DecreaseLife(1);
-	}
 }
 
 unsigned int Chicken::GetLife() const
@@ -220,7 +213,7 @@ void Chicken::DecreaseLife(unsigned int delta)
 void Chicken::Eat(Food* food)
 {
 	SetChickenEvent(eat);
-
+	food->removeFromParentAndCleanup(true);
 }
 
 /////////////////////////////////////////////////
@@ -310,4 +303,15 @@ unsigned int Chicken::GetDigestSpeed() const
 void Chicken::SetDigestSpeed(unsigned int speed)
 {
 	digestSpeed = speed;
+}
+
+
+void Chicken::Digest()
+{
+	DecreaseLife(1);
+
+	CCDelayTime* delayTime = CCDelayTime::create(GetDigestSpeed());
+	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Chicken::Digest));
+	CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
+	this->runAction(seq);
 }

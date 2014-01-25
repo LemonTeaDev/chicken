@@ -25,6 +25,11 @@ void Food::removeFromParentAndCleanup(bool cleanup)
 	}
 }
 
+void Food::_RemoveFromParentAndCleanup(bool cleanup)
+{
+	CCNode::removeFromParentAndCleanup(cleanup);
+}
+
 /* virtual */
 void Food::update(float dt)
 {

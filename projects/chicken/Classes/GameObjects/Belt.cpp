@@ -51,7 +51,7 @@ bool Belt::init()
     drawBackground();
 	drawGear();
 	runBelt();
-	scheduleUpdate();
+	generateFoods();
 
     return true;
 }
@@ -113,7 +113,6 @@ void Belt::runBelt()
 		CCRotateBy* rotateAction = CCRotateBy::create(3.0f, 60.0f);
 		gear[i]->runAction(CCRepeatForever::create(rotateAction));
 	}
-
 }
 
 void Belt::drawGear()
@@ -185,7 +184,10 @@ void Belt::beltPause(float time)
 		gear[i]->stopAllActions();
 	}
 
-	scheduleOnce(schedule_selector(Belt::runBelt), 1.0f);
+	CCDelayTime* delayTime = CCDelayTime::create(time);
+	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Belt::runBelt));
+	CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
+	this->runAction(seq);
 }
 
 void Belt::beltReverse()
@@ -195,13 +197,13 @@ void Belt::beltReverse()
 	runBelt();
 }
 
-Food* Belt::findEatableFood(CCPoint chickenLocation)
+Food* Belt::findEatableFood(Chicken* pChicken)
 {
 	auto itrFood = std::find_if(
 		foodList.begin(),
 		foodList.end(),
-		[](Food* food) -> bool {
-		if (food == nullptr)
+		[pChicken](Food* food) -> bool {
+		if (food == nullptr || pChicken == nullptr)
 		{
 			return false;
 		}
@@ -216,8 +218,12 @@ Food* Belt::findEatableFood(CCPoint chickenLocation)
 
 			std::pair<float, float> xBoundaryChicken;
 			{
-				auto chickenLeftTop = CocosHelper::getLeftTopPos(food);
-				auto chickenRightBottom = CocosHelper::getRightBottomPos(food);
+				if (pChicken->getParent() == nullptr)
+				{
+					return false;
+				}
+				auto chickenLeftTop = CocosHelper::getLeftTopPos(pChicken->getParent());
+				auto chickenRightBottom = CocosHelper::getRightBottomPos(pChicken->getParent());
 				xBoundaryChicken = make_pair(chickenLeftTop.x, chickenRightBottom.x);
 			}
 
@@ -244,11 +250,11 @@ void Belt::loadFood(Food* pFood)
 
 		if (getIsReverse())
 		{
-			pFood->setPosition(CCPointMake(-pFood->getContentSize().width, getPositionY()));
+			pFood->setPosition(CCPointMake(1400, 293));
 		}
 		else
 		{
-			pFood->setPosition(CCPointMake(getContentSize().width + pFood->getContentSize().width, getPositionY()));
+			pFood->setPosition(CCPointMake(-100, 293));
 		}
 		addChild(pFood);
 		int reverse = isReverse ? -1 : 1;
@@ -266,29 +272,19 @@ void Belt::unloadFood(Food* pFood, bool cleanup /* = true */)
 		if (itrFood != foodList.end())
 		{
 			foodList.erase(itrFood);
-			pFood->removeFromParentAndCleanup(cleanup);
+			pFood->_RemoveFromParentAndCleanup(cleanup);
 			pFood = nullptr;
 		}
 	}
 }
 
-void Belt::update(float dt)
+void Belt::generateFoods()
 {
-	static float time = 0;
-	time += dt;
-	if (time > 1000000)
-	{
-		time -= 1000000;
-	}
+	Food* pFood = Feed::create();
+	loadFood(pFood);
 
-	int msTime = time * 1000;
-	int tt = SpeedToTimeTick(beltSpeed) * 5 * 1000;
-	if (msTime % tt <= 1000)
-	{
-		std::uniform_int_distribution<int> dist(1, 100);
-		int randomValue = dist(randomEngine);
-		
-		Food* pFood = Feed::create();
-		loadFood(pFood);
-	}
+	CCDelayTime* delayTime = CCDelayTime::create(SpeedToTimeTick(beltSpeed) * 5);
+	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Belt::generateFoods));
+	CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
+	this->runAction(seq);
 }

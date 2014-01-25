@@ -21,19 +21,19 @@ public:
 public:
     virtual ~Belt();
 	virtual bool init() override;
-	virtual void update(float dt) override;
     void drawBackground();
     static Belt* create();
-    void runBelt();
+	void runBelt();
     void beltSpeedUp(float degree);
     void beltSpeedDown(float degree);
 	void beltPause(float time);
     void beltReverse();
 	bool getIsReverse() const { return isReverse; }
 
-	Food* findEatableFood(CCPoint chickenLocation);
+	Food* findEatableFood(Chicken* pChicken);
 	void loadFood(Food* pFood);
 	void unloadFood(Food* pFood, bool cleanup = true);
+	void generateFoods();
     
 	void drawGear();
     
