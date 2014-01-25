@@ -137,9 +137,11 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\GameObjects\ChickenField.cpp" />
     <ClCompile Include="..\Classes\GameObjects\Food.cpp" />
     <ClCompile Include="..\Classes\GameObjects\FoodEffect\GainWeight.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.cpp" />
     <ClCompile Include="..\Classes\GameObjects\FoodEffect\LoseWeight.cpp" />
     <ClCompile Include="..\Classes\GameObjects\FoodFactory.cpp" />
     <ClCompile Include="..\Classes\GameObjects\Master.cpp" />
+    <ClCompile Include="..\Classes\GameObjects\Player.cpp" />
     <ClCompile Include="..\Classes\GameOverScene.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\StartScene.cpp" />
@@ -152,9 +154,11 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\GameObjects\ChickenField.h" />
     <ClInclude Include="..\Classes\GameObjects\Food.h" />
     <ClInclude Include="..\Classes\GameObjects\FoodEffect\GainWeight.h" />
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.h" />
     <ClInclude Include="..\Classes\GameObjects\FoodEffect\LoseWeight.h" />
     <ClInclude Include="..\Classes\GameObjects\FoodFactory.h" />
     <ClInclude Include="..\Classes\GameObjects\Master.h" />
+    <ClInclude Include="..\Classes\GameObjects\Player.h" />
     <ClInclude Include="..\Classes\GameOverScene.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\StartScene.h" />

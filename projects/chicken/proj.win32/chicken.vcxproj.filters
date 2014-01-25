@@ -19,6 +19,9 @@
     <Filter Include="Classes\Game Objects\Logical">
       <UniqueIdentifier>{1853e7ee-274e-4ac8-bb8f-1fc3997c546c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Game Objects\Food Effects\Base">
+      <UniqueIdentifier>{7c44ef29-e69d-4655-aa60-67f454beca70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,6 +63,12 @@
     <ClCompile Include="..\Classes\GameObjects\FoodFactory.cpp">
       <Filter>Classes\Game Objects\Logical</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.cpp">
+      <Filter>Classes\Game Objects\Food Effects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Player.cpp">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -99,6 +108,12 @@
       <Filter>Classes\Game Objects\Logical</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameObjects\FoodFactory.h">
+      <Filter>Classes\Game Objects\Logical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\FoodEffect\IFoodEffect.h">
+      <Filter>Classes\Game Objects\Food Effects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Player.h">
       <Filter>Classes\Game Objects\Logical</Filter>
     </ClInclude>
   </ItemGroup>
