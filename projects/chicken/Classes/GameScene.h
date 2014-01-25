@@ -5,6 +5,7 @@ typedef enum eGameSceneTag{
     GAME_SCENE_BG,
     GAME_SCENE_BELT,
     GAME_SCENE_LIGHT,
+    GAME_SCENE_FOG,
     GAME_SCENE_MAX
 }eGameSceneTag;
 class GameScene : public cocos2d::CCLayer

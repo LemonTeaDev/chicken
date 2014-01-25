@@ -54,6 +54,13 @@ bool GameScene::init()
     light3->setPosition(ccp(803, visibleSize.height-46));
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
+    // 희미한 배경
+    /*
+    CCSprite* fogSpr = CocosHelper::addSprite(this, "Front-ef.jpg", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
+    CCSequence* sequence = CCSequence::create(CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x-100, fogSpr->getPosition().y)),CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x+100, fogSpr->getPosition().y)), NULL);
+    fogSpr->runAction(CCRepeatForever::create(sequence));
+    */
+    
     CCMenuItem* pUp = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
 	pUp->setTag(1);
     CCMenuItem* pDown = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
