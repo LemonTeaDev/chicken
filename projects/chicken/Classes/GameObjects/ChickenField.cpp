@@ -35,12 +35,12 @@ int ChickenField::GetRealIndex(int humanIndex) const
 
 	if (realIndex < 0)
 	{
-		assert(realIndex < 0);
+		assert(!"invalid index-");
 		realIndex = 0;
 	}
 	else if (realIndex > SLOT_COUNT)
 	{
-		assert(realIndex > SLOT_COUNT);
+		assert(!"invalid index+");
 		realIndex = SLOT_COUNT;
 	}
 

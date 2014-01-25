@@ -33,6 +33,8 @@
 	InitializeLifeFatFactors();
 	SetDigestSpeed(4);
 
+	scheduleUpdate();
+
 	return true;
 }
 
@@ -76,10 +78,12 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 }
 
 /////////////////////////////////////////////////
-// Update Logic per Tick
+// General Update Logic per Tick
 /////////////////////////////////////////////////
 /* virtual */ void Chicken::update(float dt)
 {
+	CCNode::update(dt);
+
 	static float time = 0;
 	time += dt;
 	if (time > 10)

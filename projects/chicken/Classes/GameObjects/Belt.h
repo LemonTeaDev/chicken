@@ -2,24 +2,44 @@
 #define __chicken__Belt__
 
 #include "cocos2d.h"
+#include <deque>
 USING_NS_CC;
+
 using namespace std;
+class Food;
+class Chicken;
 
 class Belt : public CCNode
 {
 public:
-    //Belt();
+	const static float MIN_SPEED;
+	const static float DEFAULT_SPEED;
+	const static float MAX_SPEED;
+	inline float SpeedToTimeTick(float speed) const;
+
+public:
     virtual ~Belt();
-    virtual bool init();
+	virtual bool init() override;
     void drawBackground();
     static Belt* create();
-    void runBeltAnimation(float speed, bool isReverse);
+    void runBelt();
     void beltSpeedUp(float degree);
     void beltSpeedDown(float degree);
-    void beltReverse();
-    
+	void beltPause(float time);
+	void beltReverse();
+	bool isReverse() const { return isReverse; }
+
+	Food* findEatableFood(CCPoint chickenLocation);
+	void loadFood(Food* pFood);
+	void unloadFood(Food* pFood, bool cleanup = true);
+
 private:
     CCSprite* beltSpr;
     int beltIdx;
+
+	deque<Food*> foodList;
+
+	float beltSpeed;
+	bool isReverse;
 };
-#endif
+#endif	
