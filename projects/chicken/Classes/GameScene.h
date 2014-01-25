@@ -15,5 +15,8 @@ public:
     void menuCloseCallback(CCObject* pSender);
     
     // implement the "static node()" method manually
+
     CREATE_FUNC(GameScene);
 };
+
+

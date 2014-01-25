@@ -247,6 +247,12 @@
 		CDB87A781893870A008C05DB /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6A1893870A008C05DB /* Light.cpp */; };
 		CDB87A791893870A008C05DB /* Master.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6C1893870A008C05DB /* Master.cpp */; };
 		CDB87A7A1893870A008C05DB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6E1893870A008C05DB /* Player.cpp */; };
+		CDB87A8118938F47008C05DB /* belt-01.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7B18938F47008C05DB /* belt-01.png */; };
+		CDB87A8218938F47008C05DB /* belt-02.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7C18938F47008C05DB /* belt-02.png */; };
+		CDB87A8318938F47008C05DB /* belt-03.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7D18938F47008C05DB /* belt-03.png */; };
+		CDB87A8418938F47008C05DB /* belt-04.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7E18938F47008C05DB /* belt-04.png */; };
+		CDB87A8518938F47008C05DB /* belt-05.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7F18938F47008C05DB /* belt-05.png */; };
+		CDB87A8618938F47008C05DB /* belt-06.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A8018938F47008C05DB /* belt-06.png */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -770,6 +776,12 @@
 		CDB87A6D1893870A008C05DB /* Master.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Master.h; sourceTree = "<group>"; };
 		CDB87A6E1893870A008C05DB /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		CDB87A6F1893870A008C05DB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		CDB87A7B18938F47008C05DB /* belt-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-01.png"; sourceTree = "<group>"; };
+		CDB87A7C18938F47008C05DB /* belt-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-02.png"; sourceTree = "<group>"; };
+		CDB87A7D18938F47008C05DB /* belt-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-03.png"; sourceTree = "<group>"; };
+		CDB87A7E18938F47008C05DB /* belt-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-04.png"; sourceTree = "<group>"; };
+		CDB87A7F18938F47008C05DB /* belt-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-05.png"; sourceTree = "<group>"; };
+		CDB87A8018938F47008C05DB /* belt-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-06.png"; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -1769,6 +1781,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDB87A7B18938F47008C05DB /* belt-01.png */,
+				CDB87A7C18938F47008C05DB /* belt-02.png */,
+				CDB87A7D18938F47008C05DB /* belt-03.png */,
+				CDB87A7E18938F47008C05DB /* belt-04.png */,
+				CDB87A7F18938F47008C05DB /* belt-05.png */,
+				CDB87A8018938F47008C05DB /* belt-06.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -1924,13 +1942,19 @@
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
+				CDB87A8218938F47008C05DB /* belt-02.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				CDB87A8518938F47008C05DB /* belt-05.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
+				CDB87A8318938F47008C05DB /* belt-03.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				CDB87A8118938F47008C05DB /* belt-01.png in Resources */,
+				CDB87A8618938F47008C05DB /* belt-06.png in Resources */,
+				CDB87A8418938F47008C05DB /* belt-04.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
