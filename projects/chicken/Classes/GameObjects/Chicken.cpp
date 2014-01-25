@@ -4,6 +4,7 @@
 #include "GameScene.h"
 #include "Belt.h"
 #include "ChickenField.h"
+#include "SoundManager.h"
 /////////////////////////////////////////////////
 // init
 /////////////////////////////////////////////////
@@ -278,6 +279,7 @@ void Chicken::SetChickenSide(ChickenSide chickenSide)
 void Chicken::SetChickenEvent(EventStatus chickenEvent)
 {
 	if (chickenEvent == eat) {
+        SoundManager::sharedSoundManager()->playEatSound();
         CCAnimation* chickenSprAnimation = CCAnimation::create();
         chickenSprAnimation->setDelayPerUnit(0.3f);
         if (GetFatStatus() == slim) {
@@ -308,6 +310,8 @@ void Chicken::SetChickenEvent(EventStatus chickenEvent)
         CCAnimate *animate = CCAnimate::create(chickenSprAnimation);
         chickenSpr->runAction(animate);
     }else if (chickenEvent == cry) {
+        SoundManager::sharedSoundManager()->playEatFailSound();
+        DecreaseLife(10.0f);
         if (side == back) {
             return ;
         }
