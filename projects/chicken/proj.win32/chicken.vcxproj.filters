@@ -69,6 +69,9 @@
     <ClCompile Include="..\Classes\GameObjects\Player.cpp">
       <Filter>Classes\Game Objects\Logical</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameObjects\Light.cpp">
+      <Filter>Classes\Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -115,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameObjects\Player.h">
       <Filter>Classes\Game Objects\Logical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjects\Light.h">
+      <Filter>Classes\Game Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
