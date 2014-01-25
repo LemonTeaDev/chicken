@@ -228,9 +228,9 @@ void Chicken::SetLife(unsigned int life)
 void Chicken::Eat(Food* food)
 {
 	SetChickenEvent(eat);
-	food->removeFromParentAndCleanup(true);
 	food->doEffect(this); // effect to chicken
 	food->doEffect(GetBelt(this));	// effect to belt
+	food->removeFromParentAndCleanup(true);
 }
 
 /////////////////////////////////////////////////
