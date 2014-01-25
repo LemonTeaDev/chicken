@@ -11,10 +11,10 @@
 
 CCSprite* CocosHelper::addSprite(CCNode *parent, const char* filename, CCPoint position, int tag, bool isVisible, CCPoint anchor ,float scale){
     CCSprite *child = CCSprite::create(filename);
-    if (child == NULL)
+	if (child == nullptr)
     {
         CCLog("not found texture : %s",filename);
-        child = CCSprite::create(filename);
+		return child;
     }
     //position.y = 360 - position.y;
     child->setPosition(position);
