@@ -6,14 +6,28 @@
 /////////////////////////////////////////////////
 /* virtual */ bool Chicken::init()
 {
-	// Load Sprites
+	// super init
+	if (!CCNode::init())
+	{
+		return false;
+	}
 
+	// Load Sprites
 	spriteFront[slim] = CCSprite::create("normal_chicken_slim_f.png");
 	spriteFront[normal] = CCSprite::create("normal_chicken_normal_f.png");
 	spriteFront[fat] = CCSprite::create("normal_chicken_fat_f.png");
 	spriteBack[slim] = CCSprite::create("normal_chicken_slim_b.png");
 	spriteBack[normal] = CCSprite::create("normal_chicken_normal_b.png");
 	spriteBack[fat] = CCSprite::create("normal_chicken_fat_b.png");
+
+	//Eat animation Sprites
+	spriteFront[slim] = CCSprite::create("normal_chicken_slim_f_eat.png");
+	spriteFront[normal] = CCSprite::create("normal_chicken_normal_f_eat.png");
+	spriteFront[fat] = CCSprite::create("normal_chicken_fat_f_eat.png");
+	spriteBack[slim] = CCSprite::create("normal_chicken_slim_b_eat.png");
+	spriteBack[normal] = CCSprite::create("normal_chicken_normal_b_eat.png");
+	spriteBack[fat] = CCSprite::create("normal_chicken_fat_b_eat.png");
+	
 
 	InitializeLifeMax();
 	InitializeLifeFatFactors();

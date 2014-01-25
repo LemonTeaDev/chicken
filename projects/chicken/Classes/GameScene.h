@@ -4,6 +4,7 @@
 typedef enum eGameSceneTag{
     GAME_SCENE_BG,
     GAME_SCENE_BELT,
+    GAME_SCENE_CHICKEN,
     GAME_SCENE_LIGHT,
     GAME_SCENE_FOG,
     GAME_SCENE_MAX

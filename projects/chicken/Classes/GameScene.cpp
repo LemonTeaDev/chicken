@@ -3,6 +3,8 @@
 #include "Belt.h"
 #include "Light.h"
 #include "CocosHelper.h"
+#include "GameObjects/ChickenField.h"
+
 USING_NS_CC;
 GameScene::GameScene(){
     
@@ -34,6 +36,7 @@ bool GameScene::init()
     }
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+
     CCLog("%f %f",visibleSize.width, visibleSize.height);
     CocosHelper::addSprite(this, "back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
     
@@ -45,6 +48,12 @@ bool GameScene::init()
     Light* light = Light::create();
     light->setPosition(ccp(332, visibleSize.height-46));
     addChild(light,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
+    
+    ChickenField* pChickenField = ChickenField::create();
+    pChickenField->setPosition(ccp(0.0f, 0.0f));
+    pChickenField->setAnchorPoint(ccp(0.5f, 0.5f));
+	addChild(pChickenField,GAME_SCENE_CHICKEN,GAME_SCENE_CHICKEN);
+
     
     Light* light2 = Light::create();
     light2->setPosition(ccp(574, visibleSize.height-46));

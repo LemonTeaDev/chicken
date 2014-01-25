@@ -61,6 +61,8 @@ protected:
 
 	std::map<FatStatus, CCSprite*> spriteFront;
 	std::map<FatStatus, CCSprite*> spriteBack;
+	std::map<FatStatus, CCSprite*> spriteFront_Eat;
+	std::map<FatStatus, CCSprite*> spriteBack_Eat;
 
 	mutable std::map<FatStatus, unsigned int> lifeFatFactor;
 	
