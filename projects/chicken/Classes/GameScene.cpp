@@ -73,6 +73,8 @@ bool GameScene::init()
     light3->setPosition(ccp(803, visibleSize.height-46));
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
+    
+    CocosHelper::addLabelFnt(this, "playui_fever_xcombo.fnt", ccp(visibleSize.width-100,100), GAME_SCENE_TIME, "", ccp(0.5f,0.5f), true);
     // dim background
     //CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
     /*
@@ -101,6 +103,7 @@ bool GameScene::init()
     scheduleUpdateWithPriority(1);
     GameManager::sharedGameManager()->sendMessage(GameMessageGameStart);
     GameManager::sharedGameManager()->setMasterAppearListener(callfunc_selector(GameScene::masterApper), this);
+    GameManager::sharedGameManager()->setMasterAppearProgressListener(schedule_selector(GameScene::masterProgress), this);
     return true;
 }
 void GameScene::onEnter(){
@@ -142,9 +145,7 @@ void GameScene::masterApper(){
     int randIdx = rand() % ChickenField::SLOT_COUNT + 1;
     CCNode* chickenLayer = chickenField->GetChickenNode(randIdx);
     
-    //CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint touchPoint = chickenLayer->getPosition();
-    //CCLog("%f %f",touchPoint.x,touchPoint.y);
     Master* master = Master::create();
     master->setAnchorPoint(ccp(0.5f,0.5f));
     if (touchPoint.y > visibleSize.height/2) {
@@ -156,13 +157,13 @@ void GameScene::masterApper(){
         addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
         master->runStartAction(touchPoint,false);
     }
-    
-    /*
-    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
-    master->runAction(sequence);
-     */
-    
-    
+}
+
+void GameScene::masterProgress(float dt){
+    CCLabelBMFont* bmFont = (CCLabelBMFont*)getChildByTag(GAME_SCENE_TIME);
+    char str[0x10];
+    sprintf(str, "%d",(int)dt);
+    bmFont->setString(str);
 }
 void GameScene::menuCloseCallback(CCObject* pSender)
 {

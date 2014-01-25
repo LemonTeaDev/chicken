@@ -41,6 +41,8 @@ bool StartScene::init()
 	CCMenu* pMenu = CCMenu::create(pClose, pStart, NULL);
 	pMenu->setPosition(CCPointZero);
 	this->addChild(pMenu, 1);
+    
+    
 	/*
 	
     //////////////////////////////

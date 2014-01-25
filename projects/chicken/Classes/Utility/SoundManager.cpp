@@ -12,7 +12,11 @@ SoundManager* onlySoundManager = NULL;
 
 SoundManager::SoundManager(){
     this->audioEngine = SimpleAudioEngine::sharedEngine();
+#if 1
     this->audioEngine->setEffectsVolume(0.2f);
+    this->audioEngine->setEffectsVolume(0);
+    this->audioEngine->setBackgroundMusicVolume(0);
+#endif
 }
 
 SoundManager::~SoundManager(){
