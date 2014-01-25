@@ -295,6 +295,7 @@
 		CDC4AF1D189410CE001AB582 /* nomal_chicken_normal_f_cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF18189410CE001AB582 /* nomal_chicken_normal_f_cry.png */; };
 		CDC4AF1E189410CE001AB582 /* nomal_chicken_normal_f_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF19189410CE001AB582 /* nomal_chicken_normal_f_eat.png */; };
 		CDC4AF1F189410CE001AB582 /* nomal_chicken_normal_f_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF1A189410CE001AB582 /* nomal_chicken_normal_f_stand.png */; };
+		CDC4AF21189417EC001AB582 /* health_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF20189417EC001AB582 /* health_bar.png */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -870,6 +871,7 @@
 		CDC4AF18189410CE001AB582 /* nomal_chicken_normal_f_cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_normal_f_cry.png; sourceTree = "<group>"; };
 		CDC4AF19189410CE001AB582 /* nomal_chicken_normal_f_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_normal_f_eat.png; sourceTree = "<group>"; };
 		CDC4AF1A189410CE001AB582 /* nomal_chicken_normal_f_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_normal_f_stand.png; sourceTree = "<group>"; };
+		CDC4AF20189417EC001AB582 /* health_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_bar.png; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -1402,6 +1404,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AF22189422BD001AB582 /* UI */,
 				CDC4AED51893BF75001AB582 /* Layer */,
 				CDB87A581893870A008C05DB /* GameObjects */,
 				CDE6ABA218936583005F1D97 /* Utility */,
@@ -1870,6 +1873,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AF20189417EC001AB582 /* health_bar.png */,
 				CDC4AEDD1893E173001AB582 /* front-ef.png */,
 				CDC4AEDE1893E173001AB582 /* hand_01.png */,
 				CDC4AEDF1893E173001AB582 /* hand_02.png */,
@@ -1991,6 +1995,14 @@
 				CDC4AEDB1893DFEB001AB582 /* bg_01.mp3 */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		CDC4AF22189422BD001AB582 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			path = ../Classes/UI;
 			sourceTree = "<group>";
 		};
 		CDE6ABA218936583005F1D97 /* Utility */ = {
@@ -2116,6 +2128,7 @@
 				CDC4AEC51893BE0C001AB582 /* back-1.png in Resources */,
 				CDC4AEF31893E173001AB582 /* nomal_chicken_fat_f_eat.png in Resources */,
 				CDC4AEEF1893E173001AB582 /* hand_02.png in Resources */,
+				CDC4AF21189417EC001AB582 /* health_bar.png in Resources */,
 				CDC4AEF01893E173001AB582 /* nomal_chicken_fat_b_eat.png in Resources */,
 				CDC4AED31893BE0C001AB582 /* start_test.png in Resources */,
 				CDC4AF1518940E57001AB582 /* nomal_chicken_slim_f_stand.png in Resources */,

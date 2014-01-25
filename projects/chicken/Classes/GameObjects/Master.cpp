@@ -43,7 +43,20 @@ void Master::drawBackground(){
     masterSpr->setAnchorPoint(CCPointMake(0.5f, 0.5f));
 }
 
-void Master::runGrapAction(){
+void Master::runStartAction(CCPoint point, bool aIsUp){
+    isUp = aIsUp;
+    CCPoint adjustPoint = point;
+    if (isUp) {
+        setRotation(180);
+        adjustPoint.y = adjustPoint.y+55;
+    }else{
+        adjustPoint.y = adjustPoint.y-55;
+    }
+    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, adjustPoint),CCCallFunc::create(this, callfunc_selector(Master::runGrapAction)), NULL);
+    runAction(sequence);
+}
+
+void Master::runGrapAction(){    
     CCAnimation* masterSprAnimation = CCAnimation::create();
     masterSprAnimation->setDelayPerUnit(0.3f);
     masterSprAnimation->addSpriteFrameWithFileName("hand_02.png");

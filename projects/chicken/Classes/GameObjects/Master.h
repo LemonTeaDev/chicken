@@ -12,8 +12,10 @@ public:
     virtual bool init();
     void drawBackground();
     static Master* create();
+    void runStartAction(CCPoint point, bool isUp);
     void runGrapAction();
 private:
     CCSprite* masterSpr;
+    bool isUp;
 };
 #endif

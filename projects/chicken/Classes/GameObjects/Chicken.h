@@ -4,7 +4,11 @@
 USING_NS_CC;
 
 class Food;
-
+typedef enum eChickenTag{
+    CHICKEN_SPR,
+    CHICKEN_MENU,
+    CHICKEN_HEALTHBAR
+}eChickenTag;
 class Chicken : public CCNode
 {
 public:
@@ -41,6 +45,7 @@ public:
     void chickenTouch(CCObject* pSender);
     
 	unsigned int GetLife() const;
+    void UpdateHealthBar();
 	void IncreaseLife(unsigned int delta);
 	void DecreaseLife(unsigned int delta);
 	void SetLife(unsigned int life);
@@ -68,6 +73,7 @@ protected:
 	unsigned int lifeMax;
 
     CCSprite* chickenSpr;
+    CCSprite* healthSpr;
 	std::map<FatStatus, CCTexture2D*> spriteFront;
 	std::map<FatStatus, CCTexture2D*> spriteBack;
 	std::map<FatStatus, CCTexture2D*> spriteFront_Eat;
