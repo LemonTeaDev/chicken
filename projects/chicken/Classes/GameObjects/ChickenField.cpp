@@ -19,7 +19,7 @@
 	for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
 	{
 		auto slot = *slotItr;
-		slot = CCLayerColor::create(ccc4(255, 0, 0, 255));
+		slot = CCLayerColor::create(ccc4(255, rand()%255, rand()%255, 255));
 		slot->setContentSize(CCSizeMake(CHICKEN_SLOT_WIDTH, CHICKEN_SLOT_HEIGHT));
 		slot->setPosition(layerCenterPos[i]);
 		this->addChild(slot);
