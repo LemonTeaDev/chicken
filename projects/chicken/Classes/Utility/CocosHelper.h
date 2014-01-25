@@ -14,7 +14,9 @@ USING_NS_CC;
 class CocosHelper {
 public:
     static CCSprite* addSprite(CCNode *parent, const char* filename, CCPoint position, int tag, bool isVisible = true, CCPoint anchor = ccp(0.5, 0.5),float scale = 1.0f);
-     static CCSprite* addSpriteWithFrame(CCNode *parent, const char* frame, CCPoint position, int tag,bool isVisible = true,CCPoint anchor = ccp(0.5, 0.5),float scale = 1.0f);
+    static CCSprite* addSpriteWithFrame(CCNode *parent, const char* frame, CCPoint position, int tag,bool isVisible = true,CCPoint anchor = ccp(0.5, 0.5),float scale = 1.0f);
+	static CCPoint getLeftTopPos(CCNode* node);
+	static CCPoint getRightBottomPos(CCNode* node);
 };
 
 #endif /* defined(__chicken__CocosHelper__) */

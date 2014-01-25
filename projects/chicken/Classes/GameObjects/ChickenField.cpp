@@ -14,17 +14,16 @@
 
 	InitializeLayerCenterPos();
 
-	// ¥ﬂ ΩΩ∑‘ «“¥Á
-	int i = 0;
+	// ¥�?ΩΩ?��?«?�¥�?	int i = 0;
 	for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
 	{
 		auto slot = *slotItr;
 		slot = CCLayerColor::create(ccc4(255, rand()%255, rand()%255, 255));
 		slot->setContentSize(CCSizeMake(CHICKEN_SLOT_WIDTH, CHICKEN_SLOT_HEIGHT));
         slot->setAnchorPoint(ccp(0.0f, 0.0f));
-		slot->setPosition(layerCenterPos[i]);
+		//slot->setPosition(layerCenterPos[i]);
 		this->addChild(slot);
-		i++;
+		//i++;
 	}
 	
 	return true;
@@ -36,12 +35,12 @@ int ChickenField::GetRealIndex(int humanIndex) const
 
 	if (realIndex < 0)
 	{
-		assert(realIndex < 0);
+		assert(!"invalid index-");
 		realIndex = 0;
 	}
 	else if (realIndex > SLOT_COUNT)
 	{
-		assert(realIndex > SLOT_COUNT);
+		assert(!"invalid index+");
 		realIndex = SLOT_COUNT;
 	}
 

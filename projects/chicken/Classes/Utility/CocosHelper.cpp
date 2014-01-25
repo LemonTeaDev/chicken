@@ -7,6 +7,7 @@
 //
 
 #include "CocosHelper.h"
+#include <cassert>
 
 CCSprite* CocosHelper::addSprite(CCNode *parent, const char* filename, CCPoint position, int tag, bool isVisible, CCPoint anchor ,float scale){
     CCSprite *child = CCSprite::create(filename);
@@ -40,4 +41,38 @@ CCSprite* CocosHelper::addSpriteWithFrame(CCNode *parent, const char* filename, 
     child->setVisible(isVisible);
     
     return child;
+}
+
+CCPoint CocosHelper::getLeftTopPos(CCNode* node)
+{
+	if (node == nullptr)
+	{
+		assert(!"node null");
+		return CCPointMake(0, 0);
+	}
+	else
+	{
+		auto anchorPoint = node->getAnchorPoint();
+		auto contentSize = node->getContentSize();
+		return CCPointMake(
+			node->getPositionX() - (contentSize.width * anchorPoint.x),
+			node->getPositionY() + (contentSize.height * (1 - anchorPoint.y)));
+	}
+}
+
+CCPoint CocosHelper::getRightBottomPos(CCNode* node)
+{
+	if (node == nullptr)
+	{
+		assert(!"node null");
+		return CCPointMake(0, 0);
+	}
+	else
+	{
+		auto anchorPoint = node->getAnchorPoint();
+		auto contentSize = node->getContentSize();
+		return CCPointMake(
+			node->getPositionX() + (contentSize.width * (1 - anchorPoint.x)),
+			node->getPositionY() - (contentSize.height * anchorPoint.y));
+	}
 }
