@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "GameOverScene.h"
+#include "GameObjects/ChickenField.h"
 
 USING_NS_CC;
 
@@ -38,6 +39,9 @@ bool GameScene::init()
                             origin.y + visibleSize.height - pLabel->getContentSize().height));
 
     this->addChild(pLabel, 1);
+
+	ChickenField* pChickenField = ChickenField::create();
+	this->addChild(pChickenField);
 
 
  //   CCSprite* pSprite = CCSprite::create("GameScene.png");

@@ -7,7 +7,7 @@
 
 /* virtual */ bool ChickenField::init()
 {
-	if (!CCNode::init())
+	if (!CCLayer::init())
 	{
 		return false;
 	}
