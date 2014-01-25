@@ -55,7 +55,7 @@ bool StartScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
+    CCLabelTTF* pLabel = CCLabelTTF::create("Hey", "Arial", 24);
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
