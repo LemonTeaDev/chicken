@@ -145,9 +145,14 @@ void GameScene::masterApper(){
     CCLog("MASTER APPEAR");
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     ChickenField* chickenField = (ChickenField*)getChildByTag(GAME_SCENE_CHICKEN);
-    Chicken* minHealthChicken = chickenField->GetMinHealthChicken();
-    if (minHealthChicken->GetIsCaptureAble()) {
-        int idx = minHealthChicken->GetIdx()+1;
+    Chicken* dieChicken;
+    if (rand() % 2 == 0){
+        dieChicken = chickenField->GetMinHealthChicken();
+    }else{
+        dieChicken = chickenField->GetMaxHealthChicken();
+    }
+    if (dieChicken->GetIsCaptureAble()) {
+        int idx = dieChicken->GetIdx()+1;
         CCNode* chickenLayer = chickenField->GetChickenNode(idx);
         CCPoint touchPoint = chickenLayer->getPosition();
         

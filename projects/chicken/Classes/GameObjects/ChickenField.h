@@ -32,6 +32,7 @@ public:
 	void AddChicken(int index, Chicken* chicken);
 	Chicken* GetChicken(int index) const;
     Chicken* GetMinHealthChicken() const;
+    Chicken* GetMaxHealthChicken() const;
     CCNode* GetChickenNode(int index) const;
 	void RemoveChicken(int index);
 

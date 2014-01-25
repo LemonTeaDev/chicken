@@ -31,7 +31,7 @@ GameManager* GameManager::sharedGameManager(){
 bool GameManager::init(){
     state = new GameStateNone;
     state->setModel(this);
-    masterApperTime = 30.0F;
+    masterApperTime = 11.0F;
     return true;
 }
 void

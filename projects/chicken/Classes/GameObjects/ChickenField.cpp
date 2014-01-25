@@ -123,6 +123,44 @@ Chicken* ChickenField::GetMinHealthChicken() const{
 
     return NULL;
 }
+
+Chicken* ChickenField::GetMaxHealthChicken() const{
+    
+    if (rand() % 2 == 0) {
+        CCNode* node = *(chickenSlots.begin());
+        Chicken* maxChicken = (Chicken* )node->getChildByTag(CHICKEN_TAG);
+        for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
+        {
+            auto slot = *slotItr;
+            if (maxChicken == NULL) {
+                maxChicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            }
+            Chicken* chicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            if (chicken != NULL && maxChicken != NULL && chicken->GetLife() > maxChicken->GetLife()) {
+                maxChicken = chicken;
+            }
+        }
+        return maxChicken;
+    }else{
+        CCNode* node = *(chickenSlots.rbegin());
+        Chicken* maxChicken = (Chicken* )node->getChildByTag(CHICKEN_TAG);
+        for (auto slotItr = chickenSlots.rbegin(); slotItr != chickenSlots.rend(); ++slotItr)
+        {
+            auto slot = *slotItr;
+            if (maxChicken == NULL) {
+                maxChicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            }
+            Chicken* chicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            if (chicken != NULL && maxChicken != NULL && chicken->GetLife() > maxChicken->GetLife()) {
+                maxChicken = chicken;
+            }
+        }
+        return maxChicken;
+    }
+    
+    return NULL;
+}
+
 CCNode* ChickenField::GetChickenNode(int index) const
 {
     CCNode* node = chickenSlots[GetRealIndex(index)];

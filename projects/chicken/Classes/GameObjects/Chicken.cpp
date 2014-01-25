@@ -17,7 +17,7 @@ bool Chicken::init()
 	}
     InitializeLifeMax();
 	InitializeLifeFatFactors();
-	SetDigestSpeed(1);
+	SetDigestSpeed(4);
 	// Load Sprites
     for (int i = 0 ; i < max; i++) {
         if ((FatStatus)i == slim) {
@@ -188,6 +188,9 @@ unsigned int Chicken::GetLife() const
 	return life;
 }
 void Chicken::UpdateHealthBar(){
+    if (life > lifeMax) {
+        return ;
+    }
     if (life <= lifeFatFactor[normal]) {
         healthSpr->setColor(ccc3(255,0,0));
     }else if (life <= lifeFatFactor[fat] ) {
@@ -219,6 +222,7 @@ void Chicken::IncreaseLife(unsigned int delta)
 void Chicken::DecreaseLife(unsigned int delta)
 {
     CCLog("DecreaseLife : %d",delta);
+    CCLog("DecreaseLife life: %d",life);
 	if (life - delta > 0)
 	{
 		life -= delta;
@@ -232,7 +236,7 @@ void Chicken::DecreaseLife(unsigned int delta)
 
 void Chicken::SetLife(unsigned int life)
 {
-	this->life = max(min(lifeMax, life), 0);
+	this->life = life;
 	UpdateHealthBar();
 }
 
@@ -342,15 +346,13 @@ void Chicken::Digest()
     int range = (rand() % digestRange) - digestRange;
 	DecreaseLife(digestValue+range);
     CCLog("Digest : %d",life);
-    if (life > 0) {
+    if (life > 0 && life < lifeMax) {
         CCDelayTime* delayTime = CCDelayTime::create(GetDigestSpeed());
         CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Chicken::Digest));
         CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
         this->runAction(seq);
     }else{
         stopAllActions();
-        ChickenField* chickenField = (ChickenField*)getParent()->getParent();
-        chickenField->RemoveChicken(idx+1);
     }
 }
 void Chicken::SetIdx(unsigned int aIdx){
