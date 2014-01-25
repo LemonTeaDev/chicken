@@ -7,12 +7,12 @@
 /* virtual */ bool Chicken::init()
 {
 	// Load Sprites
-	spriteFront[FatStatus::slim] = CCSprite::create("../../Resources/normal_chicken_slim_f.png");
-	spriteFront[FatStatus::normal] = CCSprite::create("../../Resources/normal_chicken_normal_f.png");
-	spriteFront[FatStatus::fat] = CCSprite::create("../../Resources/normal_chicken_fat_f.png");
-	spriteBack[FatStatus::slim] = CCSprite::create("../../Resources/normal_chicken_slim_b.png");
-	spriteBack[FatStatus::normal] = CCSprite::create("../../Resources/normal_chicken_normal_b.png");
-	spriteBack[FatStatus::fat] = CCSprite::create("../../Resources/normal_chicken_fat_b.png");
+	spriteFront[FatStatus::slim] = CCSprite::create("normal_chicken_slim_f.png");
+	spriteFront[FatStatus::normal] = CCSprite::create("normal_chicken_normal_f.png");
+	spriteFront[FatStatus::fat] = CCSprite::create("normal_chicken_fat_f.png");
+	spriteBack[FatStatus::slim] = CCSprite::create("normal_chicken_slim_b.png");
+	spriteBack[FatStatus::normal] = CCSprite::create("normal_chicken_normal_b.png");
+	spriteBack[FatStatus::fat] = CCSprite::create("normal_chicken_fat_b.png");
 
 	InitializeLifeMax();
 	InitializeLifeFatFactors();

@@ -1,5 +1,6 @@
 #include "Belt.h"
-#include "../Classes/Utility/CocosHelper.h"
+#include "Utility/CocosHelper.h"
+
 
 Belt::~Belt(){
     

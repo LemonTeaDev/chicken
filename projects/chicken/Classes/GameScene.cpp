@@ -39,13 +39,8 @@ bool GameScene::init()
 
     this->addChild(pLabel, 1);
 
-	
 
-	CCMenuItemImage *test = CCMenuItemImage::create("../Resources/replay.png", "../Resources/replay.png", this, menu_selector(GameScene::menuCloseCallback));
-	test->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
-	this->addChild(test, 1);
-
- //   CCSprite* pSprite = CCSprite::create("../Resources/GameScene.png");
+ //   CCSprite* pSprite = CCSprite::create("GameScene.png");
 //    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
 //    this->addChild(pSprite, 0);
