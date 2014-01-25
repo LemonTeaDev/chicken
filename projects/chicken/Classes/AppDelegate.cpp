@@ -36,7 +36,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #endif
 
     // run
-    pDirector->runWithScene(pScene);
+#ifndef _JY_TEST_
+	pDirector->runWithScene(pGameScene);
+#else
+	pDirector->runWithScene(pScene);
+#endif
 
     return true;
 }

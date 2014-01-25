@@ -37,7 +37,7 @@ bool GameScene::init()
 
     this->addChild(pLabel, 1);
 
- //   CCSprite* pSprite = CCSprite::create("../Resources/GameScene.png");
+ //   CCSprite* pSprite = CCSprite::create("GameScene.png");
 //    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
 //    this->addChild(pSprite, 0);
