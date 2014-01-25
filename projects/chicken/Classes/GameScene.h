@@ -20,6 +20,7 @@ public:
     
     virtual bool init();
     virtual void onEnter();
+    virtual void update(float delta);
     static cocos2d::CCScene* scene();
     
     
@@ -27,6 +28,7 @@ public:
     void ccTouchMoved(CCTouch* touch, CCEvent* event);
     void ccTouchEnded(CCTouch* touch, CCEvent* event);
     
+    void masterApper();
     void menuCloseCallback(CCObject* pSender);
     void menuStartCallback(CCObject* pSender);
     void menuReverseCallback(CCObject* pSender);

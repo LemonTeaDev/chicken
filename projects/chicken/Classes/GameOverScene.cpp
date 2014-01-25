@@ -36,8 +36,8 @@ bool GameOverScene::init()
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
-	CCMenuItemImage *pReplay = CCMenuItemImage::create("../Resources/replay.png", "../Resources/replay.png", this, menu_selector(GameOverScene::menuStartCallback));
-	CCMenuItemImage *pQuit = CCMenuItemImage::create("../Resources/quit.png", "../Resources/quit.png", this, menu_selector(GameOverScene::menuCloseCallback));
+	CCMenuItemImage *pReplay = CCMenuItemImage::create("replay.png", "replay.png", this, menu_selector(GameOverScene::menuStartCallback));
+	CCMenuItemImage *pQuit = CCMenuItemImage::create("quit.png", "quit.png", this, menu_selector(GameOverScene::menuCloseCallback));
 
 	pReplay->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
 	pQuit->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2 - pQuit->getContentSize().height));

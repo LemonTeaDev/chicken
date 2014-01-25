@@ -286,6 +286,15 @@
 		CDC4AEFA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEEA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png */; };
 		CDC4AEFB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEEB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png */; };
 		CDC4AEFC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEEC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png */; };
+		CDC4AF031893EEC6001AB582 /* belt_always.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEFD1893EEC6001AB582 /* belt_always.mp3 */; };
+		CDC4AF041893EEC6001AB582 /* belt_one.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEFE1893EEC6001AB582 /* belt_one.mp3 */; };
+		CDC4AF051893EEC6001AB582 /* eat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AEFF1893EEC6001AB582 /* eat.mp3 */; };
+		CDC4AF061893EEC6001AB582 /* footstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF001893EEC6001AB582 /* footstep.mp3 */; };
+		CDC4AF071893EEC6001AB582 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF011893EEC6001AB582 /* gameover.mp3 */; };
+		CDC4AF081893EEC6001AB582 /* hand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AF021893EEC6001AB582 /* hand.mp3 */; };
+		CDC4AF0B1893F081001AB582 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDC4AF091893F081001AB582 /* GameManager.cpp */; };
+		CDC4AF0E1893F2FE001AB582 /* GameStateNone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDC4AF0C1893F2FE001AB582 /* GameStateNone.cpp */; };
+		CDC4AF111893F30C001AB582 /* GameStateGaming.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDC4AF0F1893F30C001AB582 /* GameStateGaming.cpp */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -849,6 +858,18 @@
 		CDC4AEEA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_sliml_f_cry.png; sourceTree = "<group>"; };
 		CDC4AEEB1893E173001AB582 /* nomal_chicken_sliml_f_eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_sliml_f_eat.png; sourceTree = "<group>"; };
 		CDC4AEEC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_sliml_f_stand.png; sourceTree = "<group>"; };
+		CDC4AEFD1893EEC6001AB582 /* belt_always.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = belt_always.mp3; sourceTree = "<group>"; };
+		CDC4AEFE1893EEC6001AB582 /* belt_one.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = belt_one.mp3; sourceTree = "<group>"; };
+		CDC4AEFF1893EEC6001AB582 /* eat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eat.mp3; sourceTree = "<group>"; };
+		CDC4AF001893EEC6001AB582 /* footstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = footstep.mp3; sourceTree = "<group>"; };
+		CDC4AF011893EEC6001AB582 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameover.mp3; sourceTree = "<group>"; };
+		CDC4AF021893EEC6001AB582 /* hand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hand.mp3; sourceTree = "<group>"; };
+		CDC4AF091893F081001AB582 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		CDC4AF0A1893F081001AB582 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		CDC4AF0C1893F2FE001AB582 /* GameStateNone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStateNone.cpp; sourceTree = "<group>"; };
+		CDC4AF0D1893F2FE001AB582 /* GameStateNone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateNone.h; sourceTree = "<group>"; };
+		CDC4AF0F1893F30C001AB582 /* GameStateGaming.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStateGaming.cpp; sourceTree = "<group>"; };
+		CDC4AF101893F30C001AB582 /* GameStateGaming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateGaming.h; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -1961,6 +1982,12 @@
 		CDC4AEDA1893DFEB001AB582 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AEFD1893EEC6001AB582 /* belt_always.mp3 */,
+				CDC4AEFE1893EEC6001AB582 /* belt_one.mp3 */,
+				CDC4AEFF1893EEC6001AB582 /* eat.mp3 */,
+				CDC4AF001893EEC6001AB582 /* footstep.mp3 */,
+				CDC4AF011893EEC6001AB582 /* gameover.mp3 */,
+				CDC4AF021893EEC6001AB582 /* hand.mp3 */,
 				CDC4AEDB1893DFEB001AB582 /* bg_01.mp3 */,
 			);
 			path = Sound;
@@ -1977,6 +2004,12 @@
 				CDB87A5218937016008C05DB /* SaveData.h */,
 				CDC4AED61893DE51001AB582 /* SoundManager.cpp */,
 				CDC4AED71893DE51001AB582 /* SoundManager.h */,
+				CDC4AF091893F081001AB582 /* GameManager.cpp */,
+				CDC4AF0A1893F081001AB582 /* GameManager.h */,
+				CDC4AF0C1893F2FE001AB582 /* GameStateNone.cpp */,
+				CDC4AF0D1893F2FE001AB582 /* GameStateNone.h */,
+				CDC4AF0F1893F30C001AB582 /* GameStateGaming.cpp */,
+				CDC4AF101893F30C001AB582 /* GameStateGaming.h */,
 			);
 			name = Utility;
 			path = ../Classes/Utility;
@@ -2057,12 +2090,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC4AECA1893BE0C001AB582 /* light-1.png in Resources */,
+				CDC4AF081893EEC6001AB582 /* hand.mp3 in Resources */,
 				CDC4AEC91893BE0C001AB582 /* gear3.png in Resources */,
 				CDC4AED01893BE0C001AB582 /* quit_test.png in Resources */,
 				CDC4AEC71893BE0C001AB582 /* gear1.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				CDC4AEF61893E173001AB582 /* nomal_chicken_nomal_b_stand.png in Resources */,
 				CDC4AEF71893E173001AB582 /* nomal_chicken_nomal_f_cry.png in Resources */,
+				CDC4AF061893EEC6001AB582 /* footstep.mp3 in Resources */,
+				CDC4AF071893EEC6001AB582 /* gameover.mp3 in Resources */,
 				CDC4AEEE1893E173001AB582 /* hand_01.png in Resources */,
 				CDC4AEF81893E173001AB582 /* nomal_chicken_slim_b_eat.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
@@ -2075,6 +2111,7 @@
 				CDC4AEC81893BE0C001AB582 /* gear2.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				CDB87A8218938F47008C05DB /* belt-02.png in Resources */,
+				CDC4AF041893EEC6001AB582 /* belt_one.mp3 in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				CDC4AEC51893BE0C001AB582 /* back-1.png in Resources */,
 				CDC4AEFC1893E173001AB582 /* nomal_chicken_sliml_f_stand.png in Resources */,
@@ -2086,6 +2123,7 @@
 				CDB87A8518938F47008C05DB /* belt-05.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				CDC4AECC1893BE0C001AB582 /* light-3.png in Resources */,
+				CDC4AF051893EEC6001AB582 /* eat.mp3 in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				CDC4AEED1893E173001AB582 /* front-ef.png in Resources */,
 				CDC4AECF1893BE0C001AB582 /* nomal_chicken_nomal_f_stand.png in Resources */,
@@ -2104,6 +2142,7 @@
 				CDC4AED11893BE0C001AB582 /* quit.png in Resources */,
 				CDC4AECB1893BE0C001AB582 /* light-2.png in Resources */,
 				CDC4AEFA1893E173001AB582 /* nomal_chicken_sliml_f_cry.png in Resources */,
+				CDC4AF031893EEC6001AB582 /* belt_always.mp3 in Resources */,
 				CDB87A8418938F47008C05DB /* belt-04.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2132,6 +2171,7 @@
 				375BD4C61868411B0024609E /* TriggerObj.cpp in Sources */,
 				375BD4C31868411B0024609E /* ObjectFactory.cpp in Sources */,
 				15A3D90D1682F7D5002FB0C5 /* b2Math.cpp in Sources */,
+				CDC4AF0E1893F2FE001AB582 /* GameStateNone.cpp in Sources */,
 				15A3D90E1682F7D5002FB0C5 /* b2Settings.cpp in Sources */,
 				15A3D90F1682F7D5002FB0C5 /* b2StackAllocator.cpp in Sources */,
 				15A3D9101682F7D5002FB0C5 /* b2Timer.cpp in Sources */,
@@ -2303,6 +2343,7 @@
 				379BB99F17F03F3700829B88 /* CCDatas.cpp in Sources */,
 				379BB9A017F03F3700829B88 /* CCBatchNode.cpp in Sources */,
 				379BB9A117F03F3700829B88 /* CCDecorativeDisplay.cpp in Sources */,
+				CDC4AF111893F30C001AB582 /* GameStateGaming.cpp in Sources */,
 				379BB9A217F03F3700829B88 /* CCDisplayFactory.cpp in Sources */,
 				379BB9A317F03F3700829B88 /* CCDisplayManager.cpp in Sources */,
 				379BB9A417F03F3700829B88 /* CCSkin.cpp in Sources */,
@@ -2315,6 +2356,7 @@
 				379BB9AA17F03F3700829B88 /* CCTransformHelp.cpp in Sources */,
 				379BB9AB17F03F3700829B88 /* CCTweenFunction.cpp in Sources */,
 				379BB9AC17F03F3700829B88 /* CCUtilMath.cpp in Sources */,
+				CDC4AF0B1893F081001AB582 /* GameManager.cpp in Sources */,
 				379BB9AD17F03F3700829B88 /* CCComAttribute.cpp in Sources */,
 				379BB9AE17F03F3700829B88 /* CCComAudio.cpp in Sources */,
 				379BB9AF17F03F3700829B88 /* CCComController.cpp in Sources */,

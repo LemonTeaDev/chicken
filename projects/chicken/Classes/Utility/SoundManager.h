@@ -23,6 +23,7 @@ public:
     //static SoundManager* sharedSoundManager();
     void preloadGameSound();
     void playGameBgm();
+    void playBeltSound();
 protected:
     CC_SYNTHESIZE(SimpleAudioEngine *, audioEngine, AudioEngine);
 };

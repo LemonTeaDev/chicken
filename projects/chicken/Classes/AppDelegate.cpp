@@ -37,7 +37,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	//CCScene *pGameScene = GameOverScene::scene();
 
     // run
-    pDirector->runWithScene(pGameScene);
+    CCDirector::sharedDirector()->setDepthTest(true);
+	CCScene* transition = CCTransitionCrossFade::create(1.5f, pGameScene);
+    
+    pDirector->runWithScene(transition);
 
     return true;
 }

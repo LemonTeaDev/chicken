@@ -6,7 +6,7 @@
 #include "SoundManager.h"
 #include "Master.h"
 #include "GameObjects/ChickenField.h"
-
+#include "GameManager.h"
 GameScene::GameScene(){
     
 }
@@ -23,7 +23,6 @@ CCScene* GameScene::scene()
 
     // add layer as a child to scene
     scene->addChild(layer);
-
     // return the scene
     return scene;
 }
@@ -36,12 +35,13 @@ bool GameScene::init()
         return false;
     }
     SoundManager::sharedSoundManager()->playGameBgm();
+    SoundManager::sharedSoundManager()->playBeltSound();
     
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
     CCLog("%f %f",visibleSize.width, visibleSize.height);
-    CocosHelper::addSprite(this, "../Resources/back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
+    CocosHelper::addSprite(this, "back-1.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_BG,true,ccp(0.5f, 0.5f));
     
     // 컨베이어 벨트 + 기어즈
     Belt* belt = Belt::create();
@@ -74,11 +74,12 @@ bool GameScene::init()
     fogSpr->runAction(CCRepeatForever::create(sequence));
     */
     
-    CCMenuItem* pUp = CCMenuItemImage::create("../Resources/Icon-114.png", "../Resources/Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
+    /*
+    CCMenuItem* pUp = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
 	pUp->setTag(1);
-    CCMenuItem* pDown = CCMenuItemImage::create("../Resources/Icon-114.png", "../Resources/Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
+    CCMenuItem* pDown = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
     pDown->setTag(2);
-    CCMenuItem* pReverse = CCMenuItemImage::create("../Resources/Icon-114.png", "../Resources/Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
+    CCMenuItem* pReverse = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
     pReverse->setTag(3);
     
 	pUp->setPosition(ccp(50, origin.y + visibleSize.height / 2));
@@ -89,8 +90,11 @@ bool GameScene::init()
     
     pMenu->setPosition(CCPointZero);
 	addChild(pMenu, 1);
-    
+    */
     CCLog("this : %p",this);
+    scheduleUpdateWithPriority(1);
+    GameManager::sharedGameManager()->sendMessage(GameMessageGameStart);
+    GameManager::sharedGameManager()->setMasterAppearListener(callfunc_selector(GameScene::masterApper), this);
     return true;
 }
 void GameScene::onEnter(){
@@ -98,12 +102,17 @@ void GameScene::onEnter(){
     pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
     CCNode::onEnter();
 }
+
+void GameScene::update(float delta){
+    GameManager *gm = GameManager::sharedGameManager();
+    gm->update(delta);
+}
 bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
     CCPoint touchPoint = touch->getLocation();
     Master* master = Master::create();
     master->setAnchorPoint(ccp(0.5f,0.5f));
-    master->setPosition(ccp(touchPoint.x, touchPoint.y));
+    master->setPosition(ccp(touchPoint.x, touchPoint.y-40));
     
     CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
     master->runAction(sequence);
@@ -116,6 +125,19 @@ void GameScene::ccTouchMoved(CCTouch* touch, CCEvent* event)
 }
 void GameScene::ccTouchEnded(CCTouch* touch, CCEvent* event)
 {
+    
+}
+void GameScene::masterApper(){
+    CCLog("MASTER APPEAR");
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+    CCPoint touchPoint = ccp(visibleSize.width/2, visibleSize.height/2);
+    Master* master = Master::create();
+    master->setAnchorPoint(ccp(0.5f,0.5f));
+    master->setPosition(ccp(touchPoint.x, touchPoint.y-40));
+    
+    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
+    master->runAction(sequence);
+    addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
     
 }
 void GameScene::menuCloseCallback(CCObject* pSender)
