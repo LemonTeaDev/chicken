@@ -29,6 +29,7 @@ public:
     void ccTouchMoved(CCTouch* touch, CCEvent* event);
     void ccTouchEnded(CCTouch* touch, CCEvent* event);
     
+    void playBeltSound();
     void masterApper();
     void masterProgress(float dt);
     void menuCloseCallback(CCObject* pSender);

@@ -13,9 +13,9 @@ SoundManager* onlySoundManager = NULL;
 SoundManager::SoundManager(){
     this->audioEngine = SimpleAudioEngine::sharedEngine();
 #if 1
-    this->audioEngine->setEffectsVolume(0.2f);
-    this->audioEngine->setEffectsVolume(0);
-    this->audioEngine->setBackgroundMusicVolume(0);
+    this->audioEngine->setEffectsVolume(0.5f);
+    //this->audioEngine->setEffectsVolume(0);
+    //this->audioEngine->setBackgroundMusicVolume(0);
 #endif
 }
 
@@ -34,6 +34,14 @@ SoundManager* SoundManager::sharedSoundManager(){
 
 void SoundManager::preloadGameSound(){
     audioEngine->preloadEffect("belt_always.mp3");
+    audioEngine->preloadEffect("belt_one.mp3");
+    audioEngine->preloadEffect("button.mp3");
+    audioEngine->preloadEffect("create_chicken.mp3");
+    audioEngine->preloadEffect("eat_fail.mp3");
+    audioEngine->preloadEffect("eat.mp3");
+    audioEngine->preloadEffect("footstep.mp3");
+    audioEngine->preloadEffect("gameover.mp3");
+    audioEngine->preloadEffect("hand.mp3");
 }
 
 void SoundManager::playGameBgm()
@@ -42,5 +50,28 @@ void SoundManager::playGameBgm()
 }
 
 void SoundManager::playBeltSound(){
-    audioEngine->playEffect("belt_always.mp3", true);
+    audioEngine->playEffect("belt_always.mp3", false);
+}
+
+void SoundManager::playBeltOneSound(){
+    audioEngine->playEffect("belt_one.mp3", false);
+}
+void SoundManager::playButtonSound(){
+    audioEngine->playEffect("button.mp3", false);
+}
+void SoundManager::playCreateChickenSound(){
+    audioEngine->playEffect("create_chicken.mp3", false);
+}
+void SoundManager::playEatFailSound()
+{
+    audioEngine->playEffect("eat_fail.mp3", false);
+}
+void SoundManager::playEatSound(){
+    audioEngine->playEffect("eat.mp3", false);
+}
+void SoundManager::playGameOverSound(){
+    audioEngine->playEffect("gameover.mp3", false);
+}
+void SoundManager::playHandSound(){
+    audioEngine->playEffect("hand.mp3", false);
 }

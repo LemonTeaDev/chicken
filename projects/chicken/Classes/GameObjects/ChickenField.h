@@ -31,6 +31,7 @@ public:
 	// index는 1부터 8까지!
 	void AddChicken(int index, Chicken* chicken);
 	Chicken* GetChicken(int index) const;
+    Chicken* GetMinHealthChicken() const;
     CCNode* GetChickenNode(int index) const;
 	void RemoveChicken(int index);
 

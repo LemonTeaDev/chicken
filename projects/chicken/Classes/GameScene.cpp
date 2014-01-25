@@ -41,7 +41,7 @@ bool GameScene::init()
         return false;
     }
     SoundManager::sharedSoundManager()->playGameBgm();
-    SoundManager::sharedSoundManager()->playBeltSound();
+    playBeltSound();
     
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
@@ -137,25 +137,35 @@ void GameScene::ccTouchEnded(CCTouch* touch, CCEvent* event)
 {
     
 }
+void GameScene::playBeltSound(){
+    SoundManager::sharedSoundManager()->playBeltOneSound();
+    runAction(CCSequence::create(CCDelayTime::create(0.5),CCCallFunc::create(this, callfunc_selector(GameScene::playBeltSound)),NULL));
+}
 void GameScene::masterApper(){
     CCLog("MASTER APPEAR");
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     ChickenField* chickenField = (ChickenField*)getChildByTag(GAME_SCENE_CHICKEN);
-    int randIdx = rand() % ChickenField::SLOT_COUNT + 1;
-    CCNode* chickenLayer = chickenField->GetChickenNode(randIdx);
-    
-    CCPoint touchPoint = chickenLayer->getPosition();
-    Master* master = Master::create();
-    master->setAnchorPoint(ccp(0.5f,0.5f));
-    if (touchPoint.y > visibleSize.height/2) {
-        master->setPosition(touchPoint.x, visibleSize.height);
-        addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
-        master->runStartAction(touchPoint,true);
+    Chicken* minHealthChicken = chickenField->GetMinHealthChicken();
+    if (minHealthChicken->GetIsCaptureAble()) {
+        int idx = minHealthChicken->GetIdx()+1;
+        CCNode* chickenLayer = chickenField->GetChickenNode(idx);
+        CCPoint touchPoint = chickenLayer->getPosition();
+        
+        Master* master = Master::create();
+        master->setAnchorPoint(ccp(0.5f,0.5f));
+        if (touchPoint.y > visibleSize.height/2) {
+            master->setPosition(touchPoint.x, visibleSize.height);
+            addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+            master->runStartAction(touchPoint,true,chickenField,idx);
+        }else{
+            master->setPosition(touchPoint.x, 0);
+            addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
+            master->runStartAction(touchPoint,false,chickenField,idx);
+        }
     }else{
-        master->setPosition(touchPoint.x, 0);
-        addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
-        master->runStartAction(touchPoint,false);
+        
     }
+    
 }
 
 void GameScene::masterProgress(float dt){

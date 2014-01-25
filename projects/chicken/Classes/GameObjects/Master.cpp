@@ -1,5 +1,7 @@
 #include "Master.h"
 #include "CocosHelper.h"
+#include "SoundManager.h"
+#include "ChickenField.h"
 Master::~Master(){
     
 }
@@ -43,8 +45,11 @@ void Master::drawBackground(){
     masterSpr->setAnchorPoint(CCPointMake(0.5f, 0.5f));
 }
 
-void Master::runStartAction(CCPoint point, bool aIsUp){
+void Master::runStartAction(CCPoint point, bool aIsUp, ChickenField* aRemoveChickenField,int idx){
+    SoundManager::sharedSoundManager()->playHandSound();
     isUp = aIsUp;
+    removeChickenField = aRemoveChickenField;
+    removeIdx = idx;
     CCPoint adjustPoint = point;
     if (isUp) {
         setRotation(180);
@@ -52,7 +57,7 @@ void Master::runStartAction(CCPoint point, bool aIsUp){
     }else{
         adjustPoint.y = adjustPoint.y-55;
     }
-    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, adjustPoint),CCCallFunc::create(this, callfunc_selector(Master::runGrapAction)), NULL);
+    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, adjustPoint),CCCallFunc::create(this, callfunc_selector(Master::runGrapAction)) ,NULL);
     runAction(sequence);
 }
 
@@ -64,4 +69,20 @@ void Master::runGrapAction(){
     CCAnimate *masterSprAnimate = CCAnimate::create(masterSprAnimation);
     CCSequence* sequence = CCSequence::create(masterSprAnimate,CCRemoveSelf::create(),NULL);
     masterSpr->runAction(sequence);
+    
+    removeChickenField->RemoveChicken(removeIdx);
+    runAction(CCSequence::create(CCDelayTime::create(2.0f),CCCallFunc::create(this, callfunc_selector(Master::reSpawn)),NULL));
+}
+
+void Master::reSpawn(){
+    Chicken* chicken = Chicken::create();
+    if (removeIdx <= 4) {
+        chicken->SetChickenSide(Chicken::front);
+    }else{
+        chicken->SetChickenSide(Chicken::back);
+    }
+    chicken->setScale(0.0f);
+    chicken->SetIdx(removeIdx-1);
+    removeChickenField->AddChicken(removeIdx, chicken);
+    chicken->runAction(CCScaleTo::create(0.5f, 1.0f));
 }

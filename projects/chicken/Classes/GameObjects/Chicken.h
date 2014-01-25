@@ -50,13 +50,14 @@ public:
 	void DecreaseLife(unsigned int delta);
 	void Digest();
 	void SetLife(unsigned int life);
-	
+    void SetIdx(unsigned int aIdx);
+	unsigned int GetIdx() const;
 	FatStatus GetFatStatus() const;
-
+    bool GetIsCaptureAble();
 	// 몇 초에 한 번 소화가 되게 할 것인가?
 	unsigned int GetDigestSpeed() const;
 	void SetDigestSpeed(unsigned int speed);
-
+    
 	void Eat(Food* food);
 
 	// 앞보는 치킨이냐, 뒤보는 치킨이냐
@@ -72,7 +73,10 @@ protected:
 
 	unsigned int life;
 	unsigned int lifeMax;
-
+    unsigned int digestRange;
+    unsigned int digestValue;
+    
+    unsigned int idx;
     CCSprite* chickenSpr;
     CCSprite* healthSpr;
 	std::map<FatStatus, CCTexture2D*> spriteFront;

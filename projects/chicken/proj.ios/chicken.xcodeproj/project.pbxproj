@@ -356,6 +356,11 @@
 		CDC4AFAB18943202001AB582 /* item_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFA218943202001AB582 /* item_red.png */; };
 		CDC4AFAC18943202001AB582 /* item_up.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFA318943202001AB582 /* item_up.PNG */; };
 		CDC4AFAD18943202001AB582 /* item_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFA418943202001AB582 /* item_yellow.png */; };
+		CDC4AFB318943576001AB582 /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFAE18943576001AB582 /* button.mp3 */; };
+		CDC4AFB418943576001AB582 /* create_chicken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFAF18943576001AB582 /* create_chicken.mp3 */; };
+		CDC4AFB518943576001AB582 /* eat_fail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFB018943576001AB582 /* eat_fail.mp3 */; };
+		CDC4AFB618943576001AB582 /* get_item.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFB118943576001AB582 /* get_item.mp3 */; };
+		CDC4AFB718943576001AB582 /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFB218943576001AB582 /* title.mp3 */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -989,6 +994,11 @@
 		CDC4AFA218943202001AB582 /* item_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_red.png; sourceTree = "<group>"; };
 		CDC4AFA318943202001AB582 /* item_up.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_up.PNG; sourceTree = "<group>"; };
 		CDC4AFA418943202001AB582 /* item_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_yellow.png; sourceTree = "<group>"; };
+		CDC4AFAE18943576001AB582 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
+		CDC4AFAF18943576001AB582 /* create_chicken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = create_chicken.mp3; sourceTree = "<group>"; };
+		CDC4AFB018943576001AB582 /* eat_fail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eat_fail.mp3; sourceTree = "<group>"; };
+		CDC4AFB118943576001AB582 /* get_item.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = get_item.mp3; sourceTree = "<group>"; };
+		CDC4AFB218943576001AB582 /* title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title.mp3; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -2107,6 +2117,11 @@
 		CDC4AEDA1893DFEB001AB582 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AFAE18943576001AB582 /* button.mp3 */,
+				CDC4AFAF18943576001AB582 /* create_chicken.mp3 */,
+				CDC4AFB018943576001AB582 /* eat_fail.mp3 */,
+				CDC4AFB118943576001AB582 /* get_item.mp3 */,
+				CDC4AFB218943576001AB582 /* title.mp3 */,
 				CDC4AEFD1893EEC6001AB582 /* belt_always.mp3 */,
 				CDC4AEFE1893EEC6001AB582 /* belt_one.mp3 */,
 				CDC4AEFF1893EEC6001AB582 /* eat.mp3 */,
@@ -2291,6 +2306,7 @@
 				CDC4AF8F18942D6A001AB582 /* weeklyrank_friend_info_bestscore.fnt in Resources */,
 				CDC4AF6C18942D6A001AB582 /* gameresult_score_bonusfont.png in Resources */,
 				CDC4AEC91893BE0C001AB582 /* gear3.png in Resources */,
+				CDC4AFB618943576001AB582 /* get_item.mp3 in Resources */,
 				CDC4AED01893BE0C001AB582 /* quit_test.png in Resources */,
 				CDC4AF6518942D6A001AB582 /* gameresult_levelup.fnt in Resources */,
 				CDC4AF9018942D6A001AB582 /* weeklyrank_friend_info_bestscore.png in Resources */,
@@ -2303,6 +2319,7 @@
 				CDC4AF7E18942D6A001AB582 /* playui_single_itembiscuit_font.png in Resources */,
 				CDC4AEEE1893E173001AB582 /* hand_01.png in Resources */,
 				CDC4AEF81893E173001AB582 /* nomal_chicken_slim_b_eat.png in Resources */,
+				CDC4AFB718943576001AB582 /* title.mp3 in Resources */,
 				CDC4AF7918942D6A001AB582 /* playui_fever_xcombo.fnt in Resources */,
 				CDC4AF7818942D6A001AB582 /* playui_combo.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
@@ -2320,6 +2337,8 @@
 				CDC4AF6E18942D6A001AB582 /* itemshop_itempiece.png in Resources */,
 				CDC4AF1418940E57001AB582 /* nomal_chicken_slim_f_eat.png in Resources */,
 				CDC4AF6B18942D6A001AB582 /* gameresult_score_bonusfont.fnt in Resources */,
+				CDC4AFB518943576001AB582 /* eat_fail.mp3 in Resources */,
+				CDC4AFB418943576001AB582 /* create_chicken.mp3 in Resources */,
 				CDC4AF7A18942D6A001AB582 /* playui_fever_xcombo.png in Resources */,
 				CDC4AF1E189410CE001AB582 /* nomal_chicken_normal_f_eat.png in Resources */,
 				CDC4AFA618943202001AB582 /* item_blue.png in Resources */,
@@ -2359,6 +2378,7 @@
 				CDC4AFAA18943202001AB582 /* item_feed3.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				CDC4AF1F189410CE001AB582 /* nomal_chicken_normal_f_stand.png in Resources */,
+				CDC4AFB318943576001AB582 /* button.mp3 in Resources */,
 				CDC4AF7718942D6A001AB582 /* playui_combo.fnt in Resources */,
 				CDC4AEED1893E173001AB582 /* front-ef.png in Resources */,
 				CDB87A8318938F47008C05DB /* belt-03.png in Resources */,

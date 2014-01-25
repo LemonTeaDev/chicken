@@ -30,6 +30,7 @@
         }else{
             chicken->SetChickenSide(Chicken::back);
         }
+        chicken->SetIdx(i);
 		slot->addChild(chicken,CHICKEN_TAG,CHICKEN_TAG);
         addChild(slot);
         *slotItr = slot;
@@ -85,6 +86,42 @@ Chicken* ChickenField::GetChicken(int index) const
     CCNode* node = chickenSlots[GetRealIndex(index)];
 	return dynamic_cast<Chicken*>(
 		node->getChildByTag(CHICKEN_TAG));
+}
+Chicken* ChickenField::GetMinHealthChicken() const{
+    
+    if (rand() % 2 == 0) {
+        CCNode* node = *(chickenSlots.begin());
+        Chicken* minChicken = (Chicken* )node->getChildByTag(CHICKEN_TAG);
+        for (auto slotItr = chickenSlots.begin(); slotItr != chickenSlots.end(); ++slotItr)
+        {
+            auto slot = *slotItr;
+            if (minChicken == NULL) {
+                minChicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            }
+            Chicken* chicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            if (chicken != NULL && minChicken != NULL && chicken->GetLife() < minChicken->GetLife()) {
+                minChicken = chicken;
+            }
+        }
+         return minChicken;
+    }else{
+        CCNode* node = *(chickenSlots.rbegin());
+        Chicken* minChicken = (Chicken* )node->getChildByTag(CHICKEN_TAG);
+        for (auto slotItr = chickenSlots.rbegin(); slotItr != chickenSlots.rend(); ++slotItr)
+        {
+            auto slot = *slotItr;
+            if (minChicken == NULL) {
+                minChicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            }
+            Chicken* chicken = (Chicken*)slot->getChildByTag(CHICKEN_TAG);
+            if (chicken != NULL && minChicken != NULL && chicken->GetLife() < minChicken->GetLife()) {
+                minChicken = chicken;
+            }
+        }
+         return minChicken;
+    }
+
+    return NULL;
 }
 CCNode* ChickenField::GetChickenNode(int index) const
 {

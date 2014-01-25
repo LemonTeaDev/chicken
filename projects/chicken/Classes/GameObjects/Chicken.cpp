@@ -3,7 +3,7 @@
 #include "CocosHelper.h"
 #include "GameScene.h"
 #include "Belt.h"
-
+#include "ChickenField.h"
 /////////////////////////////////////////////////
 // init
 /////////////////////////////////////////////////
@@ -17,7 +17,7 @@ bool Chicken::init()
 	}
     InitializeLifeMax();
 	InitializeLifeFatFactors();
-	SetDigestSpeed(4);
+	SetDigestSpeed(1);
 	// Load Sprites
     for (int i = 0 ; i < max; i++) {
         if ((FatStatus)i == slim) {
@@ -123,6 +123,9 @@ void Chicken::chickenTouch(CCObject* pSender){
 	lifeFatFactor[slim] = 0;
 	lifeFatFactor[normal] = 30;
 	lifeFatFactor[fat] = 70;
+    
+    digestRange = 3;
+    digestValue = 5;
 }
 
 /////////////////////////////////////////////////
@@ -130,10 +133,6 @@ void Chicken::chickenTouch(CCObject* pSender){
 /////////////////////////////////////////////////
 Chicken::FatStatus Chicken::GetFatStatus() const
 {
-#if 1
-    return fat;
-#endif
-    
 	if (lifeFatFactor[slim] <= life &&
 		life < lifeFatFactor[normal])
 	{
@@ -149,7 +148,15 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 		return fat;
 	}
 }
-
+bool Chicken::GetIsCaptureAble(){
+    CCLog("GetIsCaptureAble life : %d",life);
+    if (lifeFatFactor[normal]/2 > life ||
+		life > lifeMax - (lifeMax-lifeFatFactor[fat])/2)
+	{
+		return true;
+	}
+    return false;
+}
 //////////////////////////////////////////////////////
 // set max life (value differs by the chicken species)
 //////////////////////////////////////////////////////
@@ -172,14 +179,20 @@ unsigned int Chicken::GetLife() const
 	return life;
 }
 void Chicken::UpdateHealthBar(){
-    if (life <= 25) {
+    if (life <= lifeFatFactor[normal]) {
         healthSpr->setColor(ccc3(255,0,0));
-    }else if (life <= 75) {
+    }else if (life <= lifeFatFactor[fat] ) {
         healthSpr->setColor(ccc3(0,255,0));
     }else{
         healthSpr->setColor(ccc3(255,255,0));
     }
-    healthSpr->setScaleX(((float)life/(float)lifeMax));
+    if (((float)life/(float)lifeMax) <= 0) {
+        healthSpr->setScaleX(0);
+    }else if(((float)life/(float)lifeMax) >= 1){
+        healthSpr->setScaleX(1);
+    }else{
+        healthSpr->setScaleX(((float)life/(float)lifeMax));
+    }
 }
 void Chicken::IncreaseLife(unsigned int delta)
 {
@@ -196,6 +209,7 @@ void Chicken::IncreaseLife(unsigned int delta)
 
 void Chicken::DecreaseLife(unsigned int delta)
 {
+    CCLog("DecreaseLife : %d",delta);
 	if (life - delta > 0)
 	{
 		life -= delta;
@@ -308,10 +322,23 @@ void Chicken::SetDigestSpeed(unsigned int speed)
 
 void Chicken::Digest()
 {
-	DecreaseLife(1);
-
-	CCDelayTime* delayTime = CCDelayTime::create(GetDigestSpeed());
-	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Chicken::Digest));
-	CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
-	this->runAction(seq);
+    int range = (rand() % digestRange) - digestRange;
+	DecreaseLife(digestValue+range);
+    CCLog("Digest : %d",life);
+    if (life > 0) {
+        CCDelayTime* delayTime = CCDelayTime::create(GetDigestSpeed());
+        CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Chicken::Digest));
+        CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
+        this->runAction(seq);
+    }else{
+        stopAllActions();
+        ChickenField* chickenField = (ChickenField*)getParent()->getParent();
+        chickenField->RemoveChicken(idx+1);
+    }
+}
+void Chicken::SetIdx(unsigned int aIdx){
+    idx = aIdx;
+}
+unsigned int Chicken::GetIdx() const{
+    return idx;
 }

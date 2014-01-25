@@ -24,6 +24,13 @@ public:
     void preloadGameSound();
     void playGameBgm();
     void playBeltSound();
+    void playBeltOneSound();
+    void playButtonSound();
+    void playCreateChickenSound();
+    void playEatFailSound();
+    void playEatSound();
+    void playGameOverSound();
+    void playHandSound();
 protected:
     CC_SYNTHESIZE(SimpleAudioEngine *, audioEngine, AudioEngine);
 };
