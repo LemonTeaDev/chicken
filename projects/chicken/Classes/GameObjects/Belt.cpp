@@ -1,5 +1,5 @@
 #include "Belt.h"
-#include "Utility/CocosHelper.h"
+#include "CocosHelper.h"
 #include "Chicken.h"
 #include "Food.h"
 #include <algorithm>
@@ -66,7 +66,7 @@ float Belt::SpeedToTimeTick(float speed) const
  
 void Belt::drawBackground(){
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    beltSpr = CocosHelper::addSprite(this, "../Resources/belt-01.png", ccp(visibleSize.width/2, 220), 0, true, ccp(0.5f, 0.5f));
+    beltSpr = CocosHelper::addSprite(this, "belt-01.png", ccp(visibleSize.width/2, 220), 0, true, ccp(0.5f, 0.5f));
     
     runBelt();
 }
@@ -75,6 +75,7 @@ void Belt::runBelt()
 {
     CCAnimation* beltSprAnimation = CCAnimation::create();
     beltSprAnimation->setDelayPerUnit(SpeedToTimeTick(beltSpeed));
+
     beltSprAnimation->addSpriteFrameWithFileName("belt-02.png");
     beltSprAnimation->addSpriteFrameWithFileName("belt-03.png");
     beltSprAnimation->addSpriteFrameWithFileName("belt-04.png");
@@ -99,18 +100,18 @@ void Belt::drawGear()
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
 	//왼쪽 기어
-	gear[0] = CCSprite::create("../Resources/gear3.png");
-	gear[1] = CCSprite::create("../Resources/gear2.png");
-	gear[2] = CCSprite::create("../Resources/gear1.png");
+	gear[0] = CCSprite::create("gear3.png");
+	gear[1] = CCSprite::create("gear2.png");
+	gear[2] = CCSprite::create("gear1.png");
 
 	gear[0]->setPosition(ccp(origin.x + (gear[0]->getContentSize().width) * 2 + 4.0, 220 - 50.0));
 	gear[1]->setPosition(ccp(origin.x + gear[1]->getContentSize().width / 2 + 4.0, 220 - 60.0));
 	gear[2]->setPosition(ccp(origin.x + (gear[2]->getContentSize().width) * 3 - 4.5, 220 - 75.0));
 
 	//오른쪽 기어
-	gear[3] = CCSprite::create("../Resources/gear3.png");
-	gear[4] = CCSprite::create("../Resources/gear2.png");
-	gear[5] = CCSprite::create("../Resources/gear1.png");
+	gear[3] = CCSprite::create("gear3.png");
+	gear[4] = CCSprite::create("gear2.png");
+	gear[5] = CCSprite::create("gear1.png");
 
 	gear[3]->setPosition(ccp(visibleSize.width - (gear[0]->getContentSize().width) * 2 - 4.0, 220 - 50.0));
 	gear[4]->setPosition(ccp(visibleSize.width - gear[1]->getContentSize().width / 2 - 4.0, 220 - 60.0));

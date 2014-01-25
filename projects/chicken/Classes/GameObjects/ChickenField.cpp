@@ -22,9 +22,9 @@
 		slot = CCLayerColor::create(ccc4(255, rand()%255, rand()%255, 255));
 		slot->setContentSize(CCSizeMake(CHICKEN_SLOT_WIDTH, CHICKEN_SLOT_HEIGHT));
         slot->setAnchorPoint(ccp(0.0f, 0.0f));
-		slot->setPosition(layerCenterPos[i]);
+		//slot->setPosition(layerCenterPos[i]);
 		this->addChild(slot);
-		i++;
+		//i++;
 	}
 	
 	return true;
