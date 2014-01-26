@@ -5,7 +5,7 @@
 #include "JYTestScene.h"
 #endif
 #include "GameScene.h"
-
+#include "Opening.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -33,7 +33,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
    // CCScene *pGameScene = GameScene::scene();
 	//CCScene *pScene = GameOverScene::scene();
-	CCScene *pGameScene = StartScene::scene();
+	CCScene *pGameScene = OpeningOne::scene();
 	//CCScene *pGameScene = GameOverScene::scene();
 
     // run
