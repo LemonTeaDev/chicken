@@ -227,6 +227,9 @@
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		CD7F10ED1894BE1000D18FC5 /* credit_bt.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7F10EB1894BE1000D18FC5 /* credit_bt.png */; };
+		CD7F10EE1894BE1000D18FC5 /* credit_in.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7F10EC1894BE1000D18FC5 /* credit_in.png */; };
+		CD7F113C1894BF9400D18FC5 /* CreditScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD7F113A1894BF9400D18FC5 /* CreditScene.cpp */; };
 		CDB87A4E18936F6D008C05DB /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A4818936F6D008C05DB /* GameOverScene.cpp */; };
 		CDB87A4F18936F6D008C05DB /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A4A18936F6D008C05DB /* GameScene.cpp */; };
 		CDB87A5018936F6D008C05DB /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A4C18936F6D008C05DB /* StartScene.cpp */; };
@@ -864,6 +867,10 @@
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CD7F10EB1894BE1000D18FC5 /* credit_bt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credit_bt.png; sourceTree = "<group>"; };
+		CD7F10EC1894BE1000D18FC5 /* credit_in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credit_in.png; sourceTree = "<group>"; };
+		CD7F113A1894BF9400D18FC5 /* CreditScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CreditScene.cpp; path = ../Classes/CreditScene.cpp; sourceTree = "<group>"; };
+		CD7F113B1894BF9400D18FC5 /* CreditScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditScene.h; path = ../Classes/CreditScene.h; sourceTree = "<group>"; };
 		CDB87A4818936F6D008C05DB /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
 		CDB87A4918936F6D008C05DB /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../Classes/GameOverScene.h; sourceTree = "<group>"; };
 		CDB87A4A18936F6D008C05DB /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
@@ -1582,6 +1589,8 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
+				CD7F113A1894BF9400D18FC5 /* CreditScene.cpp */,
+				CD7F113B1894BF9400D18FC5 /* CreditScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -2036,6 +2045,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CD7F10EB1894BE1000D18FC5 /* credit_bt.png */,
+				CD7F10EC1894BE1000D18FC5 /* credit_in.png */,
 				CDC4B0FE1894B738001AB582 /* life.png */,
 				CDC4AFEB1894AF48001AB582 /* back-1.png */,
 				CDC4AFEC1894AF48001AB582 /* belt-01.png */,
@@ -2426,6 +2437,7 @@
 				CDC4B0FD1894AF49001AB582 /* StartScene.png in Resources */,
 				CDC4B0B31894AF49001AB582 /* weeklyrank_friend_score.png in Resources */,
 				CDC4B0CF1894AF49001AB582 /* light-ef.png in Resources */,
+				CD7F10ED1894BE1000D18FC5 /* credit_bt.png in Resources */,
 				CDC4B0C81894AF49001AB582 /* item_feed3.png in Resources */,
 				CDC4B0921894AF49001AB582 /* playui_candyuse_num.fnt in Resources */,
 				CDC4B0FA1894AF49001AB582 /* hand.mp3 in Resources */,
@@ -2482,6 +2494,7 @@
 				CDC4B08C1894AF49001AB582 /* itemshop_itemprice.fnt in Resources */,
 				CDC4B0E71894AF49001AB582 /* op_ef2.png in Resources */,
 				CDC4B0C21894AF49001AB582 /* HelloWorld.png in Resources */,
+				CD7F10EE1894BE1000D18FC5 /* credit_in.png in Resources */,
 				CDC4B0961894AF49001AB582 /* playui_fever_xcombo.fnt in Resources */,
 				CDC4B0C51894AF49001AB582 /* item_down.png in Resources */,
 				CDC4B0A41894AF49001AB582 /* ui_level_mylevel.fnt in Resources */,
@@ -2615,6 +2628,7 @@
 				CDB87A701893870A008C05DB /* Belt.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
+				CD7F113C1894BF9400D18FC5 /* CreditScene.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
 				CDC4AFC618949DE0001AB582 /* Opening.cpp in Sources */,
 				CDB87A57189371DC008C05DB /* JYTestScene.cpp in Sources */,

@@ -342,7 +342,7 @@ void Belt::generateFoods()
 		loadFood(pFood);
 	}
 
-	CCDelayTime* delayTime = CCDelayTime::create(SpeedToTimeTick(beltSpeed) * 5);
+	CCDelayTime* delayTime = CCDelayTime::create(SpeedToTimeTick(beltSpeed) * 3);
 	CCCallFunc* funcCall = CCCallFunc::create(this, callfunc_selector(Belt::generateFoods));
 	CCFiniteTimeAction* seq = CCSequence::create(delayTime, funcCall, nullptr);
 	this->runAction(seq);

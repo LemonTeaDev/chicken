@@ -102,7 +102,10 @@ void GameScene::update(float delta){
 }
 bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
-
+#if 0
+    CCScene* scene = GameOverScene::scene();
+    CCDirector::sharedDirector()->replaceScene(scene);
+#endif
     return true;
 }
 void GameScene::ccTouchMoved(CCTouch* touch, CCEvent* event)

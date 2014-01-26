@@ -137,8 +137,8 @@ void Chicken::InitializeLifeFatFactors()
 	lifeFatFactor[normal] = 30;
 	lifeFatFactor[fat] = 70;
     
-    digestRange = 3;
-    digestValue = 5;
+    digestRange = 2;
+    digestValue = 3;
 }
 
 /////////////////////////////////////////////////

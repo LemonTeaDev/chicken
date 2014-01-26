@@ -80,7 +80,8 @@ void SoundManager::playItemSound(){
     audioEngine->playEffect("get_item.mp3", false);
 }
 void SoundManager::playGameOverSound(){
-    audioEngine->playEffect("gameover.mp3", false);
+    audioEngine->stopBackgroundMusic();
+    audioEngine->playBackgroundMusic("gameover.mp3", true);
 }
 void SoundManager::playHandSound(){
     audioEngine->playEffect("hand.mp3", false);
