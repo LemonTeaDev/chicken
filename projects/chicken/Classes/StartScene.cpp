@@ -61,6 +61,7 @@ bool StartScene::init()
 
 void StartScene::menuStartCallback(CCObject* pSender)
 {
+    SoundManager::sharedSoundManager()->playButtonSound();
     ((CCNode*)(pSender))->runAction(CCSequence::create(CCScaleTo::create(0.25f, 1.1f),CCScaleTo::create(0.25f, 1.0f),CCCallFunc::create(this, callfunc_selector(StartScene::menuStartAniEnd)),NULL));
 }
 

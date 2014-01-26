@@ -91,15 +91,16 @@ void GameOverScene::menuCloseCallback(CCObject* pSender)
 void GameOverScene::menuStartCallback(CCObject* pSender)
 {
     CCNode* node = (CCNode*)(pSender);
+    SoundManager::sharedSoundManager()->playButtonSound();
     if (node->getTag() == 0) {
         (node)->runAction(CCSequence::create(CCScaleTo::create(0.25f, 1.1f),CCScaleTo::create(0.25f, 1.0f),CCCallFunc::create(this, callfunc_selector(GameOverScene::menuStartAniEnd)),NULL));
     }else{
         CCScene *pScene = CreditScene::scene();
-        CCDirector::sharedDirector()->pushScene(pScene);
+        CCDirector::sharedDirector()->replaceScene(pScene);
     }
     
 }
 void GameOverScene::menuStartAniEnd(){
     CCScene *pScene = GameScene::scene();
-	CCDirector::sharedDirector()->pushScene(pScene);
+	CCDirector::sharedDirector()->replaceScene(pScene);
 }

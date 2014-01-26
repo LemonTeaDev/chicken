@@ -17,7 +17,7 @@ public:
     
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::CCScene* scene();
-    
+    void onEnter();
     // a selector callback
     bool ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
     // implement the "static node()" method manually

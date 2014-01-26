@@ -8,7 +8,8 @@
 
 #include "CreditScene.h"
 #include "CocosHelper.h"
-
+#include "GameOverScene.h"
+#include "SoundManager.h"
 USING_NS_CC;
 CreditScene::CreditScene(){
     
@@ -46,8 +47,15 @@ bool CreditScene::init()
     CCSprite* spr = CocosHelper::addSprite(this, "credit_in.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), 0, true, ccp(0.5f,0.5f));
     return true;
 }
+void CreditScene::onEnter(){
+    CCDirector* pDirector = CCDirector::sharedDirector();
+    pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
+    CCNode::onEnter();
+}
 bool CreditScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
-    CCDirector::sharedDirector()->popScene();
+    SoundManager::sharedSoundManager()->playButtonSound();
+    CCScene* scene = GameOverScene::scene();
+    CCDirector::sharedDirector()->replaceScene(scene);
     return true;
 }
