@@ -2,6 +2,7 @@
 #include "GameScene.h"
 #include "Opening.h"
 #include "CocosHelper.h"
+#include "SoundManager.h"
 USING_NS_CC;
 
 CCScene* StartScene::scene()
@@ -27,7 +28,7 @@ bool StartScene::init()
 	{
 		return false;
 	}
-
+    SoundManager::sharedSoundManager()->playTitleBgm();
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize(); //window size
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin(); // left down corner
 

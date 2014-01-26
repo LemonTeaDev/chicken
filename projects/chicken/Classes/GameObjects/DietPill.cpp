@@ -3,7 +3,7 @@
 #include "Belt.h"
 #include "CocosHelper.h"
 #include "Chicken.h"
-
+#include "SoundManager.h"
 DietPill* DietPill::create(int effectLevel)
 {
 	DietPill* pRet = new DietPill();
@@ -74,6 +74,7 @@ void DietPill::doEffect(Chicken* pChicken) const
 			pChicken->SetLife(50);
 		}
 	}
+    SoundManager::sharedSoundManager()->playItemSound();
 }
 
 /* virtual */

@@ -23,12 +23,14 @@ public:
     //static SoundManager* sharedSoundManager();
     void preloadGameSound();
     void playGameBgm();
+    void playTitleBgm();
     void playBeltSound();
     void playBeltOneSound();
     void playButtonSound();
     void playCreateChickenSound();
     void playEatFailSound();
     void playEatSound();
+    void playItemSound();
     void playGameOverSound();
     void playHandSound();
     float beltSoundPitch;

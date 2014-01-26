@@ -126,6 +126,8 @@ void GameScene::masterApper(){
     }else{
         dieChicken = chickenField->GetMaxHealthChicken();
     }
+    CCLog("dieChicken : %p",dieChicken );
+    CCLog("dieChicken idx : %d",dieChicken->GetIdx() );
     if (dieChicken->GetIsCaptureAble()) {
         int idx = dieChicken->GetIdx()+1;
         CCNode* chickenLayer = chickenField->GetChickenNode(idx);

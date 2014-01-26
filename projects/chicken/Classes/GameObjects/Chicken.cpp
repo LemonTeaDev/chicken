@@ -168,8 +168,8 @@ bool Chicken::GetIsCaptureAble(){
 		return true;
 	}
 
-    if (lifeFatFactor[normal]/2 > life ||
-		life > lifeMax - (lifeMax-lifeFatFactor[fat])/2)
+    if (lifeFatFactor[normal] > life ||
+		life > lifeMax - (lifeMax-lifeFatFactor[fat]))
 	{
 		return true;
 	}
@@ -306,7 +306,6 @@ void Chicken::SetFatStatus(){
 void Chicken::SetChickenEvent(EventStatus chickenEvent)
 {
 	if (chickenEvent == eat) {
-        SoundManager::sharedSoundManager()->playEatSound();
         CCAnimation* chickenSprAnimation = CCAnimation::create();
         chickenSprAnimation->setDelayPerUnit(0.3f);
         if (GetFatStatus() == slim) {
