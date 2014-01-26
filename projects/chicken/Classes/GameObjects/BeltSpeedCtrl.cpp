@@ -3,7 +3,7 @@
 #include "Belt.h"
 #include "CocosHelper.h"
 #include "Chicken.h"
-
+#include "SoundManager.h"
 BeltSpeedCtrl* BeltSpeedCtrl::create(bool increase)
 {
 	BeltSpeedCtrl* pRet = new BeltSpeedCtrl();
@@ -64,4 +64,5 @@ void BeltSpeedCtrl::doEffect(Belt* pBelt) const
 			pBelt->beltSpeedDown(10);
 		}
 	}
+    SoundManager::sharedSoundManager()->playItemSound();
 }

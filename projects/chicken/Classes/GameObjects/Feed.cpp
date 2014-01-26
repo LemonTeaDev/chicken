@@ -3,7 +3,7 @@
 #include "Belt.h"
 #include "CocosHelper.h"
 #include "Chicken.h"
-
+#include "SoundManager.h"
 Feed* Feed::create(int effectLevel)
 {
 	Feed* pRet = new Feed();
@@ -55,6 +55,7 @@ void Feed::doEffect(Chicken* pChicken) const
 			pChicken->IncreaseLife(60);
 		}
 	}
+    SoundManager::sharedSoundManager()->playEatSound();
 }
 
 /* virtual */

@@ -43,13 +43,19 @@ void SoundManager::preloadGameSound(){
     audioEngine->preloadEffect("footstep.mp3");
     audioEngine->preloadEffect("gameover.mp3");
     audioEngine->preloadEffect("hand.mp3");
+    audioEngine->preloadEffect("hand.mp3");
+    audioEngine->preloadEffect("get_item.mp3");
 }
 
 void SoundManager::playGameBgm()
 {
+    audioEngine->stopBackgroundMusic();
     audioEngine->playBackgroundMusic("bg_01.mp3", true);
 }
-
+void SoundManager::playTitleBgm(){
+    audioEngine->stopBackgroundMusic();
+    audioEngine->playBackgroundMusic("title.mp3", true);
+}
 void SoundManager::playBeltSound(){
     audioEngine->playEffect("belt_always.mp3", false);
 }
@@ -70,8 +76,12 @@ void SoundManager::playEatFailSound()
 void SoundManager::playEatSound(){
     audioEngine->playEffect("eat.mp3", false);
 }
+void SoundManager::playItemSound(){
+    audioEngine->playEffect("get_item.mp3", false);
+}
 void SoundManager::playGameOverSound(){
-    audioEngine->playEffect("gameover.mp3", false);
+    audioEngine->stopBackgroundMusic();
+    audioEngine->playBackgroundMusic("gameover.mp3", true);
 }
 void SoundManager::playHandSound(){
     audioEngine->playEffect("hand.mp3", false);

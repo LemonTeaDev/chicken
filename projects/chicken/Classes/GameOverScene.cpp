@@ -6,6 +6,7 @@
 #include "CCDirector.h"
 #include "GameManager.h"
 #include "SoundManager.h"
+#include "CreditScene.h"
 USING_NS_CC;
 
 CCScene* GameOverScene::scene()
@@ -52,9 +53,20 @@ bool GameOverScene::init()
 	CCMenuItemImage *pReplay = CCMenuItemImage::create("gameover_replaybt.png", "gameover_replaybt.png", this, menu_selector(GameOverScene::menuStartCallback));
     pReplay->setAnchorPoint(ccp(0.5f, 0.5f));
     pReplay->setScale(0.0F);
+    pReplay->setTag(0);
     pReplay->runAction(CCSequence::create(CCDelayTime::create(1.0f),CCScaleTo::create(0.5f, 1.0f),NULL));
-	pReplay->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2-220));
-	CCMenu* pMenu = CCMenu::create(pReplay, NULL);
+	pReplay->setPosition(ccp(origin.x + visibleSize.width / 2-180, origin.y + visibleSize.height / 2-220));
+    
+    CCMenuItemImage *pCredit = CCMenuItemImage::create("credit_bt.png", "credit_bt.png", this, menu_selector(GameOverScene::menuStartCallback));
+    pCredit->setAnchorPoint(ccp(0.5f, 0.5f));
+    pCredit->setScale(0.0F);
+    pCredit->setTag(1);
+    pCredit->runAction(CCSequence::create(CCDelayTime::create(1.0f),CCScaleTo::create(0.5f, 1.0f),NULL));
+	pCredit->setPosition(ccp(origin.x + visibleSize.width / 2+180, origin.y + visibleSize.height / 2-220));
+    
+    //credit_bt
+    
+	CCMenu* pMenu = CCMenu::create(pReplay,pCredit, NULL);
 	pMenu->setPosition(CCPointZero);
 	this->addChild(pMenu, 1);
 
@@ -78,9 +90,17 @@ void GameOverScene::menuCloseCallback(CCObject* pSender)
 
 void GameOverScene::menuStartCallback(CCObject* pSender)
 {
-    ((CCNode*)(pSender))->runAction(CCSequence::create(CCScaleTo::create(0.25f, 1.1f),CCScaleTo::create(0.25f, 1.0f),CCCallFunc::create(this, callfunc_selector(GameOverScene::menuStartAniEnd)),NULL));
+    CCNode* node = (CCNode*)(pSender);
+    SoundManager::sharedSoundManager()->playButtonSound();
+    if (node->getTag() == 0) {
+        (node)->runAction(CCSequence::create(CCScaleTo::create(0.25f, 1.1f),CCScaleTo::create(0.25f, 1.0f),CCCallFunc::create(this, callfunc_selector(GameOverScene::menuStartAniEnd)),NULL));
+    }else{
+        CCScene *pScene = CreditScene::scene();
+        CCDirector::sharedDirector()->replaceScene(pScene);
+    }
+    
 }
 void GameOverScene::menuStartAniEnd(){
     CCScene *pScene = GameScene::scene();
-	CCDirector::sharedDirector()->pushScene(pScene);
+	CCDirector::sharedDirector()->replaceScene(pScene);
 }

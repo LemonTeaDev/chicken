@@ -1,5 +1,5 @@
 #include "Opening.h"
-#include "GameScene.h"
+#include "StartScene.h"
 
 
 CCScene* OpeningOne::scene()
@@ -209,6 +209,6 @@ void OpeningOne::seqTwo()
 
 void OpeningOne::menuStartCallback()
 {
-	CCScene* pScene = GameScene::scene();
+	CCScene* pScene = StartScene::scene();
 	CCDirector::sharedDirector()->replaceScene(pScene);
 }

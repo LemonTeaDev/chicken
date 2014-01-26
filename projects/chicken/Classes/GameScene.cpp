@@ -102,7 +102,10 @@ void GameScene::update(float delta){
 }
 bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
-
+#if 0
+    CCScene* scene = GameOverScene::scene();
+    CCDirector::sharedDirector()->replaceScene(scene);
+#endif
     return true;
 }
 void GameScene::ccTouchMoved(CCTouch* touch, CCEvent* event)
@@ -124,9 +127,17 @@ void GameScene::masterApper(){
     Chicken* dieChicken;
     if (rand() % 2 == 0){
         dieChicken = chickenField->GetMinHealthChicken();
+        if (!dieChicken->GetIsCaptureAble()){
+            dieChicken = chickenField->GetMaxHealthChicken();
+        }
     }else{
         dieChicken = chickenField->GetMaxHealthChicken();
+        if (!dieChicken->GetIsCaptureAble()){
+            dieChicken = chickenField->GetMinHealthChicken();
+        }
     }
+    CCLog("dieChicken : %p",dieChicken );
+    CCLog("dieChicken idx : %d",dieChicken->GetIdx() );
     if (dieChicken->GetIsCaptureAble()) {
         int idx = dieChicken->GetIdx()+1;
         CCNode* chickenLayer = chickenField->GetChickenNode(idx);
