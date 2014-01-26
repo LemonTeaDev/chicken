@@ -44,12 +44,12 @@ public:
 	virtual void update(float dt);	// 비만도에 따른 sprite 업데이트 등, 실시간 업데이트 담당
     void chickenTouch(CCObject* pSender);
     
-	unsigned int GetLife() const;
+	int GetLife() const;
     void UpdateHealthBar();
 	void IncreaseLife(unsigned int delta);
 	void DecreaseLife(unsigned int delta);
 	void Digest();
-	void SetLife(unsigned int life);
+	void SetLife(int life);
     void SetIdx(unsigned int aIdx);
 	unsigned int GetIdx() const;
 	FatStatus GetFatStatus() const;
@@ -72,8 +72,8 @@ protected:
 protected:
 	ChickenSide side;
 
-	unsigned int life;
-	unsigned int lifeMax;
+	int life;
+	int lifeMax;
     unsigned int digestRange;
     unsigned int digestValue;
     
@@ -86,7 +86,7 @@ protected:
 	std::map<FatStatus, CCTexture2D*> spriteBack_Eat;
     std::map<FatStatus, CCTexture2D*> spriteFront_Cry;
 	std::map<FatStatus, CCTexture2D*> spriteBack_Cry;
-	mutable std::map<FatStatus, unsigned int> lifeFatFactor;
+	mutable std::map<FatStatus, int> lifeFatFactor;
 	
 	unsigned int digestSpeed;
 };

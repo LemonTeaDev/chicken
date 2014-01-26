@@ -7,6 +7,7 @@
 #include "SoundManager.h"
 #include "ChickenField.h"
 #include "GameManager.h"
+#include "StartScene.h"
 
 USING_NS_CC;
     
@@ -72,32 +73,16 @@ bool GameScene::init()
     light3->setPosition(ccp(803, visibleSize.height-46));
     addChild(light3,GAME_SCENE_LIGHT,GAME_SCENE_LIGHT);
     
-    
     CocosHelper::addLabelFnt(this, "playui_fever_xcombo.fnt", ccp(visibleSize.width-100,100), GAME_SCENE_TIME, "", ccp(0.5f,0.5f), true);
-    // dim background
-    //CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
-    /*
-    CCSequence* sequence = CCSequence::create(CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x-100, fogSpr->getPosition().y)),CCMoveTo::create(5.0f, ccp(fogSpr->getPosition().x+100, fogSpr->getPosition().y)), NULL);
-    fogSpr->runAction(CCRepeatForever::create(sequence));
-    */
-    
-    /*
-    CCMenuItem* pUp = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
-	pUp->setTag(1);
-    CCMenuItem* pDown = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
-    pDown->setTag(2);
-    CCMenuItem* pReverse = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(GameScene::menuCloseCallback));
-    pReverse->setTag(3);
-    
-	pUp->setPosition(ccp(50, origin.y + visibleSize.height / 2));
-	pDown->setPosition(ccp(50, origin.y + visibleSize.height / 2 - pUp->getContentSize().height-30));
-    pReverse->setPosition(ccp(50, origin.y + visibleSize.height / 2 - pUp->getContentSize().height-150));
-    CCArray* menuItemArr = CCArray::create(pUp,pDown,pReverse,NULL);
-	CCMenu* pMenu = CCMenu::createWithArray(menuItemArr);
-    
-    pMenu->setPosition(CCPointZero);
-	addChild(pMenu, 1);
-    */
+   
+	// dim background
+    CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), GAME_SCENE_FOG,true,ccp(0.5f, 0.5f));
+	fogSpr->setOpacity(128);
+
+	// default player life is 3
+	setPlayerLife(3);
+
+    CCLog("this : %p",this);
     scheduleUpdateWithPriority(1);
     GameManager::sharedGameManager()->sendMessage(GameMessageGameStart);
     GameManager::sharedGameManager()->setMasterAppearListener(callfunc_selector(GameScene::masterApper), this);
@@ -116,21 +101,7 @@ void GameScene::update(float delta){
 }
 bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
-    /*
-    CCScene *pScene = GameOverScene::scene();
-	CCDirector::sharedDirector()->pushScene(pScene);
-    */
-    
-    /*
-    CCPoint touchPoint = touch->getLocation();
-    Master* master = Master::create();
-    master->setAnchorPoint(ccp(0.5f,0.5f));
-    master->setPosition(ccp(touchPoint.x, touchPoint.y-40));
-    
-    CCSequence* sequence = CCSequence::create(CCMoveTo::create(0.2f, ccp(master->getPosition().x, master->getPosition().y+50)),CCCallFunc::create(master, callfunc_selector(Master::runGrapAction)), NULL);
-    master->runAction(sequence);
-    addChild(master,GAME_SCENE_MASTER,GAME_SCENE_MASTER);
-     */
+
     return true;
 }
 void GameScene::ccTouchMoved(CCTouch* touch, CCEvent* event)
@@ -224,4 +195,20 @@ void GameScene::menuReverseCallback(CCObject* pSender)
     GameScene* scene = (GameScene*)menu->getParent();
     Belt* belt = (Belt *)scene->getChildByTag(GAME_SCENE_BELT);
     belt->beltReverse();
+}
+
+void GameScene::setPlayerLife(int life)
+{
+	playerLife = life;
+	if (playerLife <= 0)
+	{
+		// Game Over
+		CCScene* pScene = StartScene::scene();
+		CCDirector::sharedDirector()->replaceScene(pScene);
+	}
+}
+
+int GameScene::getPlayerLife() const
+{
+	return playerLife;
 }

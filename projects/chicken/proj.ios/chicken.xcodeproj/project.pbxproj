@@ -242,7 +242,6 @@
 		CDB87A731893870A008C05DB /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A5F1893870A008C05DB /* Food.cpp */; };
 		CDB87A781893870A008C05DB /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6A1893870A008C05DB /* Light.cpp */; };
 		CDB87A791893870A008C05DB /* Master.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6C1893870A008C05DB /* Master.cpp */; };
-		CDB87A7A1893870A008C05DB /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB87A6E1893870A008C05DB /* Player.cpp */; };
 		CDB87A8118938F47008C05DB /* belt-01.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7B18938F47008C05DB /* belt-01.png */; };
 		CDB87A8218938F47008C05DB /* belt-02.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7C18938F47008C05DB /* belt-02.png */; };
 		CDB87A8318938F47008C05DB /* belt-03.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB87A7D18938F47008C05DB /* belt-03.png */; };
@@ -895,8 +894,6 @@
 		CDB87A6B1893870A008C05DB /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
 		CDB87A6C1893870A008C05DB /* Master.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Master.cpp; sourceTree = "<group>"; };
 		CDB87A6D1893870A008C05DB /* Master.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Master.h; sourceTree = "<group>"; };
-		CDB87A6E1893870A008C05DB /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		CDB87A6F1893870A008C05DB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		CDB87A7B18938F47008C05DB /* belt-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-01.png"; sourceTree = "<group>"; };
 		CDB87A7C18938F47008C05DB /* belt-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-02.png"; sourceTree = "<group>"; };
 		CDB87A7D18938F47008C05DB /* belt-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belt-03.png"; sourceTree = "<group>"; };
@@ -2161,8 +2158,6 @@
 				CDB87A6B1893870A008C05DB /* Light.h */,
 				CDB87A6C1893870A008C05DB /* Master.cpp */,
 				CDB87A6D1893870A008C05DB /* Master.h */,
-				CDB87A6E1893870A008C05DB /* Player.cpp */,
-				CDB87A6F1893870A008C05DB /* Player.h */,
 			);
 			name = GameObjects;
 			path = ../Classes/GameObjects;
@@ -2620,7 +2615,6 @@
 				15A3DA3F1682F826002FB0C5 /* CCLayerLoader.cpp in Sources */,
 				15A3DA401682F826002FB0C5 /* CCMenuItemImageLoader.cpp in Sources */,
 				375BD5101868454E0024609E /* CCActionFrameEasing.cpp in Sources */,
-				CDB87A7A1893870A008C05DB /* Player.cpp in Sources */,
 				15A3DA411682F826002FB0C5 /* CCMenuItemLoader.cpp in Sources */,
 				15A3DA421682F826002FB0C5 /* CCNode+CCBRelativePositioning.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
