@@ -32,10 +32,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
 
 
-    CCScene *pGameScene = GameScene::scene();
+   // CCScene *pGameScene = GameScene::scene();
 	//CCScene *pScene = GameOverScene::scene();
 	//CCScene *pGameScene = OpeningOne::scene();
-	//CCScene *pGameScene = GameOverScene::scene();
+	CCScene *pGameScene = StartScene::scene();
 
 
     // run
