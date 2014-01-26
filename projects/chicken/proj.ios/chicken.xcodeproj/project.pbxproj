@@ -313,8 +313,6 @@
 		CDC4B0B31894AF49001AB582 /* weeklyrank_friend_score.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0291894AF49001AB582 /* weeklyrank_friend_score.png */; };
 		CDC4B0B41894AF49001AB582 /* weeklyrank_userinfo_medal.fnt in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B02A1894AF49001AB582 /* weeklyrank_userinfo_medal.fnt */; };
 		CDC4B0B51894AF49001AB582 /* weeklyrank_userinfo_medal.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B02B1894AF49001AB582 /* weeklyrank_userinfo_medal.png */; };
-		CDC4B0B61894AF49001AB582 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B02D1894AF49001AB582 /* arial.ttf */; };
-		CDC4B0B71894AF49001AB582 /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B02E1894AF49001AB582 /* Marker Felt.ttf */; };
 		CDC4B0B81894AF49001AB582 /* front-ef.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B02F1894AF49001AB582 /* front-ef.png */; };
 		CDC4B0B91894AF49001AB582 /* gameover_replaybt.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0301894AF49001AB582 /* gameover_replaybt.png */; };
 		CDC4B0BA1894AF49001AB582 /* gameover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0311894AF49001AB582 /* gameover.jpg */; };
@@ -973,8 +971,6 @@
 		CDC4B0291894AF49001AB582 /* weeklyrank_friend_score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weeklyrank_friend_score.png; sourceTree = "<group>"; };
 		CDC4B02A1894AF49001AB582 /* weeklyrank_userinfo_medal.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weeklyrank_userinfo_medal.fnt; sourceTree = "<group>"; };
 		CDC4B02B1894AF49001AB582 /* weeklyrank_userinfo_medal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weeklyrank_userinfo_medal.png; sourceTree = "<group>"; };
-		CDC4B02D1894AF49001AB582 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
-		CDC4B02E1894AF49001AB582 /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		CDC4B02F1894AF49001AB582 /* front-ef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-ef.png"; sourceTree = "<group>"; };
 		CDC4B0301894AF49001AB582 /* gameover_replaybt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_replaybt.png; sourceTree = "<group>"; };
 		CDC4B0311894AF49001AB582 /* gameover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameover.jpg; sourceTree = "<group>"; };
@@ -2059,7 +2055,6 @@
 				CDC4AFF31894AF48001AB582 /* CloseNormal.png */,
 				CDC4AFF41894AF48001AB582 /* CloseSelected.png */,
 				CDC4AFF51894AF48001AB582 /* fnt */,
-				CDC4B02C1894AF49001AB582 /* fonts */,
 				CDC4B02F1894AF49001AB582 /* front-ef.png */,
 				CDC4B0301894AF49001AB582 /* gameover_replaybt.png */,
 				CDC4B0311894AF49001AB582 /* gameover.jpg */,
@@ -2243,15 +2238,6 @@
 				CDC4B02B1894AF49001AB582 /* weeklyrank_userinfo_medal.png */,
 			);
 			path = fnt;
-			sourceTree = "<group>";
-		};
-		CDC4B02C1894AF49001AB582 /* fonts */ = {
-			isa = PBXGroup;
-			children = (
-				CDC4B02D1894AF49001AB582 /* arial.ttf */,
-				CDC4B02E1894AF49001AB582 /* Marker Felt.ttf */,
-			);
-			path = fonts;
 			sourceTree = "<group>";
 		};
 		CDC4B0671894AF49001AB582 /* Sound */ = {
@@ -2478,7 +2464,6 @@
 				CDC4B0871894AF49001AB582 /* gameresult_score_bestscore.png in Resources */,
 				CDC4B0F71894AF49001AB582 /* footstep.mp3 in Resources */,
 				CDC4B08B1894AF49001AB582 /* itemshop_itempiece.png in Resources */,
-				CDC4B0B71894AF49001AB582 /* Marker Felt.ttf in Resources */,
 				CDC4B0CA1894AF49001AB582 /* item_up.png in Resources */,
 				CDC4B0B21894AF49001AB582 /* weeklyrank_friend_score.fnt in Resources */,
 				CDC4B0AD1894AF49001AB582 /* weeklyrank_friend_info_bestscore.png in Resources */,
@@ -2504,7 +2489,6 @@
 				CDC4B0F41894AF49001AB582 /* create_chicken.mp3 in Resources */,
 				CDC4B0831894AF49001AB582 /* gameresult_levelup.png in Resources */,
 				CDC4B08D1894AF49001AB582 /* itemshop_itemprice.png in Resources */,
-				CDC4B0B61894AF49001AB582 /* arial.ttf in Resources */,
 				CDC4B0B01894AF49001AB582 /* weeklyrank_friend_rank02.fnt in Resources */,
 				CDC4B0D71894AF49001AB582 /* nomal_chicken_fat_f_cry.png in Resources */,
 				CDC4B0DF1894AF49001AB582 /* nomal_chicken_slim_b_eat.png in Resources */,

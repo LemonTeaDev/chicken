@@ -195,7 +195,8 @@ void GameScene::menuCloseCallback(CCObject* pSender)
 }
 void GameScene::speedUp(){
     Belt* belt = (Belt *)this->getChildByTag(GAME_SCENE_BELT);
-    belt->beltSpeedUp(10.0f);
+    if(belt)
+        belt->beltSpeedUp(10.0f);
 }
 void GameScene::speedDown(){
     Belt* belt = (Belt *)this->getChildByTag(GAME_SCENE_BELT);

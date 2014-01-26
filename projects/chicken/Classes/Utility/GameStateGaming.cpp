@@ -34,7 +34,7 @@ void GameStateGaming::update(float delta){
     gameAccTime+=delta;
     if ((int)tGameAccTime != (int)gameAccTime) {
         if ((int)gameAccTime % 60 == 0) {
-            GameManager::sharedGameManager()->speedUp();
+            //GameManager::sharedGameManager()->speedUp();
         }
     }
 }
