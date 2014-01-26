@@ -15,14 +15,13 @@ public:
 
 	void seqOne();
 	void seqTwo();
-	void seqThr();
-	void seqFor();
+	
+	void menuStartCallback();
 
 private :
 
 	int AHandler;
 	int BHandler;
-	int CHandler;
 
 	cocos2d::CCSprite* background;
 
@@ -30,10 +29,7 @@ private :
 
 	cocos2d::CCSprite* effect1;
 	cocos2d::CCSprite* effect2;
-	cocos2d::CCSprite* effect3;
 
-	cocos2d::CCSprite* door1;
-	cocos2d::CCSprite* door2;
 
 	CREATE_FUNC(OpeningOne);
 };

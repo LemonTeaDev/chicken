@@ -2,6 +2,8 @@
 #include "StartScene.h"
 #include "GameOverScene.h"
 #include "GameScene.h"
+#include "Opening.h"
+
 #include "SoundManager.h"
 
 USING_NS_CC;
@@ -28,10 +30,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
+
+
+   // CCScene *pGameScene = GameScene::scene();
+	//CCScene *pScene = GameOverScene::scene();
+	//CCScene *pGameScene = OpeningOne::scene();
 	CCScene *pGameScene = StartScene::scene();
 
+
     // run
-    CCDirector::sharedDirector()->setDepthTest(true);
+//    CCDirector::sharedDirector()->setDepthTest(true);
 	CCScene* transition = CCTransitionCrossFade::create(1.5f, pGameScene);
     
     pDirector->runWithScene(transition);
