@@ -24,7 +24,7 @@ private :
 	int BHandler;
 	int CHandler;
 
-//	cocos2d::CCSprite* background;
+	cocos2d::CCSprite* background;
 
 	cocos2d::CCSprite* cloud;
 
