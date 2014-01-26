@@ -1,6 +1,8 @@
 #pragma once
 
 #include "cocos2d.h"
+#include <deque>
+
 USING_NS_CC;
 typedef enum eGameSceneTag{
     GAME_SCENE_BG,
@@ -10,6 +12,7 @@ typedef enum eGameSceneTag{
     GAME_SCENE_FOG,
     GAME_SCENE_MASTER,
     GAME_SCENE_TIME,
+	GAME_SCENE_LIFE,
     GAME_SCENE_MAX
 }eGameSceneTag;
 
@@ -41,6 +44,7 @@ public:
 	int getPlayerLife() const;
     
 private:
+	std::deque<CCSprite*> lifeSprites;
 	int playerLife;
 };
 

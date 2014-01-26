@@ -80,6 +80,7 @@ bool GameScene::init()
 	fogSpr->setOpacity(128);
 
 	// default player life is 3
+	playerLife = 0;
 	setPlayerLife(3);
 
     CCLog("this : %p",this);
@@ -199,11 +200,56 @@ void GameScene::menuReverseCallback(CCObject* pSender)
 
 void GameScene::setPlayerLife(int life)
 {
+	if (playerLife == life)
+	{
+		return;
+	}
+
+	if (playerLife > life)
+	{
+		// decrease sprites
+		int diff = playerLife - life;
+		for (int i = 0; i < diff; ++i)
+		{
+			if (!lifeSprites.empty())
+			{
+				CCSprite* sprite = lifeSprites.back();
+				sprite->removeFromParentAndCleanup(true);
+				lifeSprites.pop_back();
+			}
+		}
+	}
+	else
+	{
+		// increase sprites
+		int diff = life - playerLife;
+		CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+
+		for (int i = 0; i < diff; ++i)
+		{
+			if (lifeSprites.empty())
+			{
+				CCSprite* pSprite = CocosHelper::addSprite(this, "life.png", CCPointMake(40, visibleSize.height - 30), GAME_SCENE_LIFE, true, ccp(0.5f, 0.5f));
+				lifeSprites.push_back(pSprite);
+			}
+			else
+			{
+				unsigned int index = lifeSprites.size() - 1;
+				auto lastSprite = lifeSprites[index];
+				auto lastPosX = lastSprite->getPositionX();
+				auto lastPosY = lastSprite->getPositionY();
+				auto lastWidth = lastSprite->getContentSize().width;
+				CCSprite* pSprite = CocosHelper::addSprite(this, "life.png", CCPointMake(lastPosX+lastWidth, lastPosY), GAME_SCENE_LIFE, true, ccp(0.5f, 0.5f));
+				lifeSprites.push_back(pSprite);
+			}
+		}
+	}
+
 	playerLife = life;
 	if (playerLife <= 0)
 	{
 		// Game Over
-		CCScene* pScene = StartScene::scene();
+		CCScene* pScene = GameOverScene::scene();
 		CCDirector::sharedDirector()->replaceScene(pScene);
 	}
 }
