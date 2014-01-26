@@ -50,4 +50,7 @@
     <ClInclude Include="..\Classes\Opening.h" />
     <ClInclude Include="..\Classes\CreditScene.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ResCopy.bat" />
+  </ItemGroup>
 </Project>

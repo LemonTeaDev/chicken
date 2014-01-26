@@ -1,3 +1,3 @@
-xcopy /Y /E ..\Resources\*.* $(OutDir)copy ..\Resources\fnt\*.* $(OutDir)
-copy ..\Resources\fonts\*.* $(OutDir)
+xcopy /Y /E ..\Resources\*.* $(OutDir)
+copy ..\Resources\fnt\*.* $(OutDir)
 copy ..\Resources\Sound\*.* $(OutDir)
