@@ -381,6 +381,7 @@
 		CDC4AFE518949E1F001AB582 /* op_hungry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD518949E1F001AB582 /* op_hungry.png */; };
 		CDC4AFE618949E1F001AB582 /* op_last.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD618949E1F001AB582 /* op_last.jpg */; };
 		CDC4AFE81894A409001AB582 /* main_chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFE71894A409001AB582 /* main_chicken.png */; };
+		CDC4AFEA1894ADC7001AB582 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFE91894ADC7001AB582 /* blank.png */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -1042,6 +1043,7 @@
 		CDC4AFD518949E1F001AB582 /* op_hungry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_hungry.png; sourceTree = "<group>"; };
 		CDC4AFD618949E1F001AB582 /* op_last.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = op_last.jpg; sourceTree = "<group>"; };
 		CDC4AFE71894A409001AB582 /* main_chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_chicken.png; sourceTree = "<group>"; };
+		CDC4AFE91894ADC7001AB582 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -2045,6 +2047,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AFE91894ADC7001AB582 /* blank.png */,
 				CDC4AFE71894A409001AB582 /* main_chicken.png */,
 				CDC4AFC718949E1F001AB582 /* gameover_replaybt.png */,
 				CDC4AFC818949E1F001AB582 /* gameover.jpg */,
@@ -2454,6 +2457,7 @@
 				CDC4AF7318942D6A001AB582 /* playui_candy_num.fnt in Resources */,
 				CDC4AF051893EEC6001AB582 /* eat.mp3 in Resources */,
 				CDC4AFAA18943202001AB582 /* item_feed3.png in Resources */,
+				CDC4AFEA1894ADC7001AB582 /* blank.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				CDC4AF1F189410CE001AB582 /* nomal_chicken_normal_f_stand.png in Resources */,
 				CDC4AFB318943576001AB582 /* button.mp3 in Resources */,
