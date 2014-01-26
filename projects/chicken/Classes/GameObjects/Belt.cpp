@@ -160,7 +160,7 @@ void Belt::beltSpeedUp(float degree)
 
     beltSpr->stopActionByTag(0);
 	runBelt();
-    SoundManager::sharedSoundManager()->beltSoundPitch *= 0.9;
+    SoundManager::sharedSoundManager()->beltSoundPitch *= 0.9f;
 }
 
 void Belt::beltSpeedDown(float degree)
@@ -175,7 +175,7 @@ void Belt::beltSpeedDown(float degree)
 
 	beltSpr->stopActionByTag(0);
 	runBelt();
-    SoundManager::sharedSoundManager()->beltSoundPitch *= 1.1;
+    SoundManager::sharedSoundManager()->beltSoundPitch *= 1.1f;
 }
 
 void Belt::beltPause(float time)
