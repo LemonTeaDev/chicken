@@ -139,7 +139,7 @@ void GameScene::ccTouchEnded(CCTouch* touch, CCEvent* event)
 }
 void GameScene::playBeltSound(){
     SoundManager::sharedSoundManager()->playBeltOneSound();
-    runAction(CCSequence::create(CCDelayTime::create(0.5),CCCallFunc::create(this, callfunc_selector(GameScene::playBeltSound)),NULL));
+    runAction(CCSequence::create(CCDelayTime::create(SoundManager::sharedSoundManager()->beltSoundPitch),CCCallFunc::create(this, callfunc_selector(GameScene::playBeltSound)),NULL));
 }
 void GameScene::masterApper(){
     CCLog("MASTER APPEAR");

@@ -8,7 +8,7 @@
 #include <algorithm>
 #include "CocosHelper.h"
 #include <random>
-
+#include "SoundManager.h"
 const float Belt::MIN_SPEED = 0.01f;
 const float Belt::MAX_SPEED = 100.0f;
 const float Belt::DEFAULT_SPEED = 2.0f;
@@ -156,10 +156,11 @@ void Belt::beltSpeedUp(float degree)
 		return;
 	}
 
-	beltSpeed = min(MAX_SPEED, beltSpeed + degree);
+	beltSpeed = min(MAX_SPEED, beltSpeed*0.9f);
 
-    beltSpr->stopAllActions();
+    beltSpr->stopActionByTag(0);
 	runBelt();
+    SoundManager::sharedSoundManager()->beltSoundPitch *= 0.9;
 }
 
 void Belt::beltSpeedDown(float degree)
@@ -170,10 +171,11 @@ void Belt::beltSpeedDown(float degree)
 		return;
 	}
 
-	beltSpeed = max(MIN_SPEED, beltSpeed - degree);
+	beltSpeed = max(MIN_SPEED, beltSpeed*1.1f);
 
-	beltSpr->stopAllActions();
+	beltSpr->stopActionByTag(0);
 	runBelt();
+    SoundManager::sharedSoundManager()->beltSoundPitch *= 1.1;
 }
 
 void Belt::beltPause(float time)

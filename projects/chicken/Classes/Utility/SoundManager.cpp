@@ -14,6 +14,7 @@ SoundManager::SoundManager(){
     this->audioEngine = SimpleAudioEngine::sharedEngine();
 #if 1
     this->audioEngine->setEffectsVolume(0.5f);
+    beltSoundPitch = 0.5f;
     //this->audioEngine->setEffectsVolume(0);
     //this->audioEngine->setBackgroundMusicVolume(0);
 #endif

@@ -63,6 +63,7 @@ public:
 	// 앞보는 치킨이냐, 뒤보는 치킨이냐
 	ChickenSide GetChickenSide() const;
 	void SetChickenSide(ChickenSide chickenSide);
+    void SetFatStatus();
     void SetChickenEvent(EventStatus chickenEvent);
 protected:
 	virtual void InitializeLifeFatFactors();

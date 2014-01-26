@@ -146,6 +146,9 @@ void Chicken::chickenTouch(CCObject* pSender){
 /////////////////////////////////////////////////
 Chicken::FatStatus Chicken::GetFatStatus() const
 {
+    if (life > lifeMax) {
+        return slim;
+    }
 	if (lifeFatFactor[slim] <= life &&
 		life < lifeFatFactor[normal])
 	{
@@ -162,7 +165,6 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 	}
 }
 bool Chicken::GetIsCaptureAble(){
-    CCLog("GetIsCaptureAble life : %d",life);
     if (lifeFatFactor[normal]/2 > life ||
 		life > lifeMax - (lifeMax-lifeFatFactor[fat])/2)
 	{
@@ -209,6 +211,7 @@ void Chicken::UpdateHealthBar(){
     }else{
         healthSpr->setScaleX(((float)life/(float)lifeMax));
     }
+    SetFatStatus();
 }
 void Chicken::IncreaseLife(unsigned int delta)
 {
@@ -277,6 +280,15 @@ void Chicken::SetChickenSide(ChickenSide chickenSide)
         chickenSpr->setTexture(spriteBack[GetFatStatus()]);
         healthSpr->setPosition(CCPointMake(-90,-40));
     }
+}
+
+void Chicken::SetFatStatus(){
+    if (side == front) {
+        chickenSpr->setTexture(spriteFront[GetFatStatus()]);
+    }else if(side == back) {
+        chickenSpr->setTexture(spriteBack[GetFatStatus()]);
+    }
+    
 }
 
 void Chicken::SetChickenEvent(EventStatus chickenEvent)

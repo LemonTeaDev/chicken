@@ -31,6 +31,7 @@ public:
     void playEatSound();
     void playGameOverSound();
     void playHandSound();
+    float beltSoundPitch;
 protected:
     CC_SYNTHESIZE(SimpleAudioEngine *, audioEngine, AudioEngine);
 };
