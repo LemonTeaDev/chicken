@@ -98,7 +98,6 @@ bool GameScene::init()
     pMenu->setPosition(CCPointZero);
 	addChild(pMenu, 1);
     */
-    CCLog("this : %p",this);
     scheduleUpdateWithPriority(1);
     GameManager::sharedGameManager()->sendMessage(GameMessageGameStart);
     GameManager::sharedGameManager()->setMasterAppearListener(callfunc_selector(GameScene::masterApper), this);
@@ -117,6 +116,11 @@ void GameScene::update(float delta){
 }
 bool GameScene::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
+    /*
+    CCScene *pScene = GameOverScene::scene();
+	CCDirector::sharedDirector()->pushScene(pScene);
+    */
+    
     /*
     CCPoint touchPoint = touch->getLocation();
     Master* master = Master::create();
@@ -177,7 +181,11 @@ void GameScene::masterProgress(float dt){
     CCLabelBMFont* bmFont = (CCLabelBMFont*)getChildByTag(GAME_SCENE_TIME);
     char str[0x10];
     sprintf(str, "%d",(int)dt);
-    bmFont->setString(str);
+    if ((int)dt == 0) {
+        bmFont->setString("");
+    }else{
+        bmFont->setString(str);
+    }
 }
 void GameScene::menuCloseCallback(CCObject* pSender)
 {

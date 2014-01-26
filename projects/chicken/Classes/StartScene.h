@@ -14,7 +14,7 @@ public:
     
     // a selector callback
 	void menuStartCallback(CCObject* pSender);
-
+    void menuStartAniEnd();
     
     // implement the "static node()" method manually
     CREATE_FUNC(StartScene);

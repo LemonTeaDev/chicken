@@ -1,9 +1,11 @@
 #include "GameOverScene.h"
 #include "GameScene.h"
 #include "StartScene.h"
+#include "CocosHelper.h"
 //#include "layers_scenes_transitions_nodes\CCTransitionPageTurn.h"
 #include "CCDirector.h"
-
+#include "GameManager.h"
+#include "SoundManager.h"
 USING_NS_CC;
 
 CCScene* GameOverScene::scene()
@@ -30,85 +32,55 @@ bool GameOverScene::init()
 	{
 		return false;
 	}
+    
+    SoundManager::sharedSoundManager()->playGameOverSound();
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize(); //window size
+	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin(); // left down corner
+    
+	CCSprite* sprite = CCSprite::create("back-1.png");
+	sprite->setPosition(ccp(visibleSize.width /2, visibleSize.height/2));
+    sprite->setAnchorPoint(CCPointMake(0.5f, 0.5f));
+	this->addChild(sprite,0);
+    
+    
+    CCSprite* gameOverSpr = CocosHelper::addSprite(this, "gameover.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), 1,true,ccp(0.5f, 0.5f),0.0f);
+    gameOverSpr->runAction(CCSequence::create(CCScaleTo::create(0.5f, 1.0f),NULL));
+    
+    CCSprite* fogSpr = CocosHelper::addSprite(this, "front-ef.png", CCPointMake(visibleSize.width/2, visibleSize.height/2), 2,true,ccp(0.5f, 0.5f));
+    fogSpr->setOpacity(0.85);
 
-	
-
-	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
-
-	CCMenuItemImage *pReplay = CCMenuItemImage::create("replay.png", "replay.png", this, menu_selector(GameOverScene::menuStartCallback));
-	CCMenuItemImage *pQuit = CCMenuItemImage::create("quit.png", "quit.png", this, menu_selector(GameOverScene::menuCloseCallback));
-
-	pReplay->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
-	pQuit->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2 - pQuit->getContentSize().height));
-
-	CCMenu* pMenu = CCMenu::create(pReplay, pQuit, NULL);
-	pMenu->setPosition(CCPointZero);
-	this->addChild(pMenu, 1);
-	/*
-	/////////////////////////////
-	// 2. add a menu item with "X" image, which is clicked to quit the program
-	//    you may modify it.
-
-	// add a "close" icon to exit the progress. it's an autorelease object
-	CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-		"CloseNormal.png",
-		"CloseSelected.png",
-		this,
-		menu_selector(GameOverScene::menuCloseCallback));
-
-	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width / 2,
-		origin.y + pCloseItem->getContentSize().height / 2));
-
-	// create menu, it's an autorelease object
-	CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+	CCMenuItemImage *pReplay = CCMenuItemImage::create("gameover_replaybt.png", "gameover_replaybt.png", this, menu_selector(GameOverScene::menuStartCallback));
+    pReplay->setAnchorPoint(ccp(0.5f, 0.5f));
+    pReplay->setScale(0.0F);
+    pReplay->runAction(CCSequence::create(CCDelayTime::create(1.0f),CCScaleTo::create(0.5f, 1.0f),NULL));
+	pReplay->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2-220));
+	CCMenu* pMenu = CCMenu::create(pReplay, NULL);
 	pMenu->setPosition(CCPointZero);
 	this->addChild(pMenu, 1);
 
-	/////////////////////////////
-	// 3. add your codes below...
-
-	// add a label shows "Hello World"
-	// create and initialize a label
-
-	CCLabelTTF* pLabel = CCLabelTTF::create("Game Over!", "Arial", 24);
-
-	// position the label on the center of the screen
-	pLabel->setPosition(ccp(origin.x + visibleSize.width / 2,
-		origin.y + visibleSize.height - pLabel->getContentSize().height));
-
-	// add the label as a child to this layer
-	this->addChild(pLabel, 1);
-
-	// add "GameOverScene" splash screen"
-	CCSprite* pSprite = CCSprite::create("../Resources/HelloWorld.png");
-
-	// position the sprite on the center of the screen
-	pSprite->setPosition(ccp(visibleSize.width / 2 + origin.x, visibleSize.height));
-
-	// add the sprite as a child to this layer
-	this->addChild(pSprite, 0);
-
-	CCSprite* replay = CCSprite::create("../Resources/HelloWorld.png");
-	*/
-
+    char str[0x10];
+    sprintf(str, "%d",GameManager::sharedGameManager()->getGameAccTime());
+    CCLabelBMFont* font = CocosHelper::addLabelFnt(this, "single_pack_achievement_starpiece.fnt", ccp(visibleSize.width/2+200,200), 2, str, ccp(1.0f,0.5f), true);
+    font->setScale(0.0f);
+    font->runAction(CCSequence::create(CCDelayTime::create(1.0f),CCScaleTo::create(0.5f, 2.0f),NULL));
+    
+    CCLabelBMFont* font2 = CocosHelper::addLabelFnt(this, "friendinvite_reward_piece.fnt", ccp(visibleSize.width/2+220,200), 2, "s", ccp(0.5f,0.5f), true);
+    font2->setScale(0.0f);
+    font2->runAction(CCSequence::create(CCDelayTime::create(1.3f),CCScaleTo::create(0.5f, 2.0f),NULL));
+    
 	return true;
 }
 
 void GameOverScene::menuCloseCallback(CCObject* pSender)
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-	CCMessageBox("You pressed the close button. Windows Store Apps do not implement a close button.", "Alert");
-#else
-	CCDirector::sharedDirector()->end();
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	exit(0);
-#endif
-#endif
+
 }
 
 void GameOverScene::menuStartCallback(CCObject* pSender)
 {
-	CCScene *pScene = GameScene::scene();
+    ((CCNode*)(pSender))->runAction(CCSequence::create(CCScaleTo::create(0.25f, 1.1f),CCScaleTo::create(0.25f, 1.0f),CCCallFunc::create(this, callfunc_selector(GameOverScene::menuStartAniEnd)),NULL));
+}
+void GameOverScene::menuStartAniEnd(){
+    CCScene *pScene = GameScene::scene();
 	CCDirector::sharedDirector()->pushScene(pScene);
 }

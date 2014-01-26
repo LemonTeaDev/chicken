@@ -32,6 +32,7 @@ bool GameManager::init(){
     state = new GameStateNone;
     state->setModel(this);
     masterApperTime = 11.0F;
+    gameAccTime = 0.0f;
     return true;
 }
 void

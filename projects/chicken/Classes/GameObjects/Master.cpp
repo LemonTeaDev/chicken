@@ -75,6 +75,7 @@ void Master::runGrapAction(){
 }
 
 void Master::reSpawn(){
+    SoundManager::sharedSoundManager()->playCreateChickenSound();
     Chicken* chicken = Chicken::create();
     if (removeIdx <= 4) {
         chicken->SetChickenSide(Chicken::front);

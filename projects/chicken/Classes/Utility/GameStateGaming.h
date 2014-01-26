@@ -17,6 +17,7 @@ public:
     virtual void update(float delta);
 private:
     float accTime;
+    float gameAccTime;
 };
 
 

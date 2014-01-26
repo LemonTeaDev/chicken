@@ -10,12 +10,16 @@
 #include "GameManager.h"
 GameStateGaming::GameStateGaming(){
     _state = eGameStateGaming;
+    accTime = 0.0f;
+    gameAccTime = 0.0f;
 }
 void GameStateGaming::update(float delta){
     float tAccTime = accTime;
     accTime+=delta;
+    gameAccTime+=delta;
     if ((int)tAccTime != (int)accTime) {
         GameManager::sharedGameManager()->masterProgress(GameManager::sharedGameManager()->getMasterApperTime()-accTime);
+        GameManager::sharedGameManager()->setGameAccTime(gameAccTime);
     }
     if (accTime > GameManager::sharedGameManager()->getMasterApperTime()) {
         GameManager::sharedGameManager()->masterAppear();

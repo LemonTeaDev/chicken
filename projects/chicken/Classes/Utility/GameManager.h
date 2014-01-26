@@ -53,6 +53,7 @@ public:
     void setMasterAppearProgressListener(SEL_SCHEDULE cb, CCNode* node);
     void masterAppear();
     void masterProgress(float dt);
+    CC_SYNTHESIZE(int, gameAccTime, GameAccTime);
 protected:
     SEL_CallFunc masterAppearCB;
     SEL_SCHEDULE masterAppearProgressCB;

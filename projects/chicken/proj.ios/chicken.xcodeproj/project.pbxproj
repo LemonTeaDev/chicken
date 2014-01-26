@@ -363,6 +363,24 @@
 		CDC4AFBF18945EAC001AB582 /* item_down.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFBE18945EAC001AB582 /* item_down.png */; };
 		CDC4AFC118945ED8001AB582 /* item_up.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFC018945ED8001AB582 /* item_up.png */; };
 		CDC4AFC318946370001AB582 /* nomal_chicken_slim_f_cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFC218946370001AB582 /* nomal_chicken_slim_f_cry.png */; };
+		CDC4AFC618949DE0001AB582 /* Opening.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDC4AFC418949DE0001AB582 /* Opening.cpp */; };
+		CDC4AFD718949E1F001AB582 /* gameover_replaybt.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFC718949E1F001AB582 /* gameover_replaybt.png */; };
+		CDC4AFD818949E1F001AB582 /* gameover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFC818949E1F001AB582 /* gameover.jpg */; };
+		CDC4AFD918949E1F001AB582 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFC918949E1F001AB582 /* gameover.png */; };
+		CDC4AFDA18949E1F001AB582 /* main_hand.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFCA18949E1F001AB582 /* main_hand.png */; };
+		CDC4AFDB18949E1F001AB582 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFCB18949E1F001AB582 /* main_page.png */; };
+		CDC4AFDC18949E1F001AB582 /* main_startbt.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFCC18949E1F001AB582 /* main_startbt.png */; };
+		CDC4AFDD18949E1F001AB582 /* mainlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFCD18949E1F001AB582 /* mainlogo.png */; };
+		CDC4AFDE18949E1F001AB582 /* op_door1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFCE18949E1F001AB582 /* op_door1.png */; };
+		CDC4AFDF18949E1F001AB582 /* op_door2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFCF18949E1F001AB582 /* op_door2.png */; };
+		CDC4AFE018949E1F001AB582 /* op_ef1.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD018949E1F001AB582 /* op_ef1.png */; };
+		CDC4AFE118949E1F001AB582 /* op_ef2.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD118949E1F001AB582 /* op_ef2.png */; };
+		CDC4AFE218949E1F001AB582 /* op_ef3.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD218949E1F001AB582 /* op_ef3.png */; };
+		CDC4AFE318949E1F001AB582 /* op_first.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD318949E1F001AB582 /* op_first.jpg */; };
+		CDC4AFE418949E1F001AB582 /* op_first.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD418949E1F001AB582 /* op_first.png */; };
+		CDC4AFE518949E1F001AB582 /* op_hungry.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD518949E1F001AB582 /* op_hungry.png */; };
+		CDC4AFE618949E1F001AB582 /* op_last.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFD618949E1F001AB582 /* op_last.jpg */; };
+		CDC4AFE81894A409001AB582 /* main_chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4AFE71894A409001AB582 /* main_chicken.png */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D41A0AD0160F154A004552AE /* Default-568h@2x.png */; };
@@ -1005,6 +1023,25 @@
 		CDC4AFBE18945EAC001AB582 /* item_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_down.png; sourceTree = "<group>"; };
 		CDC4AFC018945ED8001AB582 /* item_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_up.png; sourceTree = "<group>"; };
 		CDC4AFC218946370001AB582 /* nomal_chicken_slim_f_cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nomal_chicken_slim_f_cry.png; sourceTree = "<group>"; };
+		CDC4AFC418949DE0001AB582 /* Opening.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Opening.cpp; path = ../Classes/Opening.cpp; sourceTree = "<group>"; };
+		CDC4AFC518949DE0001AB582 /* Opening.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Opening.h; path = ../Classes/Opening.h; sourceTree = "<group>"; };
+		CDC4AFC718949E1F001AB582 /* gameover_replaybt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_replaybt.png; sourceTree = "<group>"; };
+		CDC4AFC818949E1F001AB582 /* gameover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameover.jpg; sourceTree = "<group>"; };
+		CDC4AFC918949E1F001AB582 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover.png; sourceTree = "<group>"; };
+		CDC4AFCA18949E1F001AB582 /* main_hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_hand.png; sourceTree = "<group>"; };
+		CDC4AFCB18949E1F001AB582 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
+		CDC4AFCC18949E1F001AB582 /* main_startbt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_startbt.png; sourceTree = "<group>"; };
+		CDC4AFCD18949E1F001AB582 /* mainlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainlogo.png; sourceTree = "<group>"; };
+		CDC4AFCE18949E1F001AB582 /* op_door1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_door1.png; sourceTree = "<group>"; };
+		CDC4AFCF18949E1F001AB582 /* op_door2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_door2.png; sourceTree = "<group>"; };
+		CDC4AFD018949E1F001AB582 /* op_ef1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_ef1.png; sourceTree = "<group>"; };
+		CDC4AFD118949E1F001AB582 /* op_ef2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_ef2.png; sourceTree = "<group>"; };
+		CDC4AFD218949E1F001AB582 /* op_ef3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_ef3.png; sourceTree = "<group>"; };
+		CDC4AFD318949E1F001AB582 /* op_first.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = op_first.jpg; sourceTree = "<group>"; };
+		CDC4AFD418949E1F001AB582 /* op_first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_first.png; sourceTree = "<group>"; };
+		CDC4AFD518949E1F001AB582 /* op_hungry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = op_hungry.png; sourceTree = "<group>"; };
+		CDC4AFD618949E1F001AB582 /* op_last.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = op_last.jpg; sourceTree = "<group>"; };
+		CDC4AFE71894A409001AB582 /* main_chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_chicken.png; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -1537,6 +1574,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AFC418949DE0001AB582 /* Opening.cpp */,
+				CDC4AFC518949DE0001AB582 /* Opening.h */,
 				CDC4AF22189422BD001AB582 /* UI */,
 				CDC4AED51893BF75001AB582 /* Layer */,
 				CDB87A581893870A008C05DB /* GameObjects */,
@@ -2006,6 +2045,23 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4AFE71894A409001AB582 /* main_chicken.png */,
+				CDC4AFC718949E1F001AB582 /* gameover_replaybt.png */,
+				CDC4AFC818949E1F001AB582 /* gameover.jpg */,
+				CDC4AFC918949E1F001AB582 /* gameover.png */,
+				CDC4AFCA18949E1F001AB582 /* main_hand.png */,
+				CDC4AFCB18949E1F001AB582 /* main_page.png */,
+				CDC4AFCC18949E1F001AB582 /* main_startbt.png */,
+				CDC4AFCD18949E1F001AB582 /* mainlogo.png */,
+				CDC4AFCE18949E1F001AB582 /* op_door1.png */,
+				CDC4AFCF18949E1F001AB582 /* op_door2.png */,
+				CDC4AFD018949E1F001AB582 /* op_ef1.png */,
+				CDC4AFD118949E1F001AB582 /* op_ef2.png */,
+				CDC4AFD218949E1F001AB582 /* op_ef3.png */,
+				CDC4AFD318949E1F001AB582 /* op_first.jpg */,
+				CDC4AFD418949E1F001AB582 /* op_first.png */,
+				CDC4AFD518949E1F001AB582 /* op_hungry.png */,
+				CDC4AFD618949E1F001AB582 /* op_last.jpg */,
 				CDC4AFC018945ED8001AB582 /* item_up.png */,
 				CDC4AF9C18943202001AB582 /* item_50.png */,
 				CDC4AFBE18945EAC001AB582 /* item_down.png */,
@@ -2316,6 +2372,7 @@
 				CDC4AF081893EEC6001AB582 /* hand.mp3 in Resources */,
 				CDC4AF8F18942D6A001AB582 /* weeklyrank_friend_info_bestscore.fnt in Resources */,
 				CDC4AF6C18942D6A001AB582 /* gameresult_score_bonusfont.png in Resources */,
+				CDC4AFDB18949E1F001AB582 /* main_page.png in Resources */,
 				CDC4AEC91893BE0C001AB582 /* gear3.png in Resources */,
 				CDC4AFB618943576001AB582 /* get_item.mp3 in Resources */,
 				CDC4AED01893BE0C001AB582 /* quit_test.png in Resources */,
@@ -2330,6 +2387,7 @@
 				CDC4AF7E18942D6A001AB582 /* playui_single_itembiscuit_font.png in Resources */,
 				CDC4AEEE1893E173001AB582 /* hand_01.png in Resources */,
 				CDC4AEF81893E173001AB582 /* nomal_chicken_slim_b_eat.png in Resources */,
+				CDC4AFDC18949E1F001AB582 /* main_startbt.png in Resources */,
 				CDC4AFB718943576001AB582 /* title.mp3 in Resources */,
 				CDC4AF7918942D6A001AB582 /* playui_fever_xcombo.fnt in Resources */,
 				CDC4AF7818942D6A001AB582 /* playui_combo.png in Resources */,
@@ -2337,8 +2395,10 @@
 				CDC4AFC118945ED8001AB582 /* item_up.png in Resources */,
 				CDC4AED41893BE0C001AB582 /* StartScene.png in Resources */,
 				CDC4AECD1893BE0C001AB582 /* light-ef.png in Resources */,
+				CDC4AFE118949E1F001AB582 /* op_ef2.png in Resources */,
 				CDC4AF6618942D6A001AB582 /* gameresult_levelup.png in Resources */,
 				CDC4AF8118942D6A001AB582 /* playui_timeover_continue_use.fnt in Resources */,
+				CDC4AFDA18949E1F001AB582 /* main_hand.png in Resources */,
 				CDC4AED21893BE0C001AB582 /* replay.png in Resources */,
 				CDC4AF8018942D6A001AB582 /* playui_stage_num.png in Resources */,
 				CDC4AF7F18942D6A001AB582 /* playui_stage_num.fnt in Resources */,
@@ -2361,6 +2421,7 @@
 				CDC4AF041893EEC6001AB582 /* belt_one.mp3 in Resources */,
 				CDC4AF9118942D6A001AB582 /* weeklyrank_friend_rank.fnt in Resources */,
 				CDC4AF8D18942D6A001AB582 /* weeklyrank_dummyfriend_reward.fnt in Resources */,
+				CDC4AFD718949E1F001AB582 /* gameover_replaybt.png in Resources */,
 				CDC4AFAB18943202001AB582 /* item_red.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				CDC4AF8418942D6A001AB582 /* single_pack_achievement_menubutton_piece.png in Resources */,
@@ -2369,6 +2430,7 @@
 				CDC4AEC51893BE0C001AB582 /* back-1.png in Resources */,
 				CDC4AEF31893E173001AB582 /* nomal_chicken_fat_f_eat.png in Resources */,
 				CDC4AEEF1893E173001AB582 /* hand_02.png in Resources */,
+				CDC4AFE81894A409001AB582 /* main_chicken.png in Resources */,
 				CDC4AF21189417EC001AB582 /* health_bar.png in Resources */,
 				CDC4AF6718942D6A001AB582 /* gameresult_score.fnt in Resources */,
 				CDC4AFAD18943202001AB582 /* item_yellow.png in Resources */,
@@ -2381,9 +2443,14 @@
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				CDB87A8518938F47008C05DB /* belt-05.png in Resources */,
 				CDC4AF8718942D6A001AB582 /* ui_level_mylevel.fnt in Resources */,
+				CDC4AFE518949E1F001AB582 /* op_hungry.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				CDC4AECC1893BE0C001AB582 /* light-3.png in Resources */,
+				CDC4AFE318949E1F001AB582 /* op_first.jpg in Resources */,
+				CDC4AFE018949E1F001AB582 /* op_ef1.png in Resources */,
 				CDC4AF7D18942D6A001AB582 /* playui_single_itembiscuit_font.fnt in Resources */,
+				CDC4AFE618949E1F001AB582 /* op_last.jpg in Resources */,
+				CDC4AFD918949E1F001AB582 /* gameover.png in Resources */,
 				CDC4AF7318942D6A001AB582 /* playui_candy_num.fnt in Resources */,
 				CDC4AF051893EEC6001AB582 /* eat.mp3 in Resources */,
 				CDC4AFAA18943202001AB582 /* item_feed3.png in Resources */,
@@ -2398,6 +2465,8 @@
 				CDC4AF6A18942D6A001AB582 /* gameresult_score_bestscore.png in Resources */,
 				CDC4AF9718942D6A001AB582 /* weeklyrank_userinfo_medal.fnt in Resources */,
 				CDC4AF8918942D6A001AB582 /* ui_level_percent.fnt in Resources */,
+				CDC4AFDF18949E1F001AB582 /* op_door2.png in Resources */,
+				CDC4AFE418949E1F001AB582 /* op_first.png in Resources */,
 				CDC4AF6D18942D6A001AB582 /* itemshop_itempiece.fnt in Resources */,
 				CDC4AF9218942D6A001AB582 /* weeklyrank_friend_rank.png in Resources */,
 				CDC4AF7618942D6A001AB582 /* playui_candyuse_num.png in Resources */,
@@ -2405,6 +2474,7 @@
 				CDC4AEF91893E173001AB582 /* nomal_chicken_slim_b_stand.png in Resources */,
 				CDC4AF6318942D6A001AB582 /* friendinvite_reward_piece.fnt in Resources */,
 				CDC4AF8A18942D6A001AB582 /* ui_level_percent.png in Resources */,
+				CDC4AFDE18949E1F001AB582 /* op_door1.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				CDC4AF8618942D6A001AB582 /* single_pack_achievement_starpiece.png in Resources */,
 				CDC4AF8818942D6A001AB582 /* ui_level_mylevel.png in Resources */,
@@ -2412,6 +2482,7 @@
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				CDC4AF9518942D6A001AB582 /* weeklyrank_friend_score.fnt in Resources */,
 				CDC4AFA818943202001AB582 /* item_feed1.png in Resources */,
+				CDC4AFE218949E1F001AB582 /* op_ef3.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				CDC4AF8E18942D6A001AB582 /* weeklyrank_dummyfriend_reward.png in Resources */,
 				CDC4AF9318942D6A001AB582 /* weeklyrank_friend_rank02.fnt in Resources */,
@@ -2422,8 +2493,10 @@
 				CDC4AF9418942D6A001AB582 /* weeklyrank_friend_rank02.png in Resources */,
 				CDC4AF8518942D6A001AB582 /* single_pack_achievement_starpiece.fnt in Resources */,
 				CDC4AF9618942D6A001AB582 /* weeklyrank_friend_score.png in Resources */,
+				CDC4AFD818949E1F001AB582 /* gameover.jpg in Resources */,
 				CDC4AEDC1893DFEB001AB582 /* bg_01.mp3 in Resources */,
 				CDB87A8618938F47008C05DB /* belt-06.png in Resources */,
+				CDC4AFDD18949E1F001AB582 /* mainlogo.png in Resources */,
 				CDC4AF9818942D6A001AB582 /* weeklyrank_userinfo_medal.png in Resources */,
 				CDC4AEF41893E173001AB582 /* nomal_chicken_fat_f_stand.png in Resources */,
 				CDC4AED11893BE0C001AB582 /* quit.png in Resources */,
@@ -2553,6 +2626,7 @@
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
 				15A3DA471682F826002FB0C5 /* CCScrollViewLoader.cpp in Sources */,
 				15A3DA481682F826002FB0C5 /* CCSpriteLoader.cpp in Sources */,
+				CDC4AFC618949DE0001AB582 /* Opening.cpp in Sources */,
 				CDB87A57189371DC008C05DB /* JYTestScene.cpp in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,
 				CDB87A731893870A008C05DB /* Food.cpp in Sources */,
