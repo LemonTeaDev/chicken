@@ -1,11 +1,11 @@
 #include "AppDelegate.h"
 #include "StartScene.h"
 #include "GameOverScene.h"
-#ifdef _JY_TEST_
-#include "JYTestScene.h"
-#endif
 #include "GameScene.h"
 #include "Opening.h"
+
+#include "SoundManager.h"
+
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -31,13 +31,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 
+
    // CCScene *pGameScene = GameScene::scene();
 	//CCScene *pScene = GameOverScene::scene();
 	CCScene *pGameScene = OpeningOne::scene();
 	//CCScene *pGameScene = GameOverScene::scene();
 
+
     // run
-    CCDirector::sharedDirector()->setDepthTest(true);
+//    CCDirector::sharedDirector()->setDepthTest(true);
 	CCScene* transition = CCTransitionCrossFade::create(1.5f, pGameScene);
     
     pDirector->runWithScene(transition);
@@ -50,7 +52,7 @@ void AppDelegate::applicationDidEnterBackground() {
     CCDirector::sharedDirector()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
-    // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+    SoundManager::sharedSoundManager()->getAudioEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
@@ -58,5 +60,5 @@ void AppDelegate::applicationWillEnterForeground() {
     CCDirector::sharedDirector()->startAnimation();
 
     // if you use SimpleAudioEngine, it must resume here
-    // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+	SoundManager::sharedSoundManager()->getAudioEngine()->resumeBackgroundMusic();
 }

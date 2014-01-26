@@ -1,5 +1,6 @@
 #include "StartScene.h"
 #include "GameScene.h"
+#include "Opening.h"
 USING_NS_CC;
 
 CCScene* StartScene::scene()
@@ -48,6 +49,6 @@ bool StartScene::init()
 
 void StartScene::menuStartCallback(CCObject* pSender)
 {
-	CCScene* pScene = GameScene::scene();
+	CCScene* pScene = OpeningOne::scene();
 	CCDirector::sharedDirector()->replaceScene(pScene);
 }
