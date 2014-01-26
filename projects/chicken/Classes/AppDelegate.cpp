@@ -1,10 +1,8 @@
 #include "AppDelegate.h"
 #include "StartScene.h"
 #include "GameOverScene.h"
-#ifdef _JY_TEST_
-#include "JYTestScene.h"
-#endif
 #include "GameScene.h"
+#include "SoundManager.h"
 
 USING_NS_CC;
 
@@ -30,11 +28,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-
-    CCScene *pGameScene = GameScene::scene();
-	//CCScene *pScene = GameOverScene::scene();
-	//CCScene *pGameScene = StartScene::scene();
-	//CCScene *pGameScene = GameOverScene::scene();
+	CCScene *pGameScene = StartScene::scene();
 
     // run
     CCDirector::sharedDirector()->setDepthTest(true);
@@ -50,7 +44,7 @@ void AppDelegate::applicationDidEnterBackground() {
     CCDirector::sharedDirector()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
-    // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+    SoundManager::sharedSoundManager()->getAudioEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
@@ -58,5 +52,5 @@ void AppDelegate::applicationWillEnterForeground() {
     CCDirector::sharedDirector()->startAnimation();
 
     // if you use SimpleAudioEngine, it must resume here
-    // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+	SoundManager::sharedSoundManager()->getAudioEngine()->resumeBackgroundMusic();
 }
