@@ -34,9 +34,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
    // CCScene *pGameScene = GameScene::scene();
 	//CCScene *pScene = GameOverScene::scene();
+#if 0
 	CCScene *pGameScene = OpeningOne::scene();
-	//CCScene *pGameScene = StartScene::scene();
-
+#else
+	 CCScene *pGameScene = GameScene::scene();
+#endif
 
     // run
 //    CCDirector::sharedDirector()->setDepthTest(true);

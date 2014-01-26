@@ -124,8 +124,14 @@ void GameScene::masterApper(){
     Chicken* dieChicken;
     if (rand() % 2 == 0){
         dieChicken = chickenField->GetMinHealthChicken();
+        if (!dieChicken->GetIsCaptureAble()){
+            dieChicken = chickenField->GetMaxHealthChicken();
+        }
     }else{
         dieChicken = chickenField->GetMaxHealthChicken();
+        if (!dieChicken->GetIsCaptureAble()){
+            dieChicken = chickenField->GetMinHealthChicken();
+        }
     }
     CCLog("dieChicken : %p",dieChicken );
     CCLog("dieChicken idx : %d",dieChicken->GetIdx() );

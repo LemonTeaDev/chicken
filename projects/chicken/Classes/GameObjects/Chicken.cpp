@@ -231,9 +231,6 @@ void Chicken::IncreaseLife(unsigned int delta)
 
 void Chicken::DecreaseLife(unsigned int delta)
 {
-    CCLog("DecreaseLife : %d",delta);
-    CCLog("DecreaseLife life: %d",life);
-
 	int _delta = static_cast<int>(delta);
 	life -= delta;
 	if (life <= 0)

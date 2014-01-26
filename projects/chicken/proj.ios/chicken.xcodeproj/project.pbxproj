@@ -382,6 +382,7 @@
 		CDC4B0FB1894AF49001AB582 /* title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0731894AF49001AB582 /* title.mp3 */; };
 		CDC4B0FC1894AF49001AB582 /* start_test.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0741894AF49001AB582 /* start_test.png */; };
 		CDC4B0FD1894AF49001AB582 /* StartScene.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0751894AF49001AB582 /* StartScene.png */; };
+		CDC4B0FF1894B738001AB582 /* life.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC4B0FE1894B738001AB582 /* life.png */; };
 		CDE6ABA518936593005F1D97 /* CocosHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA318936593005F1D97 /* CocosHelper.cpp */; };
 		CDE6ABA818936CE2005F1D97 /* Localiztion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -1037,6 +1038,7 @@
 		CDC4B0731894AF49001AB582 /* title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = title.mp3; sourceTree = "<group>"; };
 		CDC4B0741894AF49001AB582 /* start_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_test.png; sourceTree = "<group>"; };
 		CDC4B0751894AF49001AB582 /* StartScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartScene.png; sourceTree = "<group>"; };
+		CDC4B0FE1894B738001AB582 /* life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life.png; sourceTree = "<group>"; };
 		CDE6ABA318936593005F1D97 /* CocosHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosHelper.cpp; sourceTree = "<group>"; };
 		CDE6ABA418936593005F1D97 /* CocosHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHelper.h; sourceTree = "<group>"; };
 		CDE6ABA618936CE2005F1D97 /* Localiztion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Localiztion.cpp; sourceTree = "<group>"; };
@@ -2034,6 +2036,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4B0FE1894B738001AB582 /* life.png */,
 				CDC4AFEB1894AF48001AB582 /* back-1.png */,
 				CDC4AFEC1894AF48001AB582 /* belt-01.png */,
 				CDC4AFED1894AF48001AB582 /* belt-02.png */,
@@ -2360,6 +2363,7 @@
 				CDC4B07C1894AF49001AB582 /* belt-06.png in Resources */,
 				CDC4B09D1894AF49001AB582 /* playui_stage_num.png in Resources */,
 				CDC4B08E1894AF49001AB582 /* play_rivalscore_score.fnt in Resources */,
+				CDC4B0FF1894B738001AB582 /* life.png in Resources */,
 				CDC4B0C31894AF49001AB582 /* item_50.png in Resources */,
 				CDC4B0951894AF49001AB582 /* playui_combo.png in Resources */,
 				CDC4B0B11894AF49001AB582 /* weeklyrank_friend_rank02.png in Resources */,
