@@ -70,7 +70,6 @@ bool Chicken::init()
     
     
     CCMenuItem* menuItem = CCMenuItem::create(this, menu_selector(Chicken::chickenTouch));
-    //CCMenuItem* menuItem = CCMenuItemImage::create("Icon-114.png", "Icon-114.png", this, menu_selector(Chicken::chickenTouch));
     menuItem->setContentSize(chickenSpr->getContentSize());
     
 	CCMenu* pMenu = CCMenu::createWithItem(menuItem);
@@ -131,7 +130,8 @@ void Chicken::chickenTouch(CCObject* pSender){
 /////////////////////////////////////////////////
 // life : fatness factor initialize
 /////////////////////////////////////////////////
-/* virtual */ void Chicken::InitializeLifeFatFactors()
+/* virtual */ 
+void Chicken::InitializeLifeFatFactors()
 {
 	lifeFatFactor[slim] = 0;
 	lifeFatFactor[normal] = 30;
@@ -146,8 +146,7 @@ void Chicken::chickenTouch(CCObject* pSender){
 /////////////////////////////////////////////////
 Chicken::FatStatus Chicken::GetFatStatus() const
 {
-	if (lifeFatFactor[slim] <= life &&
-		life < lifeFatFactor[normal])
+	if (life < lifeFatFactor[normal])
 	{
 		return slim;
 	}
@@ -161,8 +160,14 @@ Chicken::FatStatus Chicken::GetFatStatus() const
 		return fat;
 	}
 }
+
 bool Chicken::GetIsCaptureAble(){
     CCLog("GetIsCaptureAble life : %d",life);
+	if (life <= 0)
+	{
+		return true;
+	}
+
     if (lifeFatFactor[normal]/2 > life ||
 		life > lifeMax - (lifeMax-lifeFatFactor[fat])/2)
 	{
@@ -187,10 +192,11 @@ bool Chicken::GetIsCaptureAble(){
 	CCNode::update(dt);
 }
 
-unsigned int Chicken::GetLife() const
+int Chicken::GetLife() const
 {
 	return life;
 }
+
 void Chicken::UpdateHealthBar(){
     if (life > lifeMax) {
         return ;
@@ -212,14 +218,13 @@ void Chicken::UpdateHealthBar(){
 }
 void Chicken::IncreaseLife(unsigned int delta)
 {
-	if (life + delta > lifeMax)
+	int _delta = static_cast<int>(delta);
+	life += _delta;
+	if (life > lifeMax)
 	{
 		life = lifeMax;
 	}
-	else
-	{
-		life += delta;
-	}
+	
     UpdateHealthBar();
 }
 
@@ -227,20 +232,29 @@ void Chicken::DecreaseLife(unsigned int delta)
 {
     CCLog("DecreaseLife : %d",delta);
     CCLog("DecreaseLife life: %d",life);
-	if (life - delta > 0)
+
+	int _delta = static_cast<int>(delta);
+	life -= delta;
+	if (life <= 0)
 	{
-		life -= delta;
+		life = 1;
 	}
-	else
-	{
-		life = 0;
-	}
+
     UpdateHealthBar();
 }
 
-void Chicken::SetLife(unsigned int life)
+void Chicken::SetLife(int life)
 {
 	this->life = life;
+	if (life <= 0)
+	{
+		life = 1;
+	}
+
+	if (life > lifeMax)
+	{
+		life = lifeMax;
+	}
 	UpdateHealthBar();
 }
 
@@ -314,7 +328,7 @@ void Chicken::SetChickenEvent(EventStatus chickenEvent)
         chickenSpr->runAction(animate);
     }else if (chickenEvent == cry) {
         SoundManager::sharedSoundManager()->playEatFailSound();
-        DecreaseLife(10.0f);
+        DecreaseLife(10);
         if (side == back) {
             return ;
         }

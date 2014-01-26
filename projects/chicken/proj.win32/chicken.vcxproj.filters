@@ -8,7 +8,6 @@
     <ClCompile Include="..\Classes\GameObjects\Food.cpp" />
     <ClCompile Include="..\Classes\GameObjects\Light.cpp" />
     <ClCompile Include="..\Classes\GameObjects\Master.cpp" />
-    <ClCompile Include="..\Classes\GameObjects\Player.cpp" />
     <ClCompile Include="..\Classes\GameOverScene.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\StartScene.cpp" />
@@ -33,7 +32,6 @@
     <ClInclude Include="..\Classes\GameObjects\Food.h" />
     <ClInclude Include="..\Classes\GameObjects\Light.h" />
     <ClInclude Include="..\Classes\GameObjects\Master.h" />
-    <ClInclude Include="..\Classes\GameObjects\Player.h" />
     <ClInclude Include="..\Classes\GameOverScene.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\StartScene.h" />

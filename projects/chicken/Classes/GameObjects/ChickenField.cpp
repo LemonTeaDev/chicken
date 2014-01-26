@@ -3,9 +3,11 @@
 // ltearain, 2014. 01. 25
 
 #include "ChickenField.h"
+#include "GameScene.h"
 #include <cassert>
 
-/* virtual */ bool ChickenField::init()
+/* virtual */
+bool ChickenField::init()
 {
 	if (!CCLayer::init())
 	{
@@ -171,6 +173,11 @@ void ChickenField::RemoveChicken(int index)
 	auto chicken = GetChicken(index);
 	if (chicken != nullptr)
 	{
+		GameScene* pGameScene = dynamic_cast<GameScene*>(getParent());
+		if (pGameScene != nullptr)
+		{
+			pGameScene->setPlayerLife(pGameScene->getPlayerLife() - 1);
+		}
 		chicken->removeFromParentAndCleanup(true);
 	}
 }

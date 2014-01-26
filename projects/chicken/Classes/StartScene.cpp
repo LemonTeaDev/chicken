@@ -49,6 +49,6 @@ bool StartScene::init()
 
 void StartScene::menuStartCallback(CCObject* pSender)
 {
-	CCScene* pScene = OpeningOne::scene();
+	CCScene* pScene = GameScene::scene();
 	CCDirector::sharedDirector()->replaceScene(pScene);
 }

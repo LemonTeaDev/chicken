@@ -9,9 +9,15 @@
 #include "GameStateGaming.h"
 #include "GameManager.h"
 GameStateGaming::GameStateGaming(){
+	accTime = 0;
     _state = eGameStateGaming;
 }
 void GameStateGaming::update(float delta){
+	if (accTime > INT_MAX)
+	{
+		accTime -= INT_MAX;
+	}
+
     float tAccTime = accTime;
     accTime+=delta;
     if ((int)tAccTime != (int)accTime) {
