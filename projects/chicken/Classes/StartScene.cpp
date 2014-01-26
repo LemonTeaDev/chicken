@@ -29,16 +29,18 @@ bool StartScene::init()
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize(); //window size
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin(); // left down corner
 
+	CCSprite* backImage = CCSprite::create("main_page.png");
+	backImage->setPosition(ccp(visibleSize.width /2, visibleSize.height/2));
+	this->addChild(backImage,0);
+
+	//CCMenuItemImage* pClose = CCMenuItemImage::create("quit_test.png", "quit_test.png", this, menu_selector(StartScene::menuCloseCallback));
+	CCMenuItemImage* pStart = CCMenuItemImage::create("main_startbt.png", "main_startbt.png", this, menu_selector(StartScene::menuStartCallback));
 
 
-	CCMenuItemImage* pClose = CCMenuItemImage::create("quit_test.png", "quit_test.png", this, menu_selector(StartScene::menuCloseCallback));
-	CCMenuItemImage* pStart = CCMenuItemImage::create("start_test.png", "start_test.png", this, menu_selector(StartScene::menuStartCallback));
+//	pClose->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
+	pStart->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2 - pStart->getContentSize().height));
 
-
-	pClose->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
-	pStart->setPosition(ccp(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2 - pClose->getContentSize().height));
-
-	CCMenu* pMenu = CCMenu::create(pClose, pStart, NULL);
+	CCMenu* pMenu = CCMenu::create(pStart, NULL);
 	pMenu->setPosition(CCPointZero);
 	this->addChild(pMenu, 1);
     
@@ -94,7 +96,7 @@ bool StartScene::init()
 }
 
 
-void StartScene::menuCloseCallback(CCObject* pSender)
+/*void StartScene::menuCloseCallback(CCObject* pSender)
 {
     CCMenuItemImage *item = dynamic_cast<CCMenuItemImage*>(pSender);
     
@@ -102,7 +104,7 @@ void StartScene::menuCloseCallback(CCObject* pSender)
     StartScene* scene = (StartScene*)menu->getParent();
     
 }
-
+*/
 
 void StartScene::menuStartCallback(CCObject* pSender)
 {
