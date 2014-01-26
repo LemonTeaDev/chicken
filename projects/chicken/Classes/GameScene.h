@@ -39,7 +39,8 @@ public:
     void menuStartCallback(CCObject* pSender);
     void menuReverseCallback(CCObject* pSender);
     CREATE_FUNC(GameScene);
-
+    void speedUp();
+    void speedDown();
 	void setPlayerLife(int life);
 	int getPlayerLife() const;
     

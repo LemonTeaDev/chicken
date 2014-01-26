@@ -22,7 +22,6 @@ void GameStateGaming::update(float delta){
 
     float tAccTime = accTime;
     accTime+=delta;
-    gameAccTime+=delta;
     if ((int)tAccTime != (int)accTime) {
         GameManager::sharedGameManager()->masterProgress(GameManager::sharedGameManager()->getMasterApperTime()-accTime);
         GameManager::sharedGameManager()->setGameAccTime(gameAccTime);
@@ -30,5 +29,12 @@ void GameStateGaming::update(float delta){
     if (accTime > GameManager::sharedGameManager()->getMasterApperTime()) {
         GameManager::sharedGameManager()->masterAppear();
         accTime = 0.0f;
+    }
+    float tGameAccTime = gameAccTime;
+    gameAccTime+=delta;
+    if ((int)tGameAccTime != (int)gameAccTime) {
+        if ((int)gameAccTime % 60 == 0) {
+            GameManager::sharedGameManager()->speedUp();
+        }
     }
 }

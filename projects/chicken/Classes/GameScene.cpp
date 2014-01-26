@@ -193,7 +193,14 @@ void GameScene::menuCloseCallback(CCObject* pSender)
         belt->beltReverse();
     }
 }
-
+void GameScene::speedUp(){
+    Belt* belt = (Belt *)this->getChildByTag(GAME_SCENE_BELT);
+    belt->beltSpeedUp(10.0f);
+}
+void GameScene::speedDown(){
+    Belt* belt = (Belt *)this->getChildByTag(GAME_SCENE_BELT);
+    belt->beltSpeedDown(10.0f);
+}
 void GameScene::menuStartCallback(CCObject* pSender)
 {
     CCMenu* menu = (CCMenu*)(((CCNode*)(pSender))->getParent());

@@ -91,3 +91,10 @@ void GameManager::masterProgress(float dt){
         (scene->*masterAppearProgressCB)(dt);
     }
 }
+void GameManager::speedUp(){
+    
+    GameScene* scene = dynamic_cast<GameScene*>(listener);
+    if (scene) {
+        scene->speedUp();
+    }
+}
